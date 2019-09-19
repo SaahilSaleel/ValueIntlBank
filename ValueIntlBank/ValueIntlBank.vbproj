@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8BFC9D9F-075A-4CCE-A8D9-7DCE161D4887}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ValueIntlBank.My.MyApplication</StartupObject>
+    <RootNamespace>ValueIntlBank</RootNamespace>
+    <AssemblyName>ValueIntlBank</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ValueIntlBank.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ValueIntlBank.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer Menu\AccountTransfer.Designer.vb">
+      <DependentUpon>AccountTransfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\AccountTransfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\AddBeneficiary.Designer.vb">
+      <DependentUpon>AddBeneficiary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\AddBeneficiary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\CustomerMenu.Designer.vb">
+      <DependentUpon>CustomerMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\CustomerMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\EditCusDetails.Designer.vb">
+      <DependentUpon>EditCusDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\EditCusDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\TransferReceipt.Designer.vb">
+      <DependentUpon>TransferReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\TransferReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\CreateBankAcc.Designer.vb">
+      <DependentUpon>CreateBankAcc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\CreateBankAcc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusHome.Designer.vb">
+      <DependentUpon>EmpCusHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusMenu.Designer.vb">
+      <DependentUpon>EmpCusMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\PersonalHome.Designer.vb">
+      <DependentUpon>PersonalHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\PersonalHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn\CusLogin.Designer.vb">
+      <DependentUpon>CusLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn\CusLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\TransferMenu.Designer.vb">
+      <DependentUpon>TransferMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\TransferMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\AddCus.Designer.vb">
+      <DependentUpon>AddCus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\AddCus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\AdvancedCusDetails.Designer.vb">
+      <DependentUpon>AdvancedCusDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\AdvancedCusDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\AccDeposit.Designer.vb">
+      <DependentUpon>AccDeposit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\AccDeposit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusLogin.Designer.vb">
+      <DependentUpon>EmpCusLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\Loan.Designer.vb">
+      <DependentUpon>Loan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\Loan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\AccWithdraw.Designer.vb">
+      <DependentUpon>AccWithdraw.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\AccWithdraw.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\EditPersonalDetails.Designer.vb">
+      <DependentUpon>EditPersonalDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\EditPersonalDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\AddEmployee.Designer.vb">
+      <DependentUpon>AddEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\AddEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\AllTransactions.Designer.vb">
+      <DependentUpon>AllTransactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\AllTransactions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\EditBankDetails.Designer.vb">
+      <DependentUpon>EditBankDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\EditBankDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\EditOtherDetails.Designer.vb">
+      <DependentUpon>EditOtherDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\EditOtherDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\SalaryManager.Designer.vb">
+      <DependentUpon>SalaryManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\SalaryManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\MessageHub.Designer.vb">
+      <DependentUpon>MessageHub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\MessageHub.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\MySalary.Designer.vb">
+      <DependentUpon>MySalary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\MySalary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\ViewBankDetails.Designer.vb">
+      <DependentUpon>ViewBankDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\ViewBankDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn\KioskSelection.Designer.vb">
+      <DependentUpon>KioskSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn\KioskSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Method\Bank.vb" />
+    <Compile Include="Method\Misc.vb" />
+    <Compile Include="Misc\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn\EmpLogin.Designer.vb">
+      <DependentUpon>EmpLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn\EmpLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\Module1.vb" />
+    <Compile Include="Misc\SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\Test_Login.Designer.vb">
+      <DependentUpon>Test_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\Test_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Customer Menu\Passbook.Designer.vb">
+      <DependentUpon>Passbook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\Passbook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Method\SQL.vb" />
+    <Compile Include="vibDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vibDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Customer Menu\CustomerMenu.resx">
+      <DependentUpon>CustomerMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Menu\TransferMenu.resx">
+      <DependentUpon>TransferMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\AddCus.resx">
+      <DependentUpon>AddCus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\CreateBankAcc.resx">
+      <DependentUpon>CreateBankAcc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\AccDeposit.resx">
+      <DependentUpon>AccDeposit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\EmpCusMenu.resx">
+      <DependentUpon>EmpCusMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn\CusLogin.resx">
+      <DependentUpon>CusLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn\KioskSelection.resx">
+      <DependentUpon>KioskSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Misc\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Misc\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn\EmpLogin.resx">
+      <DependentUpon>EmpLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Misc\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Misc\Test_Login.resx">
+      <DependentUpon>Test_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="vibDataSet.xsc">
+      <DependentUpon>vibDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vibDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vibDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vibDataSet.xss">
+      <DependentUpon>vibDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Deposit\India_100_INR.png" />
+    <Content Include="Images\Deposit\India_10_INR.jpg" />
+    <Content Include="Images\Deposit\India_1_INR.jpg" />
+    <Content Include="Images\Deposit\India_2000_INR.jpg" />
+    <Content Include="Images\Deposit\India_200_INR.jpg" />
+    <Content Include="Images\Deposit\India_20_INR.jpg" />
+    <Content Include="Images\Deposit\India_2_INR.jpg" />
+    <Content Include="Images\Deposit\India_500_INR.jpg" />
+    <Content Include="Images\Deposit\India_50_INR.jpg" />
+    <Content Include="Images\Deposit\India_5_INR.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
