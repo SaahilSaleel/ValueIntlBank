@@ -18,7 +18,7 @@
             Dim inr5 As Integer = TextBox8.Text * 5
             Dim inr2 As Integer = TextBox7.Text * 2
             Dim inr1 As Integer = TextBox6.Text * 1
-            inrTotal = inr2000 + inr500 + inr200 + inr100 + inr50 + inr20 + inr10 + inr5 + inr5 + inr2 + inr1
+            inrtotal = inr2000 + inr500 + inr200 + inr100 + inr50 + inr20 + inr10 + inr5 + inr2 + inr1
             Label3.Text = inrTotal & ".00 Rs"
         End If
     End Sub
@@ -42,7 +42,7 @@
         TextBox1.Text = i
     End Sub
 
-    Private Sub Deposit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AccDeposit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If CusID IsNot "" Then
             TextBox11.Text = CusID
             Me.Button1.PerformClick()

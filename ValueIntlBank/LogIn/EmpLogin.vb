@@ -13,7 +13,8 @@ Public Class EmpLogin
             If RadioButton1.Checked = True Then
                 CustomerMenu.Show()
             ElseIf RadioButton2.Checked = True Then
-                PersonalHome.Show()
+                Dim Form = New PersonalHome(UsernameTextBox.Text)
+                Form.Show()
             End If
             Me.Close()
         End If

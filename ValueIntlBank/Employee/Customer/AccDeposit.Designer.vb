@@ -49,13 +49,12 @@ Partial Class AccDeposit
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,8 +67,6 @@ Partial Class AccDeposit
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -142,6 +139,7 @@ Partial Class AccDeposit
         Me.TextBox10.Size = New System.Drawing.Size(104, 22)
         Me.TextBox10.TabIndex = 31
         Me.TextBox10.Text = "0"
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox9
         '
@@ -150,6 +148,7 @@ Partial Class AccDeposit
         Me.TextBox9.Size = New System.Drawing.Size(104, 22)
         Me.TextBox9.TabIndex = 30
         Me.TextBox9.Text = "0"
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox8
         '
@@ -158,6 +157,7 @@ Partial Class AccDeposit
         Me.TextBox8.Size = New System.Drawing.Size(98, 22)
         Me.TextBox8.TabIndex = 29
         Me.TextBox8.Text = "0"
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox7
         '
@@ -166,6 +166,7 @@ Partial Class AccDeposit
         Me.TextBox7.Size = New System.Drawing.Size(101, 22)
         Me.TextBox7.TabIndex = 28
         Me.TextBox7.Text = "0"
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox6
         '
@@ -174,6 +175,7 @@ Partial Class AccDeposit
         Me.TextBox6.Size = New System.Drawing.Size(101, 22)
         Me.TextBox6.TabIndex = 27
         Me.TextBox6.Text = "0"
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox5
         '
@@ -182,6 +184,7 @@ Partial Class AccDeposit
         Me.TextBox5.Size = New System.Drawing.Size(100, 22)
         Me.TextBox5.TabIndex = 26
         Me.TextBox5.Text = "0"
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox4
         '
@@ -190,6 +193,7 @@ Partial Class AccDeposit
         Me.TextBox4.Size = New System.Drawing.Size(100, 22)
         Me.TextBox4.TabIndex = 25
         Me.TextBox4.Text = "0"
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox3
         '
@@ -198,6 +202,7 @@ Partial Class AccDeposit
         Me.TextBox3.Size = New System.Drawing.Size(100, 22)
         Me.TextBox3.TabIndex = 24
         Me.TextBox3.Text = "0"
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox2
         '
@@ -206,6 +211,7 @@ Partial Class AccDeposit
         Me.TextBox2.Size = New System.Drawing.Size(95, 22)
         Me.TextBox2.TabIndex = 23
         Me.TextBox2.Text = "0"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'PictureBox1
         '
@@ -234,6 +240,7 @@ Partial Class AccDeposit
         Me.TextBox1.Size = New System.Drawing.Size(95, 22)
         Me.TextBox1.TabIndex = 2
         Me.TextBox1.Text = "0"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2
         '
@@ -337,7 +344,6 @@ Partial Class AccDeposit
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -345,16 +351,6 @@ Partial Class AccDeposit
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Cheque"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(32, 84)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(245, 109)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
         '
         'ComboBox1
         '
@@ -398,22 +394,21 @@ Partial Class AccDeposit
         Me.Button1.Text = "Submit"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'Button3
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 31)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(115, 21)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "RadioButton1"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Button3.Location = New System.Drawing.Point(903, 744)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(158, 40)
+        Me.Button3.TabIndex = 29
+        Me.Button3.Text = "Return"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'AccDeposit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1107, 760)
+        Me.ClientSize = New System.Drawing.Size(1107, 799)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.Label5)
@@ -436,9 +431,6 @@ Partial Class AccDeposit
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -446,7 +438,6 @@ Partial Class AccDeposit
     Friend WithEvents Label1 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -476,5 +467,5 @@ Partial Class AccDeposit
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Button3 As Button
 End Class

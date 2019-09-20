@@ -115,12 +115,6 @@
     <Compile Include="Customer Menu\CustomerMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer Menu\EditCusDetails.Designer.vb">
-      <DependentUpon>EditCusDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\EditCusDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Customer Menu\TransferReceipt.Designer.vb">
       <DependentUpon>TransferReceipt.vb</DependentUpon>
     </Compile>
@@ -143,6 +137,12 @@
       <DependentUpon>EmpCusMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="Employee\Customer\EmpCusMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusLogin.Designer.vb">
+      <DependentUpon>EmpCusLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Customer\EmpCusLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee\Personal\PersonalHome.Designer.vb">
@@ -169,22 +169,16 @@
     <Compile Include="Employee\Customer\AddCus.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee\Customer\AdvancedCusDetails.Designer.vb">
-      <DependentUpon>AdvancedCusDetails.vb</DependentUpon>
+    <Compile Include="Employee\Customer\EditCusDetails.Designer.vb">
+      <DependentUpon>EditCusDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="Employee\Customer\AdvancedCusDetails.vb">
+    <Compile Include="Employee\Customer\EditCusDetails.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee\Customer\AccDeposit.Designer.vb">
       <DependentUpon>AccDeposit.vb</DependentUpon>
     </Compile>
     <Compile Include="Employee\Customer\AccDeposit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusLogin.Designer.vb">
-      <DependentUpon>EmpCusLogin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee\Customer\Loan.Designer.vb">
@@ -327,6 +321,9 @@
     <EmbeddedResource Include="Customer Menu\TransferMenu.resx">
       <DependentUpon>TransferMenu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\AccWithdraw.resx">
+      <DependentUpon>AccWithdraw.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\Customer\AddCus.resx">
       <DependentUpon>AddCus.vb</DependentUpon>
     </EmbeddedResource>
@@ -336,8 +333,17 @@
     <EmbeddedResource Include="Employee\Customer\AccDeposit.resx">
       <DependentUpon>AccDeposit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\EmpCusHome.resx">
+      <DependentUpon>EmpCusHome.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\Customer\EmpCusMenu.resx">
       <DependentUpon>EmpCusMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Customer\EmpCusLogin.resx">
+      <DependentUpon>EmpCusLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Personal\PersonalHome.resx">
+      <DependentUpon>PersonalHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn\CusLogin.resx">
       <DependentUpon>CusLogin.vb</DependentUpon>
