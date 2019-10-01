@@ -36,8 +36,8 @@ Partial Class EmpLogin
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,7 +70,7 @@ Partial Class EmpLogin
         '
         Me.PasswordTextBox.Location = New System.Drawing.Point(14, 86)
         Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 22)
         Me.PasswordTextBox.TabIndex = 3
         '
@@ -102,6 +102,17 @@ Partial Class EmpLogin
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Mode"
         '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(7, 49)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(85, 21)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Personal"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
@@ -113,17 +124,6 @@ Partial Class EmpLogin
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Customer"
         Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(7, 49)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(85, 21)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Personal"
-        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'EmpLogin
         '

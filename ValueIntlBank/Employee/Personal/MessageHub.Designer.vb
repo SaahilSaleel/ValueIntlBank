@@ -22,9 +22,101 @@ Partial Class MessageHub
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MessagehubBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VibDataSet = New ValueIntlBank.vibDataSet()
+        Me.MessagehubTableAdapter = New ValueIntlBank.vibDataSetTableAdapters.messagehubTableAdapter()
+        Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiverNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subject = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReadStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MessagehubBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VibDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DateTimeDataGridViewTextBoxColumn, Me.ReceiverNameDataGridViewTextBoxColumn, Me.Subject, Me.ReadStatusDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.MessagehubBindingSource
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(916, 334)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'MessagehubBindingSource
+        '
+        Me.MessagehubBindingSource.DataMember = "messagehub"
+        Me.MessagehubBindingSource.DataSource = Me.VibDataSet
+        '
+        'VibDataSet
+        '
+        Me.VibDataSet.DataSetName = "vibDataSet"
+        Me.VibDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MessagehubTableAdapter
+        '
+        Me.MessagehubTableAdapter.ClearBeforeFill = True
+        '
+        'DateTimeDataGridViewTextBoxColumn
+        '
+        Me.DateTimeDataGridViewTextBoxColumn.DataPropertyName = "Date_Time"
+        Me.DateTimeDataGridViewTextBoxColumn.HeaderText = "Date_Time"
+        Me.DateTimeDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.DateTimeDataGridViewTextBoxColumn.Name = "DateTimeDataGridViewTextBoxColumn"
+        Me.DateTimeDataGridViewTextBoxColumn.Width = 125
+        '
+        'ReceiverNameDataGridViewTextBoxColumn
+        '
+        Me.ReceiverNameDataGridViewTextBoxColumn.DataPropertyName = "Receiver_Name"
+        Me.ReceiverNameDataGridViewTextBoxColumn.HeaderText = "Receiver"
+        Me.ReceiverNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.ReceiverNameDataGridViewTextBoxColumn.Name = "ReceiverNameDataGridViewTextBoxColumn"
+        Me.ReceiverNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'Subject
+        '
+        Me.Subject.DataPropertyName = "Subject"
+        Me.Subject.HeaderText = "Subject"
+        Me.Subject.MinimumWidth = 6
+        Me.Subject.Name = "Subject"
+        Me.Subject.Width = 125
+        '
+        'ReadStatusDataGridViewTextBoxColumn
+        '
+        Me.ReadStatusDataGridViewTextBoxColumn.DataPropertyName = "Read_Status"
+        Me.ReadStatusDataGridViewTextBoxColumn.HeaderText = "Read_Status"
+        Me.ReadStatusDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.ReadStatusDataGridViewTextBoxColumn.Name = "ReadStatusDataGridViewTextBoxColumn"
+        Me.ReadStatusDataGridViewTextBoxColumn.Width = 125
+        '
+        'MessageHub
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(916, 450)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Name = "MessageHub"
         Me.Text = "MessageHub"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MessagehubBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VibDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents VibDataSet As vibDataSet
+    Friend WithEvents MessagehubBindingSource As BindingSource
+    Friend WithEvents MessagehubTableAdapter As vibDataSetTableAdapters.messagehubTableAdapter
+    Friend WithEvents DateTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiverNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Subject As DataGridViewTextBoxColumn
+    Friend WithEvents ReadStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

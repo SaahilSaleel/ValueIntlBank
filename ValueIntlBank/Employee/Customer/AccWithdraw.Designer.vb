@@ -56,6 +56,7 @@ Partial Class AccWithdraw
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -409,11 +410,21 @@ Partial Class AccWithdraw
         Me.Label6.TabIndex = 29
         Me.Label6.Text = "Amount"
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(904, 792)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(136, 42)
+        Me.Button4.TabIndex = 32
+        Me.Button4.Text = "Return"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'AccWithdraw
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1107, 846)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox12)
         Me.Controls.Add(Me.Label6)
@@ -477,4 +488,5 @@ Partial Class AccWithdraw
     Friend WithEvents Button3 As Button
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Button4 As Button
 End Class

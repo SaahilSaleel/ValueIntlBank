@@ -23,243 +23,211 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Dim StateProperties41 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties42 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties43 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties44 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties45 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties46 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties47 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
+        Dim StateProperties48 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ColdataBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VibDataSet = New ValueIntlBank.vibDataSet()
-        Me.ColdataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ColdataTableAdapter = New ValueIntlBank.vibDataSetTableAdapters.coldataTableAdapter()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.BankdetailsTableAdapter1 = New ValueIntlBank.vibDataSetTableAdapters.bankdetailsTableAdapter()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CusdetailsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CusdetailsTableAdapter = New ValueIntlBank.vibDataSetTableAdapters.cusdetailsTableAdapter()
-        Me.CusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PasswordDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MidNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PincodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DoBDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SexDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BranchnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.ColdataBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VibDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColdataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CusdetailsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.BunifuTextBox1 = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BunifuTextBox2 = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(169, 58)
+        Me.Button1.Location = New System.Drawing.Point(93, 39)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(199, 87)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Okay"
+        Me.Button1.Text = "Start"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'ColdataBindingSource1
+        'BunifuDragControl1
         '
-        Me.ColdataBindingSource1.DataMember = "coldata"
-        Me.ColdataBindingSource1.DataSource = Me.VibDataSet
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Nothing
+        Me.BunifuDragControl1.Vertical = True
         '
-        'VibDataSet
+        'BunifuTextBox1
         '
-        Me.VibDataSet.DataSetName = "vibDataSet"
-        Me.VibDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.BunifuTextBox1.AcceptsReturn = False
+        Me.BunifuTextBox1.AcceptsTab = False
+        Me.BunifuTextBox1.AnimationSpeed = 200
+        Me.BunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.BunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.BunifuTextBox1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTextBox1.BackgroundImage = CType(resources.GetObject("BunifuTextBox1.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuTextBox1.BorderColorActive = System.Drawing.Color.DodgerBlue
+        Me.BunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(161, Byte), Integer))
+        Me.BunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuTextBox1.BorderColorIdle = System.Drawing.Color.Silver
+        Me.BunifuTextBox1.BorderRadius = 1
+        Me.BunifuTextBox1.BorderThickness = 1
+        Me.BunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.BunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTextBox1.DefaultFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.BunifuTextBox1.DefaultText = ""
+        Me.BunifuTextBox1.FillColor = System.Drawing.Color.White
+        Me.BunifuTextBox1.HideSelection = True
+        Me.BunifuTextBox1.IconLeft = Nothing
+        Me.BunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTextBox1.IconPadding = 10
+        Me.BunifuTextBox1.IconRight = Nothing
+        Me.BunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTextBox1.Lines = New String(-1) {}
+        Me.BunifuTextBox1.Location = New System.Drawing.Point(112, 240)
+        Me.BunifuTextBox1.MaxLength = 32767
+        Me.BunifuTextBox1.MinimumSize = New System.Drawing.Size(100, 35)
+        Me.BunifuTextBox1.Modified = False
+        Me.BunifuTextBox1.Multiline = False
+        Me.BunifuTextBox1.Name = "BunifuTextBox1"
+        StateProperties41.BorderColor = System.Drawing.Color.DodgerBlue
+        StateProperties41.FillColor = System.Drawing.Color.Empty
+        StateProperties41.ForeColor = System.Drawing.Color.Empty
+        StateProperties41.PlaceholderForeColor = System.Drawing.Color.Empty
+        Me.BunifuTextBox1.OnActiveState = StateProperties41
+        StateProperties42.BorderColor = System.Drawing.Color.Empty
+        StateProperties42.FillColor = System.Drawing.Color.White
+        StateProperties42.ForeColor = System.Drawing.Color.Empty
+        StateProperties42.PlaceholderForeColor = System.Drawing.Color.Silver
+        Me.BunifuTextBox1.OnDisabledState = StateProperties42
+        StateProperties43.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        StateProperties43.FillColor = System.Drawing.Color.Empty
+        StateProperties43.ForeColor = System.Drawing.Color.Empty
+        StateProperties43.PlaceholderForeColor = System.Drawing.Color.Empty
+        Me.BunifuTextBox1.OnHoverState = StateProperties43
+        StateProperties44.BorderColor = System.Drawing.Color.Silver
+        StateProperties44.FillColor = System.Drawing.Color.White
+        StateProperties44.ForeColor = System.Drawing.Color.Empty
+        StateProperties44.PlaceholderForeColor = System.Drawing.Color.Empty
+        Me.BunifuTextBox1.OnIdleState = StateProperties44
+        Me.BunifuTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.BunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver
+        Me.BunifuTextBox1.PlaceholderText = "Enter text"
+        Me.BunifuTextBox1.ReadOnly = False
+        Me.BunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.BunifuTextBox1.SelectedText = ""
+        Me.BunifuTextBox1.SelectionLength = 0
+        Me.BunifuTextBox1.SelectionStart = 0
+        Me.BunifuTextBox1.ShortcutsEnabled = True
+        Me.BunifuTextBox1.Size = New System.Drawing.Size(200, 35)
+        Me.BunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu
+        Me.BunifuTextBox1.TabIndex = 1
+        Me.BunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BunifuTextBox1.TextMarginBottom = 0
+        Me.BunifuTextBox1.TextMarginLeft = 5
+        Me.BunifuTextBox1.TextMarginTop = 0
+        Me.BunifuTextBox1.TextPlaceholder = "Enter text"
+        Me.BunifuTextBox1.UseSystemPasswordChar = False
+        Me.BunifuTextBox1.WordWrap = True
         '
-        'ColdataBindingSource
+        'Button2
         '
-        Me.ColdataBindingSource.DataMember = "coldata"
-        Me.ColdataBindingSource.DataSource = Me.VibDataSet
+        Me.Button2.Location = New System.Drawing.Point(139, 176)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'ColdataTableAdapter
+        'BunifuTextBox2
         '
-        Me.ColdataTableAdapter.ClearBeforeFill = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(139, 139)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(157, 22)
-        Me.TextBox1.TabIndex = 1
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(41, 93)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(125, 24)
-        Me.ComboBox1.TabIndex = 2
-        '
-        'BankdetailsTableAdapter1
-        '
-        Me.BankdetailsTableAdapter1.ClearBeforeFill = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CusIDDataGridViewTextBoxColumn, Me.PasswordDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.MidNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.PincodeDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.DoBDataGridViewTextBoxColumn, Me.SexDataGridViewTextBoxColumn, Me.BranchnoDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.CusdetailsBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 139)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(674, 180)
-        Me.DataGridView1.TabIndex = 3
-        '
-        'CusdetailsBindingSource
-        '
-        Me.CusdetailsBindingSource.DataMember = "cusdetails"
-        Me.CusdetailsBindingSource.DataSource = Me.VibDataSet
-        '
-        'CusdetailsTableAdapter
-        '
-        Me.CusdetailsTableAdapter.ClearBeforeFill = True
-        '
-        'CusIDDataGridViewTextBoxColumn
-        '
-        Me.CusIDDataGridViewTextBoxColumn.DataPropertyName = "Cus_ID"
-        Me.CusIDDataGridViewTextBoxColumn.HeaderText = "Cus_ID"
-        Me.CusIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.CusIDDataGridViewTextBoxColumn.Name = "CusIDDataGridViewTextBoxColumn"
-        Me.CusIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'PasswordDataGridViewTextBoxColumn
-        '
-        Me.PasswordDataGridViewTextBoxColumn.DataPropertyName = "Password"
-        Me.PasswordDataGridViewTextBoxColumn.HeaderText = "Password"
-        Me.PasswordDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PasswordDataGridViewTextBoxColumn.Name = "PasswordDataGridViewTextBoxColumn"
-        Me.PasswordDataGridViewTextBoxColumn.Width = 125
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First_Name"
-        Me.FirstNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'MidNameDataGridViewTextBoxColumn
-        '
-        Me.MidNameDataGridViewTextBoxColumn.DataPropertyName = "Mid_Name"
-        Me.MidNameDataGridViewTextBoxColumn.HeaderText = "Mid_Name"
-        Me.MidNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.MidNameDataGridViewTextBoxColumn.Name = "MidNameDataGridViewTextBoxColumn"
-        Me.MidNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name"
-        Me.LastNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "Address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "Address"
-        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.Width = 125
-        '
-        'PincodeDataGridViewTextBoxColumn
-        '
-        Me.PincodeDataGridViewTextBoxColumn.DataPropertyName = "Pincode"
-        Me.PincodeDataGridViewTextBoxColumn.HeaderText = "Pincode"
-        Me.PincodeDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PincodeDataGridViewTextBoxColumn.Name = "PincodeDataGridViewTextBoxColumn"
-        Me.PincodeDataGridViewTextBoxColumn.Width = 125
-        '
-        'PhoneDataGridViewTextBoxColumn
-        '
-        Me.PhoneDataGridViewTextBoxColumn.DataPropertyName = "Phone"
-        Me.PhoneDataGridViewTextBoxColumn.HeaderText = "Phone"
-        Me.PhoneDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PhoneDataGridViewTextBoxColumn.Name = "PhoneDataGridViewTextBoxColumn"
-        Me.PhoneDataGridViewTextBoxColumn.Width = 125
-        '
-        'DoBDataGridViewTextBoxColumn
-        '
-        Me.DoBDataGridViewTextBoxColumn.DataPropertyName = "DoB"
-        Me.DoBDataGridViewTextBoxColumn.HeaderText = "DoB"
-        Me.DoBDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DoBDataGridViewTextBoxColumn.Name = "DoBDataGridViewTextBoxColumn"
-        Me.DoBDataGridViewTextBoxColumn.Width = 125
-        '
-        'SexDataGridViewTextBoxColumn
-        '
-        Me.SexDataGridViewTextBoxColumn.DataPropertyName = "Sex"
-        Me.SexDataGridViewTextBoxColumn.HeaderText = "Sex"
-        Me.SexDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.SexDataGridViewTextBoxColumn.Name = "SexDataGridViewTextBoxColumn"
-        Me.SexDataGridViewTextBoxColumn.Width = 125
-        '
-        'BranchnoDataGridViewTextBoxColumn
-        '
-        Me.BranchnoDataGridViewTextBoxColumn.DataPropertyName = "Branchno"
-        Me.BranchnoDataGridViewTextBoxColumn.HeaderText = "Branchno"
-        Me.BranchnoDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.BranchnoDataGridViewTextBoxColumn.Name = "BranchnoDataGridViewTextBoxColumn"
-        Me.BranchnoDataGridViewTextBoxColumn.Width = 125
+        Me.BunifuTextBox2.AcceptsReturn = False
+        Me.BunifuTextBox2.AcceptsTab = False
+        Me.BunifuTextBox2.AnimationSpeed = 200
+        Me.BunifuTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.BunifuTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.BunifuTextBox2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTextBox2.BackgroundImage = CType(resources.GetObject("BunifuTextBox2.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuTextBox2.BorderColorActive = System.Drawing.Color.DodgerBlue
+        Me.BunifuTextBox2.BorderColorDisabled = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(161, Byte), Integer))
+        Me.BunifuTextBox2.BorderColorHover = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuTextBox2.BorderColorIdle = System.Drawing.Color.Silver
+        Me.BunifuTextBox2.BorderRadius = 1
+        Me.BunifuTextBox2.BorderThickness = 1
+        Me.BunifuTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.BunifuTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTextBox2.DefaultFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.BunifuTextBox2.DefaultText = ""
+        Me.BunifuTextBox2.FillColor = System.Drawing.Color.White
+        Me.BunifuTextBox2.HideSelection = True
+        Me.BunifuTextBox2.IconLeft = Nothing
+        Me.BunifuTextBox2.IconLeftCursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTextBox2.IconPadding = 10
+        Me.BunifuTextBox2.IconRight = Nothing
+        Me.BunifuTextBox2.IconRightCursor = System.Windows.Forms.Cursors.IBeam
+        Me.BunifuTextBox2.Lines = New String(-1) {}
+        Me.BunifuTextBox2.Location = New System.Drawing.Point(112, 281)
+        Me.BunifuTextBox2.MaxLength = 32767
+        Me.BunifuTextBox2.MinimumSize = New System.Drawing.Size(100, 35)
+        Me.BunifuTextBox2.Modified = False
+        Me.BunifuTextBox2.Multiline = False
+        Me.BunifuTextBox2.Name = "BunifuTextBox2"
+        StateProperties45.BorderColor = System.Drawing.Color.DodgerBlue
+        StateProperties45.FillColor = System.Drawing.Color.Empty
+        StateProperties45.ForeColor = System.Drawing.Color.Empty
+        StateProperties45.PlaceholderForeColor = System.Drawing.Color.Empty
+        Me.BunifuTextBox2.OnActiveState = StateProperties45
+        StateProperties46.BorderColor = System.Drawing.Color.Empty
+        StateProperties46.FillColor = System.Drawing.Color.White
+        StateProperties46.ForeColor = System.Drawing.Color.Empty
+        StateProperties46.PlaceholderForeColor = System.Drawing.Color.Silver
+        Me.BunifuTextBox2.OnDisabledState = StateProperties46
+        StateProperties47.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        StateProperties47.FillColor = System.Drawing.Color.Empty
+        StateProperties47.ForeColor = System.Drawing.Color.Empty
+        StateProperties47.PlaceholderForeColor = System.Drawing.Color.Empty
+        Me.BunifuTextBox2.OnHoverState = StateProperties47
+        StateProperties48.BorderColor = System.Drawing.Color.Silver
+        StateProperties48.FillColor = System.Drawing.Color.White
+        StateProperties48.ForeColor = System.Drawing.Color.Empty
+        StateProperties48.PlaceholderForeColor = System.Drawing.Color.Empty
+        Me.BunifuTextBox2.OnIdleState = StateProperties48
+        Me.BunifuTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.BunifuTextBox2.PlaceholderForeColor = System.Drawing.Color.Silver
+        Me.BunifuTextBox2.PlaceholderText = "Enter text"
+        Me.BunifuTextBox2.ReadOnly = False
+        Me.BunifuTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.BunifuTextBox2.SelectedText = ""
+        Me.BunifuTextBox2.SelectionLength = 0
+        Me.BunifuTextBox2.SelectionStart = 0
+        Me.BunifuTextBox2.ShortcutsEnabled = True
+        Me.BunifuTextBox2.Size = New System.Drawing.Size(200, 35)
+        Me.BunifuTextBox2.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu
+        Me.BunifuTextBox2.TabIndex = 4
+        Me.BunifuTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.BunifuTextBox2.TextMarginBottom = 0
+        Me.BunifuTextBox2.TextMarginLeft = 5
+        Me.BunifuTextBox2.TextMarginTop = 0
+        Me.BunifuTextBox2.TextPlaceholder = "Enter text"
+        Me.BunifuTextBox2.UseSystemPasswordChar = False
+        Me.BunifuTextBox2.WordWrap = True
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(632, 392)
+        Me.Controls.Add(Me.BunifuTextBox2)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.BunifuTextBox1)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form2"
         Me.Text = "Form2"
-        CType(Me.ColdataBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VibDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColdataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CusdetailsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
-    End Sub
-
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles Me.Load
-        TextBox1.Text = str
-        Dim arr As String() = GetColNames("cusdetails")
-        If str IsNot "" Then
-            Me.Button1.PerformClick()
-            Me.Button1.Visible() = False
-            ComboBox1.Items.AddRange(arr)
-        End If
     End Sub
 
     Friend WithEvents Button1 As Button
-    Friend WithEvents VibDataSet As vibDataSet
-    Friend WithEvents ColdataBindingSource As BindingSource
-    Friend WithEvents ColdataTableAdapter As vibDataSetTableAdapters.coldataTableAdapter
-    Friend WithEvents ColdataBindingSource1 As BindingSource
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents BankdetailsTableAdapter1 As vibDataSetTableAdapters.bankdetailsTableAdapter
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents CusdetailsBindingSource As BindingSource
-    Friend WithEvents CusdetailsTableAdapter As vibDataSetTableAdapters.cusdetailsTableAdapter
-    Friend WithEvents CusIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PasswordDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MidNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PincodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DoBDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SexDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BranchnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents BunifuTextBox1 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents BunifuTextBox2 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
 End Class

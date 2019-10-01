@@ -64,6 +64,55 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>Bunifu\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
     <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
@@ -72,8 +121,10 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -103,16 +154,40 @@
     <Compile Include="Customer Menu\AccountTransfer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer Menu\AddBeneficiary.Designer.vb">
-      <DependentUpon>AddBeneficiary.vb</DependentUpon>
+    <Compile Include="Misc\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer Menu\AddBeneficiary.vb">
+    <Compile Include="Misc\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer Menu\CustomerMenu.Designer.vb">
-      <DependentUpon>CustomerMenu.vb</DependentUpon>
+    <Compile Include="Modules\AdminModule.Designer.vb">
+      <DependentUpon>AdminModule.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer Menu\CustomerMenu.vb">
+    <Compile Include="Modules\AdminModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\EmployeeModule.Designer.vb">
+      <DependentUpon>EmployeeModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EmployeeModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CustomerModule.Designer.vb">
+      <DependentUpon>CustomerModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CustomerModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\AddBank.Designer.vb">
+      <DependentUpon>AddBank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Personal\Manager\AddBank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\CusHome.Designer.vb">
+      <DependentUpon>CusHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\CusHome.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer Menu\TransferReceipt.Designer.vb">
@@ -143,6 +218,12 @@
       <DependentUpon>EmpCusLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="Employee\Customer\EmpCusLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Menu\AddBeneficiary.Designer.vb">
+      <DependentUpon>AddBeneficiary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Menu\AddBeneficiary.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee\Personal\PersonalHome.Designer.vb">
@@ -261,12 +342,6 @@
     <Compile Include="Misc\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Misc\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Misc\Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="LogIn\EmpLogin.Designer.vb">
       <DependentUpon>EmpLogin.vb</DependentUpon>
     </Compile>
@@ -278,6 +353,12 @@
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
     <Compile Include="Misc\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\EmpCusModule.Designer.vb">
+      <DependentUpon>EmpCusModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EmpCusModule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Misc\Test_Login.Designer.vb">
@@ -301,10 +382,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Customer Menu\Passbook.Designer.vb">
-      <DependentUpon>Passbook.vb</DependentUpon>
+    <Compile Include="Customer Menu\CusPassbook.Designer.vb">
+      <DependentUpon>CusPassbook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer Menu\Passbook.vb">
+    <Compile Include="Customer Menu\CusPassbook.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Method\SQL.vb" />
@@ -315,8 +396,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Customer Menu\CustomerMenu.resx">
-      <DependentUpon>CustomerMenu.vb</DependentUpon>
+    <EmbeddedResource Include="Customer Menu\AccountTransfer.resx">
+      <DependentUpon>AccountTransfer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Personal\Manager\AddBank.resx">
+      <DependentUpon>AddBank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Menu\CusHome.resx">
+      <DependentUpon>CusHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Menu\CusPassbook.resx">
+      <DependentUpon>CusPassbook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer Menu\TransferMenu.resx">
       <DependentUpon>TransferMenu.vb</DependentUpon>
@@ -342,6 +432,18 @@
     <EmbeddedResource Include="Employee\Customer\EmpCusLogin.resx">
       <DependentUpon>EmpCusLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer Menu\AddBeneficiary.resx">
+      <DependentUpon>AddBeneficiary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Personal\Manager\AddEmployee.resx">
+      <DependentUpon>AddEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Personal\Manager\AllTransactions.resx">
+      <DependentUpon>AllTransactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Personal\MessageHub.resx">
+      <DependentUpon>MessageHub.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\Personal\PersonalHome.resx">
       <DependentUpon>PersonalHome.vb</DependentUpon>
     </EmbeddedResource>
@@ -354,14 +456,20 @@
     <EmbeddedResource Include="Misc\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Misc\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogIn\EmpLogin.resx">
       <DependentUpon>EmpLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Misc\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Misc\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AdminModule.resx">
+      <DependentUpon>AdminModule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\EmpCusModule.resx">
+      <DependentUpon>EmpCusModule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Misc\Test_Login.resx">
       <DependentUpon>Test_Login.vb</DependentUpon>
@@ -419,6 +527,8 @@
     <Content Include="Images\Deposit\India_500_INR.jpg" />
     <Content Include="Images\Deposit\India_50_INR.jpg" />
     <Content Include="Images\Deposit\India_5_INR.jpg" />
+    <Content Include="Images\Lock\Lock.png" />
+    <Content Include="Images\Lock\Unlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

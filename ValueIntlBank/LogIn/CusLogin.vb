@@ -10,7 +10,8 @@ Public Class CusLogin
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If LogIn(UsernameTextBox.Text, PasswordTextBox.Text, "cus") = 1 Then
-            CustomerMenu.Show()
+            Dim Form = New CusHome(UsernameTextBox.Text)
+            Form.Show()
             Me.Close()
         End If
     End Sub

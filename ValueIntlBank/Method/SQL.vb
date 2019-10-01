@@ -15,7 +15,7 @@ Module SQL
             MysqlConn.Open()
             Dim Query As String = ""
             If table = "cus" Then
-                Query = "select * from vib.cusacc where Cus_ID='" & user & "' and password='" & pass & "' "
+                Query = "select * from vib.cusdetails where Cus_ID='" & user & "' and password='" & pass & "' "
             ElseIf table = "emp" Then
                 Query = "select * from vib.empdetails where Emp_ID='" & user & "' and password='" & pass & "' "
             End If
@@ -24,16 +24,12 @@ Module SQL
             Dim count As Integer
             count = 0
             While READER.Read
-                count = count + 1
+                count += 1
 
             End While
 
             If count = 1 Then
-                MessageBox.Show("Login Succesful")
                 Success = 1
-            Else
-                MessageBox.Show("Username and Password do not match")
-
             End If
 
 
@@ -48,7 +44,37 @@ Module SQL
         Return Success
     End Function
 
-    Function CheckExists(ByVal val As String, ByVal table As String, ByVal col As String) As Integer
+    Function GetRowCount(ByVal table As String) As Integer
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString =
+       "server=localhost;userid=root;password=root;database=vib"
+        Dim READER As MySqlDataReader
+        Dim count As Integer
+        count = 0
+        Try
+            MysqlConn.Open()
+            Dim Query As String
+            Query = "select * from vib." + table
+            COMMAND = New MySqlCommand(Query, MysqlConn)
+            READER = COMMAND.ExecuteReader
+
+            While READER.Read
+                count += 1
+
+            End While
+
+            MysqlConn.Close()
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+        Return count
+    End Function
+
+    Function GetRowCount(ByVal val As String, ByVal table As String, ByVal col As String) As Integer
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
@@ -89,6 +115,7 @@ Module SQL
             query += "'" + arr(i) + "'"
         Next i
         query += ");"
+        MessageBox.Show(query)
         Dim success = ExecuteQuery(query)
         Return success
     End Function
@@ -104,7 +131,7 @@ Module SQL
             COMMAND = New MySqlCommand(Query, MysqlConn)
             READER = COMMAND.ExecuteReader
             MysqlConn.Close()
-            MessageBox.Show(Query)
+            'MessageBox.Show(Query)
             Return 1
 
         Catch ex As MySqlException
@@ -124,7 +151,7 @@ Module SQL
        "server=localhost;userid=root;password=root;database=vib"
         Dim READER As MySqlDataReader
         Dim value As String = ""
-        If CheckExists(val, table, col) = 1 Then
+        If GetRowCount(val, table, col) = 1 Then
 
             Try
                 MysqlConn.Open()
@@ -134,7 +161,7 @@ Module SQL
                 READER = COMMAND.ExecuteReader
 
                 While READER.Read
-                    value = (READER.GetChar(0))
+                    value = (READER.GetString(0))
 
                 End While
 
@@ -149,7 +176,7 @@ Module SQL
         End If
         Return value
     End Function
-    Function GetSingleRow(ByVal table As String, ByVal col As String, ByVal val As String) As Dictionary(Of String, String)
+    Function GetSingleRowDict(ByVal table As String, ByVal col As String, ByVal val As String) As Dictionary(Of String, String)
         MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
@@ -158,7 +185,7 @@ Module SQL
         Dim keyArr() As String = GetColNames(table)
         Dim len As Integer = keyArr.Length - 1
         Dim str As String
-        If CheckExists(val, table, col) = 1 Then
+        If GetRowCount(val, table, col) = 1 Then
 
             Try
                 MysqlConn.Open()
@@ -186,6 +213,26 @@ Module SQL
         Return value
     End Function
 
+    Function GetTable(ByVal query As String) As DataTable
+        MysqlConn = New MySqlConnection
+        MysqlConn.ConnectionString =
+       "server=localhost;userid=root;password=root;database=vib"
+        Dim Dt As DataTable = New DataTable
+        Try
+            MysqlConn.Open()
+            COMMAND = New MySqlCommand(query, MysqlConn)
+            Dt.Load(COMMAND.ExecuteReader)
+
+            MysqlConn.Close()
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        Finally
+            MysqlConn.Dispose()
+
+        End Try
+        Return Dt
+    End Function
 
     Function GetColNames(ByVal table As String) As String()
         MysqlConn = New MySqlConnection
@@ -206,7 +253,7 @@ Module SQL
 #Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 value(i) = READER.GetString(0)
 #Enable Warning BC42104 ' Variable is used before it has been assigned a value
-                i = i + 1
+                i += 1
                 ReDim Preserve value(i)
             End While
 
@@ -243,7 +290,7 @@ select " + field + " from vib." + table
 #Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 value(i) = READER.GetString(0)
 #Enable Warning BC42104 ' Variable is used before it has been assigned a value
-                i = i + 1
+                i += 1
                 ReDim Preserve value(i)
             End While
 
@@ -279,7 +326,7 @@ select " + field + " from vib." + table
 #Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 value(i) = READER.GetString(0)
 #Enable Warning BC42104 ' Variable is used before it has been assigned a value
-                i = i + 1
+                i += 1
                 ReDim Preserve value(i)
             End While
 

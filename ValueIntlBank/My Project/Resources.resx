@@ -121,26 +121,20 @@
   <data name="India_1_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Deposit\India_1_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="India_1_INR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Deposit\India_1_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="India_2_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Deposit\India_2_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="India_5_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Deposit\India_5_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="India_20_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Deposit\India_20_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="India_10_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Deposit\India_10_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="India_20_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Deposit\India_20_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="India_1_INR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Deposit\India_1_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="India_50_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Deposit\India_50_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="India_100_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Deposit\India_100_INR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="India_2_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Deposit\India_2_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="India_200_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Deposit\India_200_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,7 +142,19 @@
   <data name="India_500_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Deposit\India_500_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="India_5_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Deposit\India_5_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="India_100_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Deposit\India_100_INR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="India_2000_INR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Deposit\India_2000_INR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Lock\Lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Lock\Unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

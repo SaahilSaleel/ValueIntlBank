@@ -16,7 +16,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        cusdetails = GetSingleRow("cusdetails", "Cus_ID", TextBox1.Text)
+        cusdetails = GetSingleRowDict("cusdetails", "Cus_ID", TextBox1.Text)
         TextBox2.Text = cusdetails("First_Name")
         TextBox3.Text = cusdetails("Mid_Name")
         TextBox4.Text = cusdetails("Last_Name")
@@ -39,5 +39,9 @@
             Dim Form = New AccDeposit(arr(4).ToString)
             Form.Show()
         End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
     End Sub
 End Class

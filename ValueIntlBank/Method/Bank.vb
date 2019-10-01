@@ -1,7 +1,7 @@
 ﻿Module Bank
     Function Deposit(ByVal Acc As Integer, ByVal Amount As Integer) As Integer
         Dim bal As Integer = CInt(GetSingleField("Balance", "bankacc", "Accno", Acc))
-        bal = bal + Amount
+        bal += Amount
         Dim Success = 0
         If UpdateSingleField("bankacc", "Balance", bal, "Accno", Acc) = 1 Then
             Dim msg = "Rs " & Amount & " has been succesfully deposited to AccNo:- " & Acc
@@ -13,7 +13,7 @@
 
     Function Withdraw(ByVal Acc As Integer, ByVal Amount As Integer) As Integer
         Dim bal As Integer = CInt(GetSingleField("Balance", "bankacc", "Accno", Acc))
-        bal = bal - Amount
+        bal -= Amount
         Dim Success = 0
         If bal > 0 Then
 
@@ -22,9 +22,7 @@
                 MessageBox.Show(msg)
                 Success = 1
             End If
-        ElseIf bal = 0 Then
-            MessageBox.Show("Enter a value")
-        ElseIf bal < 0 Then
+        Else
             MessageBox.Show("Value cannot be negative")
         End If
         Return Success

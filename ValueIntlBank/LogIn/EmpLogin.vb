@@ -11,7 +11,7 @@ Public Class EmpLogin
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If LogIn(UsernameTextBox.Text, PasswordTextBox.Text, "emp") = 1 Then
             If RadioButton1.Checked = True Then
-                CustomerMenu.Show()
+                EmpCusMenu.Show()
             ElseIf RadioButton2.Checked = True Then
                 Dim Form = New PersonalHome(UsernameTextBox.Text)
                 Form.Show()

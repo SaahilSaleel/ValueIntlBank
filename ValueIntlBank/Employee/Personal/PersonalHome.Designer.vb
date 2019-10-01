@@ -28,7 +28,7 @@ Partial Class PersonalHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(282, 450)
+        Me.ClientSize = New System.Drawing.Size(295, 450)
         Me.Name = "PersonalHome"
         Me.Text = "PersonalHome"
         Me.ResumeLayout(False)

@@ -189,7 +189,7 @@ Partial Class CreateBankAcc
         Me.Name = "CreateBankAcc"
         Me.Text = "CreateBankAcc"
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
 

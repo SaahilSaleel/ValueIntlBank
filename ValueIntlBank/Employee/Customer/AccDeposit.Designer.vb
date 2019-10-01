@@ -87,7 +87,7 @@ Partial Class AccDeposit
         Me.TabControl1.Location = New System.Drawing.Point(12, 136)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1086, 585)
+        Me.TabControl1.Size = New System.Drawing.Size(1141, 585)
         Me.TabControl1.TabIndex = 23
         '
         'TabPage1
@@ -118,7 +118,7 @@ Partial Class AccDeposit
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1078, 556)
+        Me.TabPage1.Size = New System.Drawing.Size(1133, 556)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Cash"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -227,11 +227,11 @@ Partial Class AccDeposit
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(964, 230)
+        Me.Label3.Location = New System.Drawing.Point(1024, 228)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(0, 32)
         Me.Label3.TabIndex = 22
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TextBox1
         '
@@ -347,7 +347,7 @@ Partial Class AccDeposit
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1078, 556)
+        Me.TabPage2.Size = New System.Drawing.Size(1133, 556)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Cheque"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -407,7 +407,7 @@ Partial Class AccDeposit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1107, 799)
+        Me.ClientSize = New System.Drawing.Size(1165, 799)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox11)
