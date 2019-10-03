@@ -160,24 +160,6 @@
     <Compile Include="Misc\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\AdminModule.Designer.vb">
-      <DependentUpon>AdminModule.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\AdminModule.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\EmployeeModule.Designer.vb">
-      <DependentUpon>EmployeeModule.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\EmployeeModule.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\CustomerModule.Designer.vb">
-      <DependentUpon>CustomerModule.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\CustomerModule.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Employee\Personal\Manager\AddBank.Designer.vb">
       <DependentUpon>AddBank.vb</DependentUpon>
     </Compile>
@@ -355,6 +337,12 @@
     <Compile Include="Misc\SplashScreen1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\CustomerModule.Designer.vb">
+      <DependentUpon>CustomerModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CustomerModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\EmpCusModule.Designer.vb">
       <DependentUpon>EmpCusModule.vb</DependentUpon>
     </Compile>
@@ -465,8 +453,8 @@
     <EmbeddedResource Include="Misc\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\AdminModule.resx">
-      <DependentUpon>AdminModule.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\CustomerModule.resx">
+      <DependentUpon>CustomerModule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\EmpCusModule.resx">
       <DependentUpon>EmpCusModule.vb</DependentUpon>
@@ -527,6 +515,17 @@
     <Content Include="Images\Deposit\India_500_INR.jpg" />
     <Content Include="Images\Deposit\India_50_INR.jpg" />
     <Content Include="Images\Deposit\India_5_INR.jpg" />
+    <Content Include="Images\Icons\AddBank.png" />
+    <Content Include="Images\Icons\AddCus.png" />
+    <Content Include="Images\Icons\add_bank.png" />
+    <Content Include="Images\Icons\Close.png" />
+    <Content Include="Images\Icons\Deposit.png" />
+    <Content Include="Images\Icons\logout.jpg" />
+    <Content Include="Images\Icons\Money Transfer.png" />
+    <Content Include="Images\Icons\Transaction.png" />
+    <Content Include="Images\Icons\Transfer.png" />
+    <Content Include="Images\Icons\user-edit-black.png" />
+    <Content Include="Images\Icons\Withdraw.png" />
     <Content Include="Images\Lock\Lock.png" />
     <Content Include="Images\Lock\Unlock.png" />
   </ItemGroup>

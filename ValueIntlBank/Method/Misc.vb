@@ -29,9 +29,16 @@ Module Misc
         Return val
     End Function
 
-    Function GetGroupBoxCheckedButton(grpb As GroupBox) As RadioButton
-        For Each ctrl As RadioButton In grpb.Controls
-            If ctrl.Checked Then Return ctrl
+    Function GetGroupBoxCheckedButton(grpb As GroupBox) As Bunifu.UI.WinForms.BunifuRadioButton
+        Dim rb As Bunifu.UI.WinForms.BunifuRadioButton
+        For Each ctrl As Object In grpb.Controls
+            If ctrl.GetType Is GetType(Bunifu.UI.WinForms.BunifuRadioButton) Then
+                rb = ctrl
+                If rb.Checked Then
+                    Return rb
+                End If
+            End If
+
         Next
 #Disable Warning BC42105 ' Function doesn't return a value on all code paths
     End Function
@@ -51,11 +58,11 @@ Module Misc
         Return word
     End Function
 
-    Public Sub Wait(ByVal seconds As Single)
-        Static start As Single
+    Public Sub Wait(ByVal seconds As Integer)
+        Static start As Integer
         start = VB.Timer()
         Do While VB.Timer() < start + seconds
-            System.Windows.Forms.Application.DoEvents()
+            Application.DoEvents()
         Loop
     End Sub
 End Module

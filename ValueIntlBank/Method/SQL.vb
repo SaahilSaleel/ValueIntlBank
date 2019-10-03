@@ -1,14 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Module SQL
-    Dim MysqlConn As MySqlConnection
+    ReadOnly MysqlConn As MySqlConnection = New MySqlConnection
     Dim COMMAND As MySqlCommand
-
+    Dim READER As MySqlDataReader
     Function LogIn(ByVal user As String, ByVal pass As String, ByVal table As String) As Integer
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim Success As Integer = 0
 
         Try
@@ -45,10 +44,9 @@ Module SQL
     End Function
 
     Function GetRowCount(ByVal table As String) As Integer
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim count As Integer
         count = 0
         Try
@@ -75,10 +73,9 @@ Module SQL
     End Function
 
     Function GetRowCount(ByVal val As String, ByVal table As String, ByVal col As String) As Integer
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim count As Integer
         count = 0
         Try
@@ -121,10 +118,9 @@ Module SQL
     End Function
 
     Function ExecuteQuery(ByVal Query As String) As Integer
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
 
         Try
             MysqlConn.Open()
@@ -146,10 +142,9 @@ Module SQL
     End Function
 
     Function GetSingleField(ByVal field As String, ByVal table As String, ByVal col As String, ByVal val As String) As String
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim value As String = ""
         If GetRowCount(val, table, col) = 1 Then
 
@@ -177,10 +172,9 @@ Module SQL
         Return value
     End Function
     Function GetSingleRowDict(ByVal table As String, ByVal col As String, ByVal val As String) As Dictionary(Of String, String)
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim value As New Dictionary(Of String, String)
         Dim keyArr() As String = GetColNames(table)
         Dim len As Integer = keyArr.Length - 1
@@ -214,7 +208,6 @@ Module SQL
     End Function
 
     Function GetTable(ByVal query As String) As DataTable
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
         Dim Dt As DataTable = New DataTable
@@ -235,10 +228,9 @@ Module SQL
     End Function
 
     Function GetColNames(ByVal table As String) As String()
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim value(0) As String
         Dim i As Integer = 0
 
@@ -271,18 +263,16 @@ Module SQL
     End Function
 
     Function GetSingleCol(ByVal field As String, ByVal table As String) As String()
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim value(0) As String
         Dim i As Integer = 0
 
         Try
             MysqlConn.Open()
             Dim Query As String
-            Query = "
-select " + field + " from vib." + table
+            Query = "select " + field + " from vib." + table
             COMMAND = New MySqlCommand(Query, MysqlConn)
             READER = COMMAND.ExecuteReader
 
@@ -308,10 +298,9 @@ select " + field + " from vib." + table
     End Function
 
     Function GetSingleCol(ByVal field As String, ByVal table As String, ByVal col As String, ByVal val As String) As String()
-        MysqlConn = New MySqlConnection
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
-        Dim READER As MySqlDataReader
+
         Dim value(0) As String
         Dim i As Integer = 0
 
