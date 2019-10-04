@@ -4,21 +4,12 @@
     Dim Cusid As String
     Dim Accno As String
     Dim cusdetails As Dictionary(Of String, String)
-    Dim AddCus As Integer = 0
-    Dim AddAcc As Integer = 0
     Private Sub EmpCusModule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'VibDataSet.receipts' table. You can move, or remove it, as needed.
+        Me.ReceiptsTableAdapter.Fill(Me.VibDataSet.receipts)
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         Me.TransparencyKey = Color.Magenta
-        DepositTotal()
-        WithdrawTotal()
-        ProgressCard.Hide()
         MenuCard.Hide()
-        Step4_btn.Hide()
-        AccTypeDropdown.Hide()
-        AccTypeCreate_Btn.Hide()
-        AddAccDropdown.Hide()
-        CreateAcc_Btn.Hide()
-        InitialDeposit_btn.Hide()
     End Sub
 
     Private Sub LockStatus(ByVal status As String)
@@ -31,6 +22,11 @@
 
     Private Sub BalanceUpdate()
         Balance_lbl.Text = "Bal:-" + GetSingleField("Balance", "bankacc", "accno", Accno)
+    End Sub
+
+    Private Sub PassbookUpdate()
+        Dim PassbookQuery As String = "SELECT * FROM vib.receipts where Debit_Accno = '" + Accno + "' or Credit_Accno = '" + Accno + "';"
+        ReceiptsBindingSource.DataSource = GetTable(PassbookQuery)
     End Sub
 
 #Region "Dragging Function"
@@ -117,27 +113,30 @@
 
 #Region "Menu Card"
     Private Sub MenuDeselectAll()
-        DepositSelect.selected = False
-        WithdrawSelect.selected = False
-        EditDetailsSelect.selected = False
-        AddAccSelect.selected = False
+        BankTransferSelect.selected = False
+        EditPasswordSelect.selected = False
+        PassbookSelect.selected = False
+        AddBeneficiarySelect.selected = False
     End Sub
     Private Sub AccnoDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AccnoDropdown.SelectedIndexChanged
         Accno = AccnoDropdown.SelectedItem
         BalanceUpdate()
+        PassbookUpdate()
     End Sub
-    Private Sub DepositSelect_Click(sender As Object, e As EventArgs) Handles DepositSelect.Click
-        HomePage.SelectedTab() = DepositTab
+    Private Sub BankTransferSelect_Click(sender As Object, e As EventArgs) Handles BankTransferSelect.Click
+        BeneficiaryDropdown.Items.Clear()
+        Dim BeneficiaryList As String() = GetSingleCol("Ben_Nick", "beneficiaries", "Creator_AccNo", Accno)
+        Me.BeneficiaryDropdown.Items.AddRange(BeneficiaryList)
+
+        HomePage.SelectedTab() = MoneyTransferTab
         MenuDeselectAll()
-        DepositSelect.selected = True
-        DepositResetFields()
+        BankTransferSelect.selected = True
     End Sub
 
-    Private Sub WithdrawSelect_Click(sender As Object, e As EventArgs) Handles WithdrawSelect.Click
-        HomePage.SelectedTab = WithdrawTab
+    Private Sub EditPasswordSelect_Click(sender As Object, e As EventArgs) Handles EditPasswordSelect.Click
+        HomePage.SelectedTab = EditPasswordTab
         MenuDeselectAll()
-        WithdrawSelect.selected = True
-        WithdrawResetFields()
+        EditPasswordSelect.selected = True
     End Sub
     Private Sub LogOut_Btn_Click(sender As Object, e As EventArgs) Handles LogOut_Btn.Click
         LockStatus("Lock")
@@ -147,38 +146,16 @@
         Wait(1)
         MenuCard.Hide()
     End Sub
-    Private Sub EditDetailsSelect_Click(sender As Object, e As EventArgs) Handles EditDetailsSelect.Click
-        HomePage.SelectedTab = EditDetailsTab
+    Private Sub PassbookSelect_Click(sender As Object, e As EventArgs) Handles PassbookSelect.Click
+        HomePage.SelectedTab = PassbookTab
         MenuDeselectAll()
-        EditDetailsSelect.selected = True
+        PassbookSelect.selected = True
+        PassbookUpdate()
     End Sub
 
-    Private Sub AddAccSelect_Click(sender As Object, e As EventArgs) Handles AddAccSelect.Click
+    Private Sub AddBeneficiarySelect_Click(sender As Object, e As EventArgs) Handles AddBeneficiarySelect.Click
         MenuDeselectAll()
-        AddAccSelect.selected = True
-        AccTypeDropdown.Show()
-        AccTypeCreate_Btn.Show()
-    End Sub
-
-    Private Sub AccTypeCreate_Btn_Click(sender As Object, e As EventArgs) Handles AccTypeCreate_Btn.Click
-        Dim arr(7) As String
-        arr(0) = GetID(8, "bankacc", "Accno")
-        arr(1) = cusdetails("First_Name")
-        arr(2) = cusdetails("Mid_Name")
-        arr(3) = cusdetails("Last_Name")
-        arr(4) = Cusid
-        arr(5) = AccTypeDropdown.SelectedItem
-        arr(6) = "0"
-        arr(7) = CurDate()
-        If InsertSingleRow(arr, "bankacc") = 1 Then
-            MessageBox.Show("Your " + arr(5) + " account has been created succesfully")
-            AccType_lbl.Text = "Acc:- " + arr(0)
-            AccTypeDropdown.Text = arr(0)
-            InitialDeposit_btn.Show()
-            Accno = arr(0)
-            HomePage.SelectedTab = DepositTab
-            AddAcc = 1
-        End If
+        AddBeneficiarySelect.selected = True
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
@@ -187,457 +164,7 @@
     End Sub
 #End Region
 
-#Region "Deposit"
-    Private Sub Deposit2000_Btn_Click(sender As Object, e As EventArgs) Handles Deposit2000_Btn.Click
-        Dim i As Integer = Deposit2000_Txt.Text
-        i += 1
-        Deposit2000_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit500_Btn_Click(sender As Object, e As EventArgs) Handles Deposit500_Btn.Click
-        Dim i As Integer = Deposit500_Txt.Text
-        i += 1
-        Deposit500_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit200_Btn_Click(sender As Object, e As EventArgs) Handles Deposit200_Btn.Click
-        Dim i As Integer = Deposit200_Txt.Text
-        i += 1
-        Deposit200_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit100_Btn_Click(sender As Object, e As EventArgs) Handles Deposit100_Btn.Click
-        Dim i As Integer = Deposit100_Txt.Text
-        i += 1
-        Deposit100_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit50_Btn_Click(sender As Object, e As EventArgs) Handles Deposit50_Btn.Click
-        Dim i As Integer = Deposit50_Txt.Text
-        i += 1
-        Deposit50_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit20_Btn_Click(sender As Object, e As EventArgs) Handles Deposit20_Btn.Click
-        Dim i As Integer = Deposit20_Txt.Text
-        i += 1
-        Deposit20_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit10_Btn_Click(sender As Object, e As EventArgs) Handles Deposit10_Btn.Click
-        Dim i As Integer = Deposit10_Txt.Text
-        i += 1
-        Deposit10_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit5_Btn_Click(sender As Object, e As EventArgs) Handles Deposit5_Btn.Click
-        Dim i As Integer = Deposit5_Txt.Text
-        i += 1
-        Deposit5_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit2_Btn_Click(sender As Object, e As EventArgs) Handles Deposit2_Btn.Click
-        Dim i As Integer = Deposit2_Txt.Text
-        i += 1
-        Deposit2_Txt.Text = i
-    End Sub
-
-    Private Sub Deposit1_Btn_Click(sender As Object, e As EventArgs) Handles Deposit1_Btn.Click
-        Dim i As Integer = Deposit1_Txt.Text
-        i += 1
-        Deposit1_Txt.Text = i
-    End Sub
-    Dim DepositTotalInr As Integer
-    Private Sub DepositTotal()
-        If Deposit2000_Txt.Text IsNot "" And Deposit500_Txt.Text IsNot "" And Deposit200_Txt.Text IsNot "" And Deposit100_Txt.Text IsNot "" And Deposit50_Txt.Text IsNot "" And Deposit1_Txt.Text IsNot "" And Deposit2_Txt.Text IsNot "" And Deposit5_Txt.Text IsNot "" And Deposit10_Txt.Text IsNot "" And Deposit20_Txt.Text IsNot "" Then
-            Dim inr2000 As Integer = Deposit2000_Txt.Text * 2000
-            Dim inr500 As Integer = Deposit500_Txt.Text * 500
-            Dim inr200 As Integer = Deposit200_Txt.Text * 200
-            Dim inr100 As Integer = Deposit100_Txt.Text * 100
-            Dim inr50 As Integer = Deposit50_Txt.Text * 50
-            Dim inr20 As Integer = Deposit20_Txt.Text * 20
-            Dim inr10 As Integer = Deposit10_Txt.Text * 10
-            Dim inr5 As Integer = Deposit5_Txt.Text * 5
-            Dim inr2 As Integer = Deposit2_Txt.Text * 2
-            Dim inr1 As Integer = Deposit1_Txt.Text * 1
-            DepositTotalInr = inr2000 + inr500 + inr200 + inr100 + inr50 + inr20 + inr10 + inr5 + inr2 + inr1
-            DepositTotal_lbl.Text = DepositTotalInr & " Rs"
-        End If
-    End Sub
-
-    Sub DepositResetFields()
-        Deposit2000_Txt.Text = "0"
-        Deposit500_Txt.Text = "0"
-        Deposit200_Txt.Text = "0"
-        Deposit100_Txt.Text = "0"
-        Deposit50_Txt.Text = "0"
-        Deposit1_Txt.Text = "0"
-        Deposit2_Txt.Text = "0"
-        Deposit5_Txt.Text = "0"
-        Deposit10_Txt.Text = "0"
-        Deposit20_Txt.Text = "0"
-    End Sub
-
-    Private Sub Deposit_Btn_Click(sender As Object, e As EventArgs) Handles Deposit_Btn.Click
-        Dim arr(7) As String
-        arr(0) = GetID(8, "receipts", "Trans_ID")
-        arr(1) = DepositTotalInr
-        arr(2) = "Deposit"
-        arr(3) = ""
-        arr(4) = ""
-        arr(5) = Cusid
-        arr(6) = Accno
-        arr(7) = CurDateTime()
-        If Deposit(Accno, DepositTotalInr) = 1 Then
-            If Receipt(arr) = 1 Then
-                DepositResetFields()
-                BalanceUpdate()
-
-                If AddCus = 1 Then
-                    Step3_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
-                    Step4_btn.Show()
-                    AddAccDropdown.Hide()
-                    CreateAcc_Btn.Hide()
-                    InitialDeposit_btn.Hide()
-                    AddAcc_lbl.Text = ""
-                    AddCus_lbl.Text = ""
-                    AddCus = 0
-                ElseIf AddAcc = 1 Then
-                    AccTypeCreate_Btn.Hide()
-                    AccTypeDropdown.Hide()
-                    AccType_lbl.Text = ""
-                    AddAcc = 0
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub Deposit2000_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit2000_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit500_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit500_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit200_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit200_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit100_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit100_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit50_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit50_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit20_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit20_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit10_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit10_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit5_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit5_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit2_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit2_Txt.TextChanged
-        DepositTotal()
-    End Sub
-
-    Private Sub Deposit1_Txt_TextChanged(sender As Object, e As EventArgs) Handles Deposit1_Txt.TextChanged
-        DepositTotal()
-    End Sub
-#End Region
-
-#Region "Withdraw"
-    Private Sub Withdraw2000_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw2000_Btn.Click
-        Dim i As Integer = Withdraw2000_Txt.Text
-        i += 1
-        Withdraw2000_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw500_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw500_Btn.Click
-        Dim i As Integer = Withdraw500_Txt.Text
-        i += 1
-        Withdraw500_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw200_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw200_Btn.Click
-        Dim i As Integer = Withdraw200_Txt.Text
-        i += 1
-        Withdraw200_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw100_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw100_Btn.Click
-        Dim i As Integer = Withdraw100_Txt.Text
-        i += 1
-        Withdraw100_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw50_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw50_Btn.Click
-        Dim i As Integer = Withdraw50_Txt.Text
-        i += 1
-        Withdraw50_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw20_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw20_Btn.Click
-        Dim i As Integer = Withdraw20_Txt.Text
-        i += 1
-        Withdraw20_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw10_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw10_Btn.Click
-        Dim i As Integer = Withdraw10_Txt.Text
-        i += 1
-        Withdraw10_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw5_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw5_Btn.Click
-        Dim i As Integer = Withdraw5_Txt.Text
-        i += 1
-        Withdraw5_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw2_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw2_Btn.Click
-        Dim i As Integer = Withdraw2_Txt.Text
-        i += 1
-        Withdraw2_Txt.Text = i
-    End Sub
-
-    Private Sub Withdraw1_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw1_Btn.Click
-        Dim i As Integer = Withdraw1_Txt.Text
-        i += 1
-        Withdraw1_Txt.Text = i
-    End Sub
-    Dim WithdrawTotalInr As Integer
-    Private Sub WithdrawTotal()
-        If Withdraw2000_Txt.Text IsNot "" And Withdraw500_Txt.Text IsNot "" And Withdraw200_Txt.Text IsNot "" And Withdraw100_Txt.Text IsNot "" And Withdraw50_Txt.Text IsNot "" And Withdraw1_Txt.Text IsNot "" And Withdraw2_Txt.Text IsNot "" And Withdraw5_Txt.Text IsNot "" And Withdraw10_Txt.Text IsNot "" And Withdraw20_Txt.Text IsNot "" Then
-            Dim inr2000 As Integer = Withdraw2000_Txt.Text * 2000
-            Dim inr500 As Integer = Withdraw500_Txt.Text * 500
-            Dim inr200 As Integer = Withdraw200_Txt.Text * 200
-            Dim inr100 As Integer = Withdraw100_Txt.Text * 100
-            Dim inr50 As Integer = Withdraw50_Txt.Text * 50
-            Dim inr20 As Integer = Withdraw20_Txt.Text * 20
-            Dim inr10 As Integer = Withdraw10_Txt.Text * 10
-            Dim inr5 As Integer = Withdraw5_Txt.Text * 5
-            Dim inr2 As Integer = Withdraw2_Txt.Text * 2
-            Dim inr1 As Integer = Withdraw1_Txt.Text * 1
-            WithdrawTotalInr = inr2000 + inr500 + inr200 + inr100 + inr50 + inr20 + inr10 + inr5 + inr2 + inr1
-            WithdrawTotal_lbl.Text = WithdrawTotalInr & " Rs"
-        End If
-    End Sub
-
-    Sub WithdrawResetFields()
-        Withdraw2000_Txt.Text = "0"
-        Withdraw500_Txt.Text = "0"
-        Withdraw200_Txt.Text = "0"
-        Withdraw100_Txt.Text = "0"
-        Withdraw50_Txt.Text = "0"
-        Withdraw1_Txt.Text = "0"
-        Withdraw2_Txt.Text = "0"
-        Withdraw5_Txt.Text = "0"
-        Withdraw10_Txt.Text = "0"
-        Withdraw20_Txt.Text = "0"
-    End Sub
-
-    Private Sub Withdraw_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw_Btn.Click
-        Dim arr(7) As String
-        arr(0) = GetID(8, "receipts", "Trans_ID")
-        arr(1) = WithdrawTotalInr
-        arr(2) = "Withdraw"
-        arr(3) = Cusid
-        arr(4) = Accno
-        arr(5) = ""
-        arr(6) = ""
-        arr(7) = CurDateTime()
-        If Withdraw(Accno, WithdrawTotalInr) = 1 Then
-            If Receipt(arr) = 1 Then
-                WithdrawResetFields()
-                BalanceUpdate()
-            End If
-        End If
-    End Sub
-
-    Private Sub Withdraw2000_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw2000_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw2000_Txt.Text < 0 Then
-            Withdraw2000_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw500_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw500_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw500_Txt.Text < 0 Then
-            Withdraw500_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw200_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw200_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw200_Txt.Text < 0 Then
-            Withdraw200_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw100_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw100_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw100_Txt.Text < 0 Then
-            Withdraw100_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw50_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw50_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw50_Txt.Text < 0 Then
-            Withdraw50_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw20_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw20_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw20_Txt.Text < 0 Then
-            Withdraw20_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw10_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw10_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw10_Txt.Text < 0 Then
-            Withdraw10_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw5_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw5_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw5_Txt.Text < 0 Then
-            Withdraw5_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw2_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw2_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw2_Txt.Text < 0 Then
-            Withdraw2_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub Withdraw1_Txt_TextChanged(sender As Object, e As EventArgs) Handles Withdraw1_Txt.TextChanged
-        WithdrawTotal()
-        If Withdraw1_Txt.Text < 0 Then
-            Withdraw1_Txt.Text = 0
-        End If
-    End Sub
-
-    Private Sub WithdrawCal_txt_TextChanged(sender As Object, e As EventArgs) Handles WithdrawCal_txt.TextChanged
-
-        Dim amt As Integer
-        If Int32.TryParse(WithdrawCal_txt.Text, amt) = True And amt > -1 Then
-            WithdrawResetFields()
-            ToolTip.Hide(WithdrawCal_txt)
-            Dim num As Integer
-            num = Math.Floor(amt / 2000) - 1
-            If num <= 0 Then
-                num = 0
-            End If
-            Withdraw2000_Txt.Text = num
-
-            amt -= (num * 2000)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 500) - 1
-            If num <= 0 Then
-                num = 0
-            End If
-            Withdraw500_Txt.Text = num
-
-            amt -= (num * 500)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 200)
-            Withdraw200_Txt.Text = num
-
-            amt -= (num * 200)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 100)
-            Withdraw100_Txt.Text = num
-
-            amt -= (num * 100)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 50)
-            Withdraw50_Txt.Text = num
-
-            amt -= (num * 50)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 20)
-            Withdraw20_Txt.Text = num
-
-            amt -= (num * 20)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 10)
-            Withdraw10_Txt.Text = num
-
-            amt -= (num * 10)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 5)
-            Withdraw5_Txt.Text = num
-
-            amt -= (num * 5)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            num = Math.Floor(amt / 2)
-            Withdraw2_Txt.Text = num
-
-            amt -= (num * 2)
-            If amt <= 0 Then
-                Exit Sub
-            End If
-            Withdraw1_Txt.Text = amt
-        Else
-            ToolTip.Show("Enter a positive Integer Value", WithdrawCal_txt)
-        End If
-    End Sub
-
-#End Region
-
 #Region "Login Page"
-    Private Sub Register_Btn_Click(sender As Object, e As EventArgs) Handles Register_Btn.Click
-        Dim StateList As String() = GetSingleCol("Name", "States")
-        Me.StateDropdown.Items.AddRange(StateList)
-        Me.StateDropdown.SelectedIndex = 0
-
-        Dim CityList As String() = GetSingleCol("city", "city_state", "state", StateDropdown.SelectedItem)
-        Me.CityDropdown.Items.AddRange(CityList)
-        Me.CityDropdown.SelectedIndex = 0
-
-        Dim BranchList As String() = GetSingleCol("branchno", "banklist")
-        Me.BranchDropdown.Items.AddRange(BranchList)
-        Me.BranchDropdown.SelectedIndex = 0
-
-        HomePage.SelectedTab = AddCusTab
-        ProgressCard.Show()
-        Step1_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Indeterminate
-        Step2_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked
-        Step3_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked
-        Step4_btn.Enabled = False
-        MainPage.SelectedTab() = HomeTab
-    End Sub
 
     Private Sub LogInButton_Click(sender As Object, e As EventArgs) Handles LogInButton.Click
         If LogIn(UsernameTextBox.Text, PasswordTextBox.Text, "cus") = 1 Then
@@ -649,7 +176,6 @@
             Me.AccnoDropdown.SelectedIndex = 0
             Accno = AccnoDropdown.SelectedItem
             MenuCard.Show()
-            cusdetails = GetSingleRowDict("cusdetails", "Cus_ID", Cusid)
             LockStatus("Unlock")
             MainPage.SelectedTab() = HomeTab()
             cusdetails = GetSingleRowDict("cusdetails", "Cus_Id", Cusid)
@@ -668,77 +194,75 @@
 
 #End Region
 
-#Region "Add Cus"
-    Private Sub Step4_btn_Click(sender As Object, e As EventArgs) Handles Step4_btn.Click
-        MainPage.SelectedTab() = LoginTab
-        Wait(2)
-        ProgressCard.Hide()
-        Me.CityDropdown.Items.Clear()
-        Me.StateDropdown.Items.Clear()
-        Me.BranchDropdown.Items.Clear()
-    End Sub
-
-    Private Sub StateDropdown_SelectedIndexChanged(sender As Object, e As EventArgs)
-        Me.CityDropdown.Items.Clear()
-        Dim CityList As String() = GetSingleCol("city", "city_state", "state", StateDropdown.SelectedItem)
-        Me.CityDropdown.Items.AddRange(CityList)
-        Me.CityDropdown.SelectedIndex = 0
-    End Sub
-
-
-    Private Sub AddCus_btn_Click(sender As Object, e As EventArgs) Handles AddCus_btn.Click
-        Dim arr(12) As String
-        arr(0) = GetID(8, "cusdetails", "Cus_ID")
-        arr(1) = InputBox("Please Enter a Password")
-        arr(2) = Accno_txt.Text
-        arr(3) = MName_txt.Text
-        arr(4) = Name_txt.Text
-        arr(5) = CityDropdown.SelectedItem
-        arr(6) = StateDropdown.SelectedItem
-        arr(7) = Address_txt.Text
-        arr(8) = IFSC_txt.Text
-        arr(9) = Nickname_txt.Text
-        arr(10) = DOB_DatePicker.Value.ToString("yyyy-MM-dd")
-        arr(11) = GetChar(GetGroupBoxCheckedButton(SexGroupBox).Name, 1)
-        arr(12) = BranchDropdown.SelectedItem
-
-        If InsertSingleRow(arr, "cusdetails") = 1 Then
-            MessageBox.Show("Creation Succesful" & vbNewLine & "Your New Account " & arr(0) & " has been created")
-            AddCus_lbl.Text = "ID:- " + arr(0)
-            Cusid = arr(0)
-            AddAccDropdown.Show()
-            CreateAcc_Btn.Show()
-            cusdetails = GetSingleRowDict("cusdetails", "Cus_Id", Cusid)
-            Step1_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
-            Step2_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Indeterminate
+#Region "Add Beneficiary"
+    Private Sub BankDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BankDropdown.SelectedIndexChanged
+        If BankDropdown.Text = "Same Bank" Then
+            Bank_txt.Text = "VIB"
+            Bank_txt.Enabled = False
+        ElseIf BankDropdown.Text = "Other Bank" Then
+            Bank_txt.Text = ""
+            Bank_txt.Enabled = True
         End If
     End Sub
-
-    Private Sub CreateAcc_Btn_Click(sender As Object, e As EventArgs)
+    Private Sub AddBeneficiary_btn_Click(sender As Object, e As EventArgs) Handles AddBeneficiary_btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(8, "bankacc", "Accno")
-        arr(1) = cusdetails("First_Name")
-        arr(2) = cusdetails("Mid_Name")
-        arr(3) = cusdetails("Last_Name")
-        arr(4) = Cusid
-        arr(5) = AddAccDropdown.SelectedItem
-        arr(6) = "0"
-        arr(7) = CurDate()
-        If InsertSingleRow(arr, "bankacc") = 1 Then
-            MessageBox.Show("Your " + arr(5) + " account has been created succesfully")
-            AddAcc_lbl.Text = "Acc:- " + arr(0)
-            InitialDeposit_btn.Show()
-            Accno = arr(0)
-            Step2_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
-            Step3_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Indeterminate
+        If Bank_txt.Text = "VIB" Then
+            If GetRowCount(Accno_txt.Text, "bankacc", "accno") Then
+                MessageBox.Show("Account does not exist")
+                Exit Sub
+            End If
+        End If
+        arr(0) = GetSno("beneficiaries", "Sno")
+        arr(1) = Accno
+        arr(2) = Accno_txt.Text
+        arr(3) = Name_txt.Text
+        arr(4) = Nickname_txt.Text
+        arr(5) = Bank_txt.Text
+        arr(6) = IFSC_txt.Text
+        If InsertSingleRow(arr, "beneficiaries") = 1 Then
+            MessageBox.Show("Your Beneficiary has been added succesfully")
         End If
     End Sub
+#End Region
 
-    Private Sub InitialDeposit_btn_Click(sender As Object, e As EventArgs)
-        HomePage.SelectedTab = DepositTab
-        AddCus = 1
+#Region "Passbook"
+    Private Sub PassbookRefresh_btn_Click(sender As Object, e As EventArgs) Handles PassbookRefresh_btn.Click
+        PassbookUpdate()
     End Sub
+#End Region
+
+#Region "Bank Transfer"
+    Private Sub Transfer_Btn_Click(sender As Object, e As EventArgs) Handles Transfer_Btn.Click
+        Dim Receiver As Integer = CInt(BeneficiaryDropdown.SelectedItem)
+        BankTransfer(Accno, TransferAmount_txt.Text, Receiver)
+    End Sub
+
 
 #End Region
 
+#Region "Edit Password"
+    Private Sub ConfirmNewPassword_txt_TextChanged(sender As Object, e As EventArgs) Handles ConfirmNewPassword_txt.TextChanged
+        If ConfirmNewPassword_txt.Text IsNot NewPassword_txt.Text Then
+            ToolTip.Show("Does not match", ConfirmNewPassword_txt)
+            EditPassword_btn.Enabled = False
+        Else
+            ToolTip.Hide(ConfirmNewPassword_txt)
+            EditPassword_btn.Enabled = True
+        End If
+    End Sub
+
+    Private Sub EditPassword_btn_Click(sender As Object, e As EventArgs) Handles EditPassword_btn.Click
+        If OldPassword_txt.Text IsNot cusdetails("Password") Then
+            MessageBox.Show("Old password is Incorrect")
+            Exit Sub
+        End If
+        If NewPassword_txt.Text.Length < 8 Then
+            MessageBox.Show("Too Short")
+            Exit Sub
+        End If
+        EditPassword(Cusid, NewPassword_txt.Text, "cusS")
+    End Sub
+
+
+#End Region
 End Class
