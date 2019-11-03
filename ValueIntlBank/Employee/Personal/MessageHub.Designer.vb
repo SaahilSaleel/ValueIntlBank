@@ -24,13 +24,13 @@ Partial Class MessageHub
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.MessagehubBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VibDataSet = New ValueIntlBank.vibDataSet()
-        Me.MessagehubTableAdapter = New ValueIntlBank.vibDataSetTableAdapters.messagehubTableAdapter()
         Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiverNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Subject = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReadStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MessagehubBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VibDataSet = New ValueIntlBank.vibDataSet()
+        Me.MessagehubTableAdapter = New ValueIntlBank.vibDataSetTableAdapters.messagehubTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MessagehubBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VibDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,25 +44,12 @@ Partial Class MessageHub
         Me.DataGridView1.DataSource = Me.MessagehubBindingSource
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(916, 334)
+        Me.DataGridView1.Size = New System.Drawing.Size(687, 271)
         Me.DataGridView1.TabIndex = 0
-        '
-        'MessagehubBindingSource
-        '
-        Me.MessagehubBindingSource.DataMember = "messagehub"
-        Me.MessagehubBindingSource.DataSource = Me.VibDataSet
-        '
-        'VibDataSet
-        '
-        Me.VibDataSet.DataSetName = "vibDataSet"
-        Me.VibDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MessagehubTableAdapter
-        '
-        Me.MessagehubTableAdapter.ClearBeforeFill = True
         '
         'DateTimeDataGridViewTextBoxColumn
         '
@@ -96,12 +83,27 @@ Partial Class MessageHub
         Me.ReadStatusDataGridViewTextBoxColumn.Name = "ReadStatusDataGridViewTextBoxColumn"
         Me.ReadStatusDataGridViewTextBoxColumn.Width = 125
         '
+        'MessagehubBindingSource
+        '
+        Me.MessagehubBindingSource.DataMember = "messagehub"
+        Me.MessagehubBindingSource.DataSource = Me.VibDataSet
+        '
+        'VibDataSet
+        '
+        Me.VibDataSet.DataSetName = "vibDataSet"
+        Me.VibDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'MessagehubTableAdapter
+        '
+        Me.MessagehubTableAdapter.ClearBeforeFill = True
+        '
         'MessageHub
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(916, 450)
+        Me.ClientSize = New System.Drawing.Size(687, 417)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "MessageHub"
         Me.Text = "MessageHub"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

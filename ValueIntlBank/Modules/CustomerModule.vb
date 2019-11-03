@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub BalanceUpdate()
-        Balance_lbl.Text = "Bal:-" + GetSingleField("Balance", "bankacc", "accno", Accno)
+        Balance_lbl.Text = "Bal: " + GetSingleField("Balance", "bankacc", "accno", Accno)
     End Sub
 
     Private Sub PassbookUpdate()
@@ -46,19 +46,19 @@
         MousePressedDown = False
     End Sub
 
-    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseDown
+    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs)
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseMove
+    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs)
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseUp
+    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs)
         MousePressedDown = False
     End Sub
 
@@ -125,8 +125,14 @@
     End Sub
     Private Sub BankTransferSelect_Click(sender As Object, e As EventArgs) Handles BankTransferSelect.Click
         BeneficiaryDropdown.Items.Clear()
-        Dim BeneficiaryList As String() = GetSingleCol("Ben_Nick", "beneficiaries", "Creator_AccNo", Accno)
+        Dim BeneficiaryAccList As String() = GetSingleCol("Ben_Accno", "beneficiaries", "Creator_AccNo", Accno)
+        Dim BeneficiaryNickList As String() = GetSingleCol("Ben_Nick", "beneficiaries", "Creator_AccNo", Accno)
+        Dim BeneficiaryList(UBound(BeneficiaryNickList)) As String
+        For i As Long = LBound(BeneficiaryAccList) To UBound(BeneficiaryNickList)
+            BeneficiaryList(i) = BeneficiaryAccList(i) + " - " + BeneficiaryNickList(i)
+        Next
         Me.BeneficiaryDropdown.Items.AddRange(BeneficiaryList)
+
 
         HomePage.SelectedTab() = MoneyTransferTab
         MenuDeselectAll()
@@ -156,6 +162,7 @@
     Private Sub AddBeneficiarySelect_Click(sender As Object, e As EventArgs) Handles AddBeneficiarySelect.Click
         MenuDeselectAll()
         AddBeneficiarySelect.selected = True
+        HomePage.SelectedTab = AddBenificiaryTab
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
@@ -205,12 +212,18 @@
         End If
     End Sub
     Private Sub AddBeneficiary_btn_Click(sender As Object, e As EventArgs) Handles AddBeneficiary_btn.Click
-        Dim arr(7) As String
+        Dim arr(6) As String
         If Bank_txt.Text = "VIB" Then
-            If GetRowCount(Accno_txt.Text, "bankacc", "accno") Then
+            If GetRowCount(Accno_txt.Text, "bankacc", "accno") < 1 Then
                 MessageBox.Show("Account does not exist")
                 Exit Sub
             End If
+        End If
+        If Accno_txt.Text.Length <> 8 Then
+            ToolTip.Show("Account number must be 8 digits", Accno_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(Accno_txt)
         End If
         arr(0) = GetSno("beneficiaries", "Sno")
         arr(1) = Accno
@@ -233,8 +246,11 @@
 
 #Region "Bank Transfer"
     Private Sub Transfer_Btn_Click(sender As Object, e As EventArgs) Handles Transfer_Btn.Click
-        Dim Receiver As Integer = CInt(BeneficiaryDropdown.SelectedItem)
-        BankTransfer(Accno, TransferAmount_txt.Text, Receiver)
+        Dim Receiver As Integer = CInt(BeneficiaryDropdown.SelectedItem.ToString.Substring(0, 8))
+        If BankTransfer(Accno, TransferAmount_txt.Text, Receiver, TransferComment_txt.Text) = 1 Then
+            Dim msg = "Rs " & TransferAmount_txt.Text & " has been succesfully transferred to receiver AccNo:- " & BeneficiaryDropdown.SelectedItem
+            MessageBox.Show(msg)
+        End If
     End Sub
 
 
@@ -260,9 +276,17 @@
             MessageBox.Show("Too Short")
             Exit Sub
         End If
-        EditPassword(Cusid, NewPassword_txt.Text, "cusS")
+        EditPassword(Cusid, NewPassword_txt.Text, "cus")
     End Sub
 
+    Private Sub Hamburger_Btn_Click(sender As Object, e As EventArgs) Handles Hamburger_Btn.Click
+        If MenuCard.Width = 309 Then
+            MenuCard.Width = 67
+        ElseIf MenuCard.Width = 67 Then
+            MenuCard.Width = 309
+        End If
+    End Sub
 
 #End Region
+
 End Class

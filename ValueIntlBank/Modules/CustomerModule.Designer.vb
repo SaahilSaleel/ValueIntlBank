@@ -80,7 +80,6 @@ Partial Class CustomerModule
         Me.MainPage = New Bunifu.UI.WinForms.BunifuPages()
         Me.LoginTab = New System.Windows.Forms.TabPage()
         Me.LogInGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.Register_Btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.LogInButton = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuPictureBox1 = New Bunifu.UI.WinForms.BunifuPictureBox()
         Me.PasswordTextBox = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
@@ -88,7 +87,6 @@ Partial Class CustomerModule
         Me.HomeTab = New System.Windows.Forms.TabPage()
         Me.HomePage = New Bunifu.UI.WinForms.BunifuPages()
         Me.SelectionTab = New System.Windows.Forms.TabPage()
-        Me.HomeGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.MoneyTransferTab = New System.Windows.Forms.TabPage()
         Me.DepositGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Transfer_Btn = New Bunifu.Framework.UI.BunifuThinButton2()
@@ -105,6 +103,12 @@ Partial Class CustomerModule
         Me.EditDetailsGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.PassbookRefresh_btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.PassbookDataGridView = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.TransIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Comment = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DebitAccNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CreditAccnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VibDataSet = New ValueIntlBank.vibDataSet()
         Me.AddBenificiaryTab = New System.Windows.Forms.TabPage()
@@ -120,6 +124,7 @@ Partial Class CustomerModule
         Me.Accno_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
         Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.Hamburger_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Balance_lbl = New System.Windows.Forms.Label()
         Me.AccType_lbl = New System.Windows.Forms.Label()
         Me.AccnoDropdown = New Bunifu.UI.WinForms.BunifuDropdown()
@@ -129,21 +134,15 @@ Partial Class CustomerModule
         Me.PassbookSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.EditPasswordSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BankTransferSelect = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.ReceiptsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.ReceiptsTableAdapter = New ValueIntlBank.vibDataSetTableAdapters.receiptsTableAdapter()
-        Me.TransIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DebitAccNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CreditAccnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MainPage.SuspendLayout()
         Me.LoginTab.SuspendLayout()
         Me.LogInGradientPanel.SuspendLayout()
         CType(Me.BunifuPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.HomeTab.SuspendLayout()
         Me.HomePage.SuspendLayout()
-        Me.SelectionTab.SuspendLayout()
         Me.MoneyTransferTab.SuspendLayout()
         Me.DepositGradientPanel.SuspendLayout()
         Me.EditPasswordTab.SuspendLayout()
@@ -157,6 +156,7 @@ Partial Class CustomerModule
         Me.AddCusGradientPanel.SuspendLayout()
         Me.MenuCard.SuspendLayout()
         Me.BunifuGradientPanel3.SuspendLayout()
+        CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MainPage
@@ -211,7 +211,6 @@ Partial Class CustomerModule
         '
         Me.LogInGradientPanel.BackgroundImage = CType(resources.GetObject("LogInGradientPanel.BackgroundImage"), System.Drawing.Image)
         Me.LogInGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.LogInGradientPanel.Controls.Add(Me.Register_Btn)
         Me.LogInGradientPanel.Controls.Add(Me.LogInButton)
         Me.LogInGradientPanel.Controls.Add(Me.BunifuPictureBox1)
         Me.LogInGradientPanel.Controls.Add(Me.PasswordTextBox)
@@ -227,31 +226,6 @@ Partial Class CustomerModule
         Me.LogInGradientPanel.Quality = 10
         Me.LogInGradientPanel.Size = New System.Drawing.Size(1637, 858)
         Me.LogInGradientPanel.TabIndex = 0
-        '
-        'Register_Btn
-        '
-        Me.Register_Btn.ActiveBorderThickness = 1
-        Me.Register_Btn.ActiveCornerRadius = 20
-        Me.Register_Btn.ActiveFillColor = System.Drawing.Color.Violet
-        Me.Register_Btn.ActiveForecolor = System.Drawing.Color.White
-        Me.Register_Btn.ActiveLineColor = System.Drawing.Color.Violet
-        Me.Register_Btn.BackColor = System.Drawing.Color.Transparent
-        Me.Register_Btn.BackgroundImage = CType(resources.GetObject("Register_Btn.BackgroundImage"), System.Drawing.Image)
-        Me.Register_Btn.ButtonText = "Register"
-        Me.Register_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Register_Btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Register_Btn.ForeColor = System.Drawing.Color.Violet
-        Me.Register_Btn.IdleBorderThickness = 1
-        Me.Register_Btn.IdleCornerRadius = 20
-        Me.Register_Btn.IdleFillColor = System.Drawing.Color.White
-        Me.Register_Btn.IdleForecolor = System.Drawing.Color.Violet
-        Me.Register_Btn.IdleLineColor = System.Drawing.Color.Violet
-        Me.Register_Btn.Location = New System.Drawing.Point(692, 540)
-        Me.Register_Btn.Margin = New System.Windows.Forms.Padding(5)
-        Me.Register_Btn.Name = "Register_Btn"
-        Me.Register_Btn.Size = New System.Drawing.Size(135, 41)
-        Me.Register_Btn.TabIndex = 4
-        Me.Register_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LogInButton
         '
@@ -460,18 +434,18 @@ Partial Class CustomerModule
         Me.HomePage.Controls.Add(Me.EditPasswordTab)
         Me.HomePage.Controls.Add(Me.PassbookTab)
         Me.HomePage.Controls.Add(Me.AddBenificiaryTab)
-        Me.HomePage.Dock = System.Windows.Forms.DockStyle.Right
-        Me.HomePage.Location = New System.Drawing.Point(295, 0)
+        Me.HomePage.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HomePage.Location = New System.Drawing.Point(309, 0)
         Me.HomePage.Margin = New System.Windows.Forms.Padding(0)
         Me.HomePage.Multiline = True
         Me.HomePage.Name = "HomePage"
         Me.HomePage.Padding = New System.Drawing.Point(0, 0)
-        Me.HomePage.Page = Me.PassbookTab
-        Me.HomePage.PageIndex = 3
-        Me.HomePage.PageName = "PassbookTab"
-        Me.HomePage.PageTitle = "Passbook"
+        Me.HomePage.Page = Me.AddBenificiaryTab
+        Me.HomePage.PageIndex = 4
+        Me.HomePage.PageName = "AddBenificiaryTab"
+        Me.HomePage.PageTitle = "AddBenificiary"
         Me.HomePage.SelectedIndex = 0
-        Me.HomePage.Size = New System.Drawing.Size(1342, 858)
+        Me.HomePage.Size = New System.Drawing.Size(1328, 858)
         Me.HomePage.TabIndex = 2
         Animation1.AnimateOnlyDifferences = True
         Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
@@ -493,43 +467,28 @@ Partial Class CustomerModule
         '
         'SelectionTab
         '
-        Me.SelectionTab.Controls.Add(Me.HomeGradientPanel)
+        Me.SelectionTab.BackColor = System.Drawing.Color.Magenta
         Me.SelectionTab.Location = New System.Drawing.Point(4, 4)
         Me.SelectionTab.Margin = New System.Windows.Forms.Padding(0)
         Me.SelectionTab.Name = "SelectionTab"
-        Me.SelectionTab.Size = New System.Drawing.Size(1342, 832)
+        Me.SelectionTab.Size = New System.Drawing.Size(1320, 832)
         Me.SelectionTab.TabIndex = 0
         Me.SelectionTab.Text = "Home"
-        Me.SelectionTab.UseVisualStyleBackColor = True
-        '
-        'HomeGradientPanel
-        '
-        Me.HomeGradientPanel.BackgroundImage = CType(resources.GetObject("HomeGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.HomeGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.HomeGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HomeGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.HomeGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.HomeGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.HomeGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.HomeGradientPanel.Location = New System.Drawing.Point(0, 0)
-        Me.HomeGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.HomeGradientPanel.Name = "HomeGradientPanel"
-        Me.HomeGradientPanel.Quality = 10
-        Me.HomeGradientPanel.Size = New System.Drawing.Size(1342, 832)
-        Me.HomeGradientPanel.TabIndex = 3
         '
         'MoneyTransferTab
         '
+        Me.MoneyTransferTab.BackColor = System.Drawing.Color.Magenta
         Me.MoneyTransferTab.Controls.Add(Me.DepositGradientPanel)
         Me.MoneyTransferTab.Location = New System.Drawing.Point(4, 4)
+        Me.MoneyTransferTab.Margin = New System.Windows.Forms.Padding(0)
         Me.MoneyTransferTab.Name = "MoneyTransferTab"
-        Me.MoneyTransferTab.Size = New System.Drawing.Size(1342, 832)
+        Me.MoneyTransferTab.Size = New System.Drawing.Size(1320, 832)
         Me.MoneyTransferTab.TabIndex = 1
         Me.MoneyTransferTab.Text = "Money Transfer"
-        Me.MoneyTransferTab.UseVisualStyleBackColor = True
         '
         'DepositGradientPanel
         '
+        Me.DepositGradientPanel.BackColor = System.Drawing.Color.Transparent
         Me.DepositGradientPanel.BackgroundImage = CType(resources.GetObject("DepositGradientPanel.BackgroundImage"), System.Drawing.Image)
         Me.DepositGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.DepositGradientPanel.Controls.Add(Me.Transfer_Btn)
@@ -751,16 +710,18 @@ Partial Class CustomerModule
         '
         'EditPasswordTab
         '
+        Me.EditPasswordTab.BackColor = System.Drawing.Color.Magenta
         Me.EditPasswordTab.Controls.Add(Me.WithdrawGradientPanel)
         Me.EditPasswordTab.Location = New System.Drawing.Point(4, 4)
+        Me.EditPasswordTab.Margin = New System.Windows.Forms.Padding(0)
         Me.EditPasswordTab.Name = "EditPasswordTab"
-        Me.EditPasswordTab.Size = New System.Drawing.Size(1342, 832)
+        Me.EditPasswordTab.Size = New System.Drawing.Size(1320, 832)
         Me.EditPasswordTab.TabIndex = 2
         Me.EditPasswordTab.Text = "Edit Password"
-        Me.EditPasswordTab.UseVisualStyleBackColor = True
         '
         'WithdrawGradientPanel
         '
+        Me.WithdrawGradientPanel.BackColor = System.Drawing.Color.Transparent
         Me.WithdrawGradientPanel.BackgroundImage = CType(resources.GetObject("WithdrawGradientPanel.BackgroundImage"), System.Drawing.Image)
         Me.WithdrawGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.WithdrawGradientPanel.Controls.Add(Me.EditPassword_btn)
@@ -1025,18 +986,18 @@ Partial Class CustomerModule
         '
         'PassbookTab
         '
+        Me.PassbookTab.BackColor = System.Drawing.Color.Magenta
         Me.PassbookTab.Controls.Add(Me.EditDetailsGradientPanel)
         Me.PassbookTab.Location = New System.Drawing.Point(4, 4)
         Me.PassbookTab.Margin = New System.Windows.Forms.Padding(0)
         Me.PassbookTab.Name = "PassbookTab"
-        Me.PassbookTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.PassbookTab.Size = New System.Drawing.Size(1334, 832)
+        Me.PassbookTab.Size = New System.Drawing.Size(1320, 832)
         Me.PassbookTab.TabIndex = 3
         Me.PassbookTab.Text = "Passbook"
-        Me.PassbookTab.UseVisualStyleBackColor = True
         '
         'EditDetailsGradientPanel
         '
+        Me.EditDetailsGradientPanel.BackColor = System.Drawing.Color.Transparent
         Me.EditDetailsGradientPanel.BackgroundImage = CType(resources.GetObject("EditDetailsGradientPanel.BackgroundImage"), System.Drawing.Image)
         Me.EditDetailsGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.EditDetailsGradientPanel.Controls.Add(Me.PassbookRefresh_btn)
@@ -1046,11 +1007,11 @@ Partial Class CustomerModule
         Me.EditDetailsGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
         Me.EditDetailsGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
         Me.EditDetailsGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.EditDetailsGradientPanel.Location = New System.Drawing.Point(3, 3)
+        Me.EditDetailsGradientPanel.Location = New System.Drawing.Point(0, 0)
         Me.EditDetailsGradientPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.EditDetailsGradientPanel.Name = "EditDetailsGradientPanel"
         Me.EditDetailsGradientPanel.Quality = 10
-        Me.EditDetailsGradientPanel.Size = New System.Drawing.Size(918, 826)
+        Me.EditDetailsGradientPanel.Size = New System.Drawing.Size(918, 832)
         Me.EditDetailsGradientPanel.TabIndex = 1
         '
         'PassbookRefresh_btn
@@ -1098,7 +1059,7 @@ Partial Class CustomerModule
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.PassbookDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.PassbookDataGridView.ColumnHeadersHeight = 40
-        Me.PassbookDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransIDDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.DateTimeDataGridViewTextBoxColumn, Me.DebitAccNoDataGridViewTextBoxColumn, Me.CreditAccnoDataGridViewTextBoxColumn})
+        Me.PassbookDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransIDDataGridViewTextBoxColumn, Me.Comment, Me.AmountDataGridViewTextBoxColumn, Me.DateTimeDataGridViewTextBoxColumn, Me.DebitAccNoDataGridViewTextBoxColumn, Me.CreditAccnoDataGridViewTextBoxColumn})
         Me.PassbookDataGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.PassbookDataGridView.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.PassbookDataGridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
@@ -1138,6 +1099,42 @@ Partial Class CustomerModule
         Me.PassbookDataGridView.TabIndex = 0
         Me.PassbookDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkViolet
         '
+        'TransIDDataGridViewTextBoxColumn
+        '
+        Me.TransIDDataGridViewTextBoxColumn.DataPropertyName = "Trans_ID"
+        Me.TransIDDataGridViewTextBoxColumn.HeaderText = "Trans_ID"
+        Me.TransIDDataGridViewTextBoxColumn.Name = "TransIDDataGridViewTextBoxColumn"
+        '
+        'Comment
+        '
+        Me.Comment.DataPropertyName = "Comment"
+        Me.Comment.HeaderText = "Comment"
+        Me.Comment.Name = "Comment"
+        '
+        'AmountDataGridViewTextBoxColumn
+        '
+        Me.AmountDataGridViewTextBoxColumn.DataPropertyName = "Amount"
+        Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
+        Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
+        '
+        'DateTimeDataGridViewTextBoxColumn
+        '
+        Me.DateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime"
+        Me.DateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime"
+        Me.DateTimeDataGridViewTextBoxColumn.Name = "DateTimeDataGridViewTextBoxColumn"
+        '
+        'DebitAccNoDataGridViewTextBoxColumn
+        '
+        Me.DebitAccNoDataGridViewTextBoxColumn.DataPropertyName = "Debit_AccNo"
+        Me.DebitAccNoDataGridViewTextBoxColumn.HeaderText = "Debit_AccNo"
+        Me.DebitAccNoDataGridViewTextBoxColumn.Name = "DebitAccNoDataGridViewTextBoxColumn"
+        '
+        'CreditAccnoDataGridViewTextBoxColumn
+        '
+        Me.CreditAccnoDataGridViewTextBoxColumn.DataPropertyName = "Credit_Accno"
+        Me.CreditAccnoDataGridViewTextBoxColumn.HeaderText = "Credit_Accno"
+        Me.CreditAccnoDataGridViewTextBoxColumn.Name = "CreditAccnoDataGridViewTextBoxColumn"
+        '
         'ReceiptsBindingSource
         '
         Me.ReceiptsBindingSource.DataMember = "receipts"
@@ -1153,8 +1150,9 @@ Partial Class CustomerModule
         Me.AddBenificiaryTab.BackColor = System.Drawing.Color.Magenta
         Me.AddBenificiaryTab.Controls.Add(Me.AddCusGradientPanel)
         Me.AddBenificiaryTab.Location = New System.Drawing.Point(4, 4)
+        Me.AddBenificiaryTab.Margin = New System.Windows.Forms.Padding(0)
         Me.AddBenificiaryTab.Name = "AddBenificiaryTab"
-        Me.AddBenificiaryTab.Size = New System.Drawing.Size(1342, 832)
+        Me.AddBenificiaryTab.Size = New System.Drawing.Size(1320, 832)
         Me.AddBenificiaryTab.TabIndex = 5
         Me.AddBenificiaryTab.Text = "AddBenificiary"
         '
@@ -1641,13 +1639,14 @@ Partial Class CustomerModule
         Me.MenuCard.Name = "MenuCard"
         Me.MenuCard.RightSahddow = False
         Me.MenuCard.ShadowDepth = 20
-        Me.MenuCard.Size = New System.Drawing.Size(327, 858)
+        Me.MenuCard.Size = New System.Drawing.Size(309, 858)
         Me.MenuCard.TabIndex = 0
         '
         'BunifuGradientPanel3
         '
         Me.BunifuGradientPanel3.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel3.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuGradientPanel3.Controls.Add(Me.Hamburger_Btn)
         Me.BunifuGradientPanel3.Controls.Add(Me.Balance_lbl)
         Me.BunifuGradientPanel3.Controls.Add(Me.AccType_lbl)
         Me.BunifuGradientPanel3.Controls.Add(Me.AccnoDropdown)
@@ -1666,8 +1665,42 @@ Partial Class CustomerModule
         Me.BunifuGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
         Me.BunifuGradientPanel3.Quality = 10
-        Me.BunifuGradientPanel3.Size = New System.Drawing.Size(327, 858)
+        Me.BunifuGradientPanel3.Size = New System.Drawing.Size(309, 858)
         Me.BunifuGradientPanel3.TabIndex = 3
+        '
+        'Hamburger_Btn
+        '
+        Me.Hamburger_Btn.Active = False
+        Me.Hamburger_Btn.Activecolor = System.Drawing.Color.Transparent
+        Me.Hamburger_Btn.BackColor = System.Drawing.Color.Transparent
+        Me.Hamburger_Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Hamburger_Btn.BorderRadius = 0
+        Me.Hamburger_Btn.ButtonText = ""
+        Me.Hamburger_Btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Hamburger_Btn.DisabledColor = System.Drawing.Color.Gray
+        Me.Hamburger_Btn.Iconcolor = System.Drawing.Color.Transparent
+        Me.Hamburger_Btn.Iconimage = CType(resources.GetObject("Hamburger_Btn.Iconimage"), System.Drawing.Image)
+        Me.Hamburger_Btn.Iconimage_right = Nothing
+        Me.Hamburger_Btn.Iconimage_right_Selected = Nothing
+        Me.Hamburger_Btn.Iconimage_Selected = Nothing
+        Me.Hamburger_Btn.IconMarginLeft = 0
+        Me.Hamburger_Btn.IconMarginRight = 0
+        Me.Hamburger_Btn.IconRightVisible = True
+        Me.Hamburger_Btn.IconRightZoom = 0R
+        Me.Hamburger_Btn.IconVisible = True
+        Me.Hamburger_Btn.IconZoom = 90.0R
+        Me.Hamburger_Btn.IsTab = False
+        Me.Hamburger_Btn.Location = New System.Drawing.Point(3, 4)
+        Me.Hamburger_Btn.Name = "Hamburger_Btn"
+        Me.Hamburger_Btn.Normalcolor = System.Drawing.Color.Transparent
+        Me.Hamburger_Btn.OnHovercolor = System.Drawing.Color.Transparent
+        Me.Hamburger_Btn.OnHoverTextColor = System.Drawing.Color.White
+        Me.Hamburger_Btn.selected = False
+        Me.Hamburger_Btn.Size = New System.Drawing.Size(50, 48)
+        Me.Hamburger_Btn.TabIndex = 39
+        Me.Hamburger_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Hamburger_Btn.Textcolor = System.Drawing.Color.White
+        Me.Hamburger_Btn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Balance_lbl
         '
@@ -1675,7 +1708,7 @@ Partial Class CustomerModule
         Me.Balance_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Balance_lbl.ForeColor = System.Drawing.Color.Purple
         Me.Balance_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Balance_lbl.Location = New System.Drawing.Point(8, 149)
+        Me.Balance_lbl.Location = New System.Drawing.Point(8, 180)
         Me.Balance_lbl.Name = "Balance_lbl"
         Me.Balance_lbl.Size = New System.Drawing.Size(0, 37)
         Me.Balance_lbl.TabIndex = 38
@@ -1715,7 +1748,7 @@ Partial Class CustomerModule
         Me.AccnoDropdown.ItemForeColor = System.Drawing.Color.Purple
         Me.AccnoDropdown.ItemHeight = 40
         Me.AccnoDropdown.ItemHighLightColor = System.Drawing.Color.Thistle
-        Me.AccnoDropdown.Location = New System.Drawing.Point(15, 94)
+        Me.AccnoDropdown.Location = New System.Drawing.Point(15, 125)
         Me.AccnoDropdown.Name = "AccnoDropdown"
         Me.AccnoDropdown.Size = New System.Drawing.Size(269, 46)
         Me.AccnoDropdown.TabIndex = 24
@@ -1743,7 +1776,7 @@ Partial Class CustomerModule
         Me.Close_Btn.IconRightZoom = 0R
         Me.Close_Btn.IconVisible = True
         Me.Close_Btn.IconZoom = 90.0R
-        Me.Close_Btn.IsTab = False
+        Me.Close_Btn.IsTab = True
         Me.Close_Btn.Location = New System.Drawing.Point(0, 777)
         Me.Close_Btn.Margin = New System.Windows.Forms.Padding(4)
         Me.Close_Btn.Name = "Close_Btn"
@@ -1780,7 +1813,7 @@ Partial Class CustomerModule
         Me.LogOut_Btn.IconRightZoom = 0R
         Me.LogOut_Btn.IconVisible = True
         Me.LogOut_Btn.IconZoom = 90.0R
-        Me.LogOut_Btn.IsTab = False
+        Me.LogOut_Btn.IsTab = True
         Me.LogOut_Btn.Location = New System.Drawing.Point(0, 721)
         Me.LogOut_Btn.Margin = New System.Windows.Forms.Padding(4)
         Me.LogOut_Btn.Name = "LogOut_Btn"
@@ -1817,15 +1850,15 @@ Partial Class CustomerModule
         Me.AddBeneficiarySelect.IconRightZoom = 0R
         Me.AddBeneficiarySelect.IconVisible = True
         Me.AddBeneficiarySelect.IconZoom = 90.0R
-        Me.AddBeneficiarySelect.IsTab = False
-        Me.AddBeneficiarySelect.Location = New System.Drawing.Point(1, 326)
+        Me.AddBeneficiarySelect.IsTab = True
+        Me.AddBeneficiarySelect.Location = New System.Drawing.Point(1, 357)
         Me.AddBeneficiarySelect.Margin = New System.Windows.Forms.Padding(4)
         Me.AddBeneficiarySelect.Name = "AddBeneficiarySelect"
         Me.AddBeneficiarySelect.Normalcolor = System.Drawing.Color.DarkOrchid
         Me.AddBeneficiarySelect.OnHovercolor = System.Drawing.Color.DarkViolet
         Me.AddBeneficiarySelect.OnHoverTextColor = System.Drawing.Color.White
         Me.AddBeneficiarySelect.selected = False
-        Me.AddBeneficiarySelect.Size = New System.Drawing.Size(305, 59)
+        Me.AddBeneficiarySelect.Size = New System.Drawing.Size(322, 59)
         Me.AddBeneficiarySelect.TabIndex = 3
         Me.AddBeneficiarySelect.Text = "   Add Beneficiary"
         Me.AddBeneficiarySelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1854,15 +1887,15 @@ Partial Class CustomerModule
         Me.PassbookSelect.IconRightZoom = 0R
         Me.PassbookSelect.IconVisible = True
         Me.PassbookSelect.IconZoom = 90.0R
-        Me.PassbookSelect.IsTab = False
-        Me.PassbookSelect.Location = New System.Drawing.Point(0, 215)
+        Me.PassbookSelect.IsTab = True
+        Me.PassbookSelect.Location = New System.Drawing.Point(0, 246)
         Me.PassbookSelect.Margin = New System.Windows.Forms.Padding(4)
         Me.PassbookSelect.Name = "PassbookSelect"
         Me.PassbookSelect.Normalcolor = System.Drawing.Color.DarkOrchid
         Me.PassbookSelect.OnHovercolor = System.Drawing.Color.DarkViolet
         Me.PassbookSelect.OnHoverTextColor = System.Drawing.Color.White
         Me.PassbookSelect.selected = False
-        Me.PassbookSelect.Size = New System.Drawing.Size(305, 59)
+        Me.PassbookSelect.Size = New System.Drawing.Size(323, 59)
         Me.PassbookSelect.TabIndex = 2
         Me.PassbookSelect.Text = "   Passbook"
         Me.PassbookSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1891,15 +1924,15 @@ Partial Class CustomerModule
         Me.EditPasswordSelect.IconRightZoom = 0R
         Me.EditPasswordSelect.IconVisible = True
         Me.EditPasswordSelect.IconZoom = 90.0R
-        Me.EditPasswordSelect.IsTab = False
-        Me.EditPasswordSelect.Location = New System.Drawing.Point(1, 383)
+        Me.EditPasswordSelect.IsTab = True
+        Me.EditPasswordSelect.Location = New System.Drawing.Point(1, 414)
         Me.EditPasswordSelect.Margin = New System.Windows.Forms.Padding(4)
         Me.EditPasswordSelect.Name = "EditPasswordSelect"
         Me.EditPasswordSelect.Normalcolor = System.Drawing.Color.DarkOrchid
         Me.EditPasswordSelect.OnHovercolor = System.Drawing.Color.DarkViolet
         Me.EditPasswordSelect.OnHoverTextColor = System.Drawing.Color.White
         Me.EditPasswordSelect.selected = False
-        Me.EditPasswordSelect.Size = New System.Drawing.Size(308, 59)
+        Me.EditPasswordSelect.Size = New System.Drawing.Size(322, 59)
         Me.EditPasswordSelect.TabIndex = 1
         Me.EditPasswordSelect.Text = "   Edit Password"
         Me.EditPasswordSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1928,60 +1961,29 @@ Partial Class CustomerModule
         Me.BankTransferSelect.IconRightZoom = 0R
         Me.BankTransferSelect.IconVisible = True
         Me.BankTransferSelect.IconZoom = 90.0R
-        Me.BankTransferSelect.IsTab = False
-        Me.BankTransferSelect.Location = New System.Drawing.Point(2, 269)
+        Me.BankTransferSelect.IsTab = True
+        Me.BankTransferSelect.Location = New System.Drawing.Point(2, 300)
         Me.BankTransferSelect.Margin = New System.Windows.Forms.Padding(4)
         Me.BankTransferSelect.Name = "BankTransferSelect"
         Me.BankTransferSelect.Normalcolor = System.Drawing.Color.DarkOrchid
         Me.BankTransferSelect.OnHovercolor = System.Drawing.Color.DarkViolet
         Me.BankTransferSelect.OnHoverTextColor = System.Drawing.Color.White
         Me.BankTransferSelect.selected = False
-        Me.BankTransferSelect.Size = New System.Drawing.Size(308, 59)
+        Me.BankTransferSelect.Size = New System.Drawing.Size(321, 59)
         Me.BankTransferSelect.TabIndex = 0
         Me.BankTransferSelect.Text = "   Bank Transfer"
         Me.BankTransferSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BankTransferSelect.Textcolor = System.Drawing.Color.Black
         Me.BankTransferSelect.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'ReceiptsBindingSource1
+        '
+        Me.ReceiptsBindingSource1.DataMember = "receipts"
+        Me.ReceiptsBindingSource1.DataSource = Me.VibDataSet
+        '
         'ReceiptsTableAdapter
         '
         Me.ReceiptsTableAdapter.ClearBeforeFill = True
-        '
-        'TransIDDataGridViewTextBoxColumn
-        '
-        Me.TransIDDataGridViewTextBoxColumn.DataPropertyName = "Trans_ID"
-        Me.TransIDDataGridViewTextBoxColumn.HeaderText = "Trans_ID"
-        Me.TransIDDataGridViewTextBoxColumn.Name = "TransIDDataGridViewTextBoxColumn"
-        '
-        'AmountDataGridViewTextBoxColumn
-        '
-        Me.AmountDataGridViewTextBoxColumn.DataPropertyName = "Amount"
-        Me.AmountDataGridViewTextBoxColumn.HeaderText = "Amount"
-        Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
-        '
-        'TypeDataGridViewTextBoxColumn
-        '
-        Me.TypeDataGridViewTextBoxColumn.DataPropertyName = "Type"
-        Me.TypeDataGridViewTextBoxColumn.HeaderText = "Comment"
-        Me.TypeDataGridViewTextBoxColumn.Name = "TypeDataGridViewTextBoxColumn"
-        '
-        'DateTimeDataGridViewTextBoxColumn
-        '
-        Me.DateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime"
-        Me.DateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime"
-        Me.DateTimeDataGridViewTextBoxColumn.Name = "DateTimeDataGridViewTextBoxColumn"
-        '
-        'DebitAccNoDataGridViewTextBoxColumn
-        '
-        Me.DebitAccNoDataGridViewTextBoxColumn.DataPropertyName = "Debit_AccNo"
-        Me.DebitAccNoDataGridViewTextBoxColumn.HeaderText = "Debit_AccNo"
-        Me.DebitAccNoDataGridViewTextBoxColumn.Name = "DebitAccNoDataGridViewTextBoxColumn"
-        '
-        'CreditAccnoDataGridViewTextBoxColumn
-        '
-        Me.CreditAccnoDataGridViewTextBoxColumn.DataPropertyName = "Credit_Accno"
-        Me.CreditAccnoDataGridViewTextBoxColumn.HeaderText = "Credit_Accno"
-        Me.CreditAccnoDataGridViewTextBoxColumn.Name = "CreditAccnoDataGridViewTextBoxColumn"
         '
         'CustomerModule
         '
@@ -1998,7 +2000,6 @@ Partial Class CustomerModule
         CType(Me.BunifuPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.HomeTab.ResumeLayout(False)
         Me.HomePage.ResumeLayout(False)
-        Me.SelectionTab.ResumeLayout(False)
         Me.MoneyTransferTab.ResumeLayout(False)
         Me.DepositGradientPanel.ResumeLayout(False)
         Me.EditPasswordTab.ResumeLayout(False)
@@ -2014,6 +2015,7 @@ Partial Class CustomerModule
         Me.MenuCard.ResumeLayout(False)
         Me.BunifuGradientPanel3.ResumeLayout(False)
         Me.BunifuGradientPanel3.PerformLayout()
+        CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2026,7 +2028,6 @@ Partial Class CustomerModule
     Friend WithEvents PasswordTextBox As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents BunifuPictureBox1 As Bunifu.UI.WinForms.BunifuPictureBox
     Friend WithEvents LogInButton As Bunifu.Framework.UI.BunifuThinButton2
-    Friend WithEvents Register_Btn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents MenuCard As Bunifu.Framework.UI.BunifuCards
     Friend WithEvents HomePage As Bunifu.UI.WinForms.BunifuPages
     Friend WithEvents SelectionTab As TabPage
@@ -2045,7 +2046,6 @@ Partial Class CustomerModule
     Friend WithEvents AddBeneficiarySelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents WithdrawGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents AccnoDropdown As Bunifu.UI.WinForms.BunifuDropdown
-    Friend WithEvents HomeGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents EditDetailsGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents Name_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents Accno_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
@@ -2072,9 +2072,11 @@ Partial Class CustomerModule
     Friend WithEvents NewPassword_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents OldPassword_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents TransIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Comment As DataGridViewTextBoxColumn
     Friend WithEvents AmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateTimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DebitAccNoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CreditAccnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptsBindingSource1 As BindingSource
+    Friend WithEvents Hamburger_Btn As Bunifu.Framework.UI.BunifuFlatButton
 End Class

@@ -151,7 +151,7 @@ Module SQL
             Try
                 MysqlConn.Open()
                 Dim Query As String
-                Query = "select " + field + " from vib." + table + " where " + col + "='" + val + "' "
+                Query = "select " + field + " from vib." + table + " where " + col + " = '" + val + "' "
                 COMMAND = New MySqlCommand(Query, MysqlConn)
                 READER = COMMAND.ExecuteReader
 

@@ -26,7 +26,6 @@ Partial Class CusPassbook
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TransIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DebitCusIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DebitAccNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,13 +46,14 @@ Partial Class CusPassbook
         '
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransIDDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.DateTimeDataGridViewTextBoxColumn, Me.DebitCusIDDataGridViewTextBoxColumn, Me.DebitAccNoDataGridViewTextBoxColumn, Me.CreditCusIDDataGridViewTextBoxColumn, Me.CreditAccnoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransIDDataGridViewTextBoxColumn, Me.AmountDataGridViewTextBoxColumn, Me.DateTimeDataGridViewTextBoxColumn, Me.DebitCusIDDataGridViewTextBoxColumn, Me.DebitAccNoDataGridViewTextBoxColumn, Me.CreditCusIDDataGridViewTextBoxColumn, Me.CreditAccnoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ReceiptsBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 10)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1059, 402)
+        Me.DataGridView1.Size = New System.Drawing.Size(794, 327)
         Me.DataGridView1.TabIndex = 0
         '
         'TransIDDataGridViewTextBoxColumn
@@ -71,14 +71,6 @@ Partial Class CusPassbook
         Me.AmountDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.AmountDataGridViewTextBoxColumn.Name = "AmountDataGridViewTextBoxColumn"
         Me.AmountDataGridViewTextBoxColumn.Width = 125
-        '
-        'TypeDataGridViewTextBoxColumn
-        '
-        Me.TypeDataGridViewTextBoxColumn.DataPropertyName = "Type"
-        Me.TypeDataGridViewTextBoxColumn.HeaderText = "Type"
-        Me.TypeDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TypeDataGridViewTextBoxColumn.Name = "TypeDataGridViewTextBoxColumn"
-        Me.TypeDataGridViewTextBoxColumn.Width = 125
         '
         'DateTimeDataGridViewTextBoxColumn
         '
@@ -136,40 +128,44 @@ Partial Class CusPassbook
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(311, 433)
+        Me.Button1.Location = New System.Drawing.Point(233, 352)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 33)
+        Me.Button1.Size = New System.Drawing.Size(112, 27)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Refresh"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(503, 433)
+        Me.Button2.Location = New System.Drawing.Point(377, 352)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(150, 33)
+        Me.Button2.Size = New System.Drawing.Size(112, 27)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Back"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(96, 493)
+        Me.TextBox1.Location = New System.Drawing.Point(72, 401)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(470, 78)
+        Me.TextBox1.Size = New System.Drawing.Size(354, 64)
         Me.TextBox1.TabIndex = 3
         '
-        'Passbook
+        'CusPassbook
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1075, 583)
+        Me.ClientSize = New System.Drawing.Size(806, 474)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Name = "Passbook"
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Name = "CusPassbook"
         Me.Text = "Passbook"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReceiptsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

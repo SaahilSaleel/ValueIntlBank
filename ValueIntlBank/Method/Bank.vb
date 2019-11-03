@@ -28,24 +28,37 @@
         Return Success
     End Function
 
-    Function BankTransfer(ByVal Sender_Acc As Integer, ByVal Amount As Integer, ByVal Receiver_Acc As Integer)
+    Function BankTransfer(ByVal Sender_Acc As Integer, ByVal Amount As Integer, ByVal Receiver_Acc As Integer, ByVal Comment As String)
         Dim bal As Integer = CInt(GetSingleField("Balance", "bankacc", "Accno", Sender_Acc))
-        Dim bank As String = GetSingleField("Bank", "beneficiaries", "Accno", Receiver_Acc)
+        Dim bank As String = GetSingleField("Ben_Bank", "beneficiaries", "Ben_Accno", Receiver_Acc)
         bal -= Amount
         Dim Success = 0
+        Dim arr(7) As String
+        arr(0) = GetID(8, "receipts", "Trans_ID")
+        arr(1) = Amount
+        arr(2) = Comment
+        arr(3) = GetSingleField("Cus_ID", "bankacc", "Accno", Sender_Acc)
+        arr(4) = Sender_Acc
+        arr(5) = GetSingleField("Cus_ID", "bankacc", "Accno", Receiver_Acc)
+        arr(6) = Receiver_Acc
+        arr(7) = CurDateTime()
+
+
         If bal > 0 Then
 
             If UpdateSingleField("bankacc", "Balance", bal, "Accno", Sender_Acc) = 1 Then
                 If bank = "VIB" Then
                     bal = CInt(GetSingleField("Balance", "bankacc", "Accno", Receiver_Acc))
                     bal += Amount
-                    UpdateSingleField("bankacc", "Balance", bal, "Accno", Receiver_Acc)
+                    If UpdateSingleField("bankacc", "Balance", bal, "Accno", Receiver_Acc) = 1 Then
+                        MessageBox.Show("Succesful")
+                    End If
                 End If
-                Dim msg = "Rs " & Amount & " has been succesfully transferred to receiver AccNo:- " & Sender_Acc
-                MessageBox.Show(msg)
-                Success = 1
+                If Receipt(arr) = 1 Then
+                    Success = 1
+                End If
             End If
-        Else
+            Else
             MessageBox.Show("Value cannot be negative")
         End If
         Return Success

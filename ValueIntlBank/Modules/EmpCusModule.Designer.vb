@@ -250,6 +250,7 @@ Partial Class EmpCusModule
         Me.Step4_btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
         Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.Balance_lbl = New System.Windows.Forms.Label()
         Me.AccType_lbl = New System.Windows.Forms.Label()
         Me.AccTypeCreate_Btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.AccTypeDropdown = New Bunifu.UI.WinForms.BunifuDropdown()
@@ -261,7 +262,6 @@ Partial Class EmpCusModule
         Me.WithdrawSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.DepositSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Balance_lbl = New System.Windows.Forms.Label()
         Me.MainPage.SuspendLayout()
         Me.LoginTab.SuspendLayout()
         Me.LogInGradientPanel.SuspendLayout()
@@ -3825,6 +3825,17 @@ Partial Class EmpCusModule
         Me.BunifuGradientPanel3.Size = New System.Drawing.Size(270, 858)
         Me.BunifuGradientPanel3.TabIndex = 3
         '
+        'Balance_lbl
+        '
+        Me.Balance_lbl.AutoSize = True
+        Me.Balance_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Balance_lbl.ForeColor = System.Drawing.Color.Purple
+        Me.Balance_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Balance_lbl.Location = New System.Drawing.Point(8, 143)
+        Me.Balance_lbl.Name = "Balance_lbl"
+        Me.Balance_lbl.Size = New System.Drawing.Size(0, 37)
+        Me.Balance_lbl.TabIndex = 38
+        '
         'AccType_lbl
         '
         Me.AccType_lbl.AutoSize = True
@@ -4143,17 +4154,6 @@ Partial Class EmpCusModule
         Me.DepositSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.DepositSelect.Textcolor = System.Drawing.Color.Black
         Me.DepositSelect.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'Balance_lbl
-        '
-        Me.Balance_lbl.AutoSize = True
-        Me.Balance_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Balance_lbl.ForeColor = System.Drawing.Color.Purple
-        Me.Balance_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Balance_lbl.Location = New System.Drawing.Point(8, 143)
-        Me.Balance_lbl.Name = "Balance_lbl"
-        Me.Balance_lbl.Size = New System.Drawing.Size(0, 37)
-        Me.Balance_lbl.TabIndex = 38
         '
         'EmpCusModule
         '

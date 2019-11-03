@@ -62,6 +62,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>unnamed.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL" />
@@ -336,11 +339,16 @@
     <Compile Include="LogIn\EmpLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Misc\Module1.vb" />
     <Compile Include="Misc\SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
     <Compile Include="Misc\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AdminModule.Designer.vb">
+      <DependentUpon>AdminModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AdminModule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\CustomerModule.Designer.vb">
@@ -355,10 +363,10 @@
     <Compile Include="Modules\EmpCusModule.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Misc\Test_Login.Designer.vb">
-      <DependentUpon>Test_Login.vb</DependentUpon>
+    <Compile Include="Modules\EmployeeModule.Designer.vb">
+      <DependentUpon>EmployeeModule.vb</DependentUpon>
     </Compile>
-    <Compile Include="Misc\Test_Login.vb">
+    <Compile Include="Modules\EmployeeModule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Hub.Designer.vb">
@@ -465,14 +473,17 @@
     <EmbeddedResource Include="Misc\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AdminModule.resx">
+      <DependentUpon>AdminModule.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\CustomerModule.resx">
       <DependentUpon>CustomerModule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\EmpCusModule.resx">
       <DependentUpon>EmpCusModule.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Misc\Test_Login.resx">
-      <DependentUpon>Test_Login.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\EmployeeModule.resx">
+      <DependentUpon>EmployeeModule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Hub.resx">
       <DependentUpon>Hub.vb</DependentUpon>
@@ -485,6 +496,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -543,6 +555,7 @@
     <Content Include="Images\Icons\Withdraw.png" />
     <Content Include="Images\Lock\Lock.png" />
     <Content Include="Images\Lock\Unlock.png" />
+    <Content Include="unnamed.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
