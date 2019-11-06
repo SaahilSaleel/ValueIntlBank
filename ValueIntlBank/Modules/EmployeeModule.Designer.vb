@@ -92,10 +92,20 @@ Partial Class EmployeeModule
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ReceivedTab = New System.Windows.Forms.TabPage()
         Me.ReceivedDataGridView = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.MsgNoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SenderIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SenderNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubjectDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MessagehubBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VibDataSet = New ValueIntlBank.vibDataSet()
         Me.SentTab = New System.Windows.Forms.TabPage()
         Me.SentDataGridView = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MessagehubBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Branchno_lbl = New System.Windows.Forms.Label()
         Me.BankListTab = New System.Windows.Forms.TabPage()
@@ -116,7 +126,7 @@ Partial Class EmployeeModule
         Me.Subject_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.Message_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
-        Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.MenuGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Hamburger_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.AccType_lbl = New System.Windows.Forms.Label()
         Me.Close_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -137,16 +147,6 @@ Partial Class EmployeeModule
         Me.SenderIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MsgNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MsgNoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateTimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SenderIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SenderNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubjectDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MainPage.SuspendLayout()
         Me.LoginTab.SuspendLayout()
         Me.LogInGradientPanel.SuspendLayout()
@@ -172,7 +172,7 @@ Partial Class EmployeeModule
         Me.ComposeTab.SuspendLayout()
         Me.ComposeGradientPanel.SuspendLayout()
         Me.MenuCard.SuspendLayout()
-        Me.BunifuGradientPanel3.SuspendLayout()
+        Me.MenuGradientPanel.SuspendLayout()
         CType(Me.ReceiptsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -452,16 +452,16 @@ Partial Class EmployeeModule
         Me.HomePage.Controls.Add(Me.InboxTab)
         Me.HomePage.Controls.Add(Me.BankListTab)
         Me.HomePage.Controls.Add(Me.ComposeTab)
-        Me.HomePage.Dock = System.Windows.Forms.DockStyle.Right
-        Me.HomePage.Location = New System.Drawing.Point(295, 0)
+        Me.HomePage.Dock = System.Windows.Forms.DockStyle.Left
+        Me.HomePage.Location = New System.Drawing.Point(290, 0)
         Me.HomePage.Margin = New System.Windows.Forms.Padding(0)
         Me.HomePage.Multiline = True
         Me.HomePage.Name = "HomePage"
         Me.HomePage.Padding = New System.Drawing.Point(0, 0)
-        Me.HomePage.Page = Me.InboxTab
-        Me.HomePage.PageIndex = 2
-        Me.HomePage.PageName = "InboxTab"
-        Me.HomePage.PageTitle = "Inbox"
+        Me.HomePage.Page = Me.EditDetailsTab
+        Me.HomePage.PageIndex = 1
+        Me.HomePage.PageName = "EditDetailsTab"
+        Me.HomePage.PageTitle = "Edit Details"
         Me.HomePage.SelectedIndex = 0
         Me.HomePage.Size = New System.Drawing.Size(1342, 858)
         Me.HomePage.TabIndex = 2
@@ -1024,6 +1024,42 @@ Partial Class EmployeeModule
         Me.ReceivedDataGridView.TabIndex = 1
         Me.ReceivedDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkViolet
         '
+        'MsgNoDataGridViewTextBoxColumn1
+        '
+        Me.MsgNoDataGridViewTextBoxColumn1.DataPropertyName = "Msg_No"
+        Me.MsgNoDataGridViewTextBoxColumn1.HeaderText = "Msg_No"
+        Me.MsgNoDataGridViewTextBoxColumn1.Name = "MsgNoDataGridViewTextBoxColumn1"
+        Me.MsgNoDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.MsgNoDataGridViewTextBoxColumn1.Visible = False
+        '
+        'DateTimeDataGridViewTextBoxColumn
+        '
+        Me.DateTimeDataGridViewTextBoxColumn.DataPropertyName = "Date_Time"
+        Me.DateTimeDataGridViewTextBoxColumn.HeaderText = "Date_Time"
+        Me.DateTimeDataGridViewTextBoxColumn.Name = "DateTimeDataGridViewTextBoxColumn"
+        Me.DateTimeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SenderIDDataGridViewTextBoxColumn
+        '
+        Me.SenderIDDataGridViewTextBoxColumn.DataPropertyName = "Sender_ID"
+        Me.SenderIDDataGridViewTextBoxColumn.HeaderText = "Sender_ID"
+        Me.SenderIDDataGridViewTextBoxColumn.Name = "SenderIDDataGridViewTextBoxColumn"
+        Me.SenderIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SenderNameDataGridViewTextBoxColumn
+        '
+        Me.SenderNameDataGridViewTextBoxColumn.DataPropertyName = "Sender_Name"
+        Me.SenderNameDataGridViewTextBoxColumn.HeaderText = "Sender_Name"
+        Me.SenderNameDataGridViewTextBoxColumn.Name = "SenderNameDataGridViewTextBoxColumn"
+        Me.SenderNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SubjectDataGridViewTextBoxColumn
+        '
+        Me.SubjectDataGridViewTextBoxColumn.DataPropertyName = "Subject"
+        Me.SubjectDataGridViewTextBoxColumn.HeaderText = "Subject"
+        Me.SubjectDataGridViewTextBoxColumn.Name = "SubjectDataGridViewTextBoxColumn"
+        Me.SubjectDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'MessagehubBindingSource
         '
         Me.MessagehubBindingSource.DataMember = "messagehub"
@@ -1106,6 +1142,42 @@ Partial Class EmployeeModule
         Me.SentDataGridView.Size = New System.Drawing.Size(998, 371)
         Me.SentDataGridView.TabIndex = 2
         Me.SentDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkViolet
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Msg_No"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Msg_No"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Date_Time"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Date_Time"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Receiver_ID"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Receiver_ID"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Receiver_Name"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Receiver_Name"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Subject"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Subject"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'MessagehubBindingSource1
         '
@@ -1524,7 +1596,7 @@ Partial Class EmployeeModule
         Me.MenuCard.BorderRadius = 5
         Me.MenuCard.BottomSahddow = False
         Me.MenuCard.color = System.Drawing.Color.SlateBlue
-        Me.MenuCard.Controls.Add(Me.BunifuGradientPanel3)
+        Me.MenuCard.Controls.Add(Me.MenuGradientPanel)
         Me.MenuCard.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuCard.LeftSahddow = False
         Me.MenuCard.Location = New System.Drawing.Point(0, 0)
@@ -1532,32 +1604,32 @@ Partial Class EmployeeModule
         Me.MenuCard.Name = "MenuCard"
         Me.MenuCard.RightSahddow = False
         Me.MenuCard.ShadowDepth = 20
-        Me.MenuCard.Size = New System.Drawing.Size(328, 858)
+        Me.MenuCard.Size = New System.Drawing.Size(290, 858)
         Me.MenuCard.TabIndex = 0
         '
-        'BunifuGradientPanel3
+        'MenuGradientPanel
         '
-        Me.BunifuGradientPanel3.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel3.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuGradientPanel3.Controls.Add(Me.Hamburger_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccType_lbl)
-        Me.BunifuGradientPanel3.Controls.Add(Me.Close_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.LogOut_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.ComposeSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.BankListSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.InboxSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.EditDetailsSelect)
-        Me.BunifuGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.MediumPurple
-        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.Purple
-        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.DarkOrchid
-        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.BunifuGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
-        Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
-        Me.BunifuGradientPanel3.Quality = 10
-        Me.BunifuGradientPanel3.Size = New System.Drawing.Size(328, 858)
-        Me.BunifuGradientPanel3.TabIndex = 3
+        Me.MenuGradientPanel.BackgroundImage = CType(resources.GetObject("MenuGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.MenuGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MenuGradientPanel.Controls.Add(Me.Hamburger_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.AccType_lbl)
+        Me.MenuGradientPanel.Controls.Add(Me.Close_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.LogOut_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.ComposeSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.BankListSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.InboxSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.EditDetailsSelect)
+        Me.MenuGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MenuGradientPanel.GradientBottomLeft = System.Drawing.Color.MediumPurple
+        Me.MenuGradientPanel.GradientBottomRight = System.Drawing.Color.Purple
+        Me.MenuGradientPanel.GradientTopLeft = System.Drawing.Color.DarkOrchid
+        Me.MenuGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.MenuGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.MenuGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MenuGradientPanel.Name = "MenuGradientPanel"
+        Me.MenuGradientPanel.Quality = 10
+        Me.MenuGradientPanel.Size = New System.Drawing.Size(290, 858)
+        Me.MenuGradientPanel.TabIndex = 3
         '
         'Hamburger_Btn
         '
@@ -1891,78 +1963,6 @@ Partial Class EmployeeModule
         Me.MsgNoDataGridViewTextBoxColumn.ReadOnly = True
         Me.MsgNoDataGridViewTextBoxColumn.Visible = False
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Msg_No"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Msg_No"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Date_Time"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Date_Time"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Receiver_ID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Receiver_ID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Receiver_Name"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Receiver_Name"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Subject"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Subject"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'MsgNoDataGridViewTextBoxColumn1
-        '
-        Me.MsgNoDataGridViewTextBoxColumn1.DataPropertyName = "Msg_No"
-        Me.MsgNoDataGridViewTextBoxColumn1.HeaderText = "Msg_No"
-        Me.MsgNoDataGridViewTextBoxColumn1.Name = "MsgNoDataGridViewTextBoxColumn1"
-        Me.MsgNoDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.MsgNoDataGridViewTextBoxColumn1.Visible = False
-        '
-        'DateTimeDataGridViewTextBoxColumn
-        '
-        Me.DateTimeDataGridViewTextBoxColumn.DataPropertyName = "Date_Time"
-        Me.DateTimeDataGridViewTextBoxColumn.HeaderText = "Date_Time"
-        Me.DateTimeDataGridViewTextBoxColumn.Name = "DateTimeDataGridViewTextBoxColumn"
-        Me.DateTimeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SenderIDDataGridViewTextBoxColumn
-        '
-        Me.SenderIDDataGridViewTextBoxColumn.DataPropertyName = "Sender_ID"
-        Me.SenderIDDataGridViewTextBoxColumn.HeaderText = "Sender_ID"
-        Me.SenderIDDataGridViewTextBoxColumn.Name = "SenderIDDataGridViewTextBoxColumn"
-        Me.SenderIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SenderNameDataGridViewTextBoxColumn
-        '
-        Me.SenderNameDataGridViewTextBoxColumn.DataPropertyName = "Sender_Name"
-        Me.SenderNameDataGridViewTextBoxColumn.HeaderText = "Sender_Name"
-        Me.SenderNameDataGridViewTextBoxColumn.Name = "SenderNameDataGridViewTextBoxColumn"
-        Me.SenderNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SubjectDataGridViewTextBoxColumn
-        '
-        Me.SubjectDataGridViewTextBoxColumn.DataPropertyName = "Subject"
-        Me.SubjectDataGridViewTextBoxColumn.HeaderText = "Subject"
-        Me.SubjectDataGridViewTextBoxColumn.Name = "SubjectDataGridViewTextBoxColumn"
-        Me.SubjectDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'EmployeeModule
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -1998,8 +1998,8 @@ Partial Class EmployeeModule
         Me.ComposeTab.ResumeLayout(False)
         Me.ComposeGradientPanel.ResumeLayout(False)
         Me.MenuCard.ResumeLayout(False)
-        Me.BunifuGradientPanel3.ResumeLayout(False)
-        Me.BunifuGradientPanel3.PerformLayout()
+        Me.MenuGradientPanel.ResumeLayout(False)
+        Me.MenuGradientPanel.PerformLayout()
         CType(Me.ReceiptsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -2018,7 +2018,7 @@ Partial Class EmployeeModule
     Friend WithEvents HomePage As Bunifu.UI.WinForms.BunifuPages
     Friend WithEvents SelectionTab As TabPage
     Friend WithEvents EditDetailsTab As TabPage
-    Friend WithEvents BunifuGradientPanel3 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents MenuGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents InboxTab As TabPage
     Friend WithEvents BankListTab As TabPage
     Friend WithEvents ComposeTab As TabPage

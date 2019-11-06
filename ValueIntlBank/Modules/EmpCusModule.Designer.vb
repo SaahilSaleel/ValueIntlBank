@@ -153,7 +153,6 @@ Partial Class EmpCusModule
         Me.HomeTab = New System.Windows.Forms.TabPage()
         Me.HomePage = New Bunifu.UI.WinForms.BunifuPages()
         Me.SelectionTab = New System.Windows.Forms.TabPage()
-        Me.HomeGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.DepositTab = New System.Windows.Forms.TabPage()
         Me.DepositGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Deposit_Btn = New Bunifu.Framework.UI.BunifuThinButton2()
@@ -209,8 +208,6 @@ Partial Class EmpCusModule
         Me.Withdraw500_Btn = New System.Windows.Forms.Button()
         Me.Withdraw2000_Txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.Withdraw2000_Btn = New System.Windows.Forms.Button()
-        Me.EditDetailsTab = New System.Windows.Forms.TabPage()
-        Me.EditDetailsGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.AddCusTab = New System.Windows.Forms.TabPage()
         Me.AddCusGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.SexGroupBox = New System.Windows.Forms.GroupBox()
@@ -249,7 +246,7 @@ Partial Class EmpCusModule
         Me.BunifuSeparator2 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.Step4_btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
-        Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.MenuGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Balance_lbl = New System.Windows.Forms.Label()
         Me.AccType_lbl = New System.Windows.Forms.Label()
         Me.AccTypeCreate_Btn = New Bunifu.Framework.UI.BunifuThinButton2()
@@ -258,7 +255,6 @@ Partial Class EmpCusModule
         Me.Close_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.LogOut_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.AddAccSelect = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.EditDetailsSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.WithdrawSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.DepositSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -268,21 +264,19 @@ Partial Class EmpCusModule
         CType(Me.BunifuPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.HomeTab.SuspendLayout()
         Me.HomePage.SuspendLayout()
-        Me.SelectionTab.SuspendLayout()
         Me.DepositTab.SuspendLayout()
         Me.DepositGradientPanel.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
         Me.WithdrawTab.SuspendLayout()
         Me.WithdrawGradientPanel.SuspendLayout()
         Me.BunifuCards2.SuspendLayout()
-        Me.EditDetailsTab.SuspendLayout()
         Me.AddCusTab.SuspendLayout()
         Me.AddCusGradientPanel.SuspendLayout()
         Me.SexGroupBox.SuspendLayout()
         Me.ProgressCard.SuspendLayout()
         Me.BunifuGradientPanel2.SuspendLayout()
         Me.MenuCard.SuspendLayout()
-        Me.BunifuGradientPanel3.SuspendLayout()
+        Me.MenuGradientPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'MainPage
@@ -585,7 +579,6 @@ Partial Class EmpCusModule
         Me.HomePage.Controls.Add(Me.SelectionTab)
         Me.HomePage.Controls.Add(Me.DepositTab)
         Me.HomePage.Controls.Add(Me.WithdrawTab)
-        Me.HomePage.Controls.Add(Me.EditDetailsTab)
         Me.HomePage.Controls.Add(Me.AddCusTab)
         Me.HomePage.Dock = System.Windows.Forms.DockStyle.Right
         Me.HomePage.Location = New System.Drawing.Point(243, 0)
@@ -594,7 +587,7 @@ Partial Class EmpCusModule
         Me.HomePage.Name = "HomePage"
         Me.HomePage.Padding = New System.Drawing.Point(0, 0)
         Me.HomePage.Page = Me.AddCusTab
-        Me.HomePage.PageIndex = 4
+        Me.HomePage.PageIndex = 3
         Me.HomePage.PageName = "AddCusTab"
         Me.HomePage.PageTitle = "AddCus"
         Me.HomePage.SelectedIndex = 0
@@ -620,30 +613,13 @@ Partial Class EmpCusModule
         '
         'SelectionTab
         '
-        Me.SelectionTab.Controls.Add(Me.HomeGradientPanel)
+        Me.SelectionTab.BackColor = System.Drawing.Color.Magenta
         Me.SelectionTab.Location = New System.Drawing.Point(4, 4)
         Me.SelectionTab.Margin = New System.Windows.Forms.Padding(0)
         Me.SelectionTab.Name = "SelectionTab"
         Me.SelectionTab.Size = New System.Drawing.Size(1386, 832)
         Me.SelectionTab.TabIndex = 0
         Me.SelectionTab.Text = "Home"
-        Me.SelectionTab.UseVisualStyleBackColor = True
-        '
-        'HomeGradientPanel
-        '
-        Me.HomeGradientPanel.BackgroundImage = CType(resources.GetObject("HomeGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.HomeGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.HomeGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HomeGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.HomeGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.HomeGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.HomeGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.HomeGradientPanel.Location = New System.Drawing.Point(0, 0)
-        Me.HomeGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.HomeGradientPanel.Name = "HomeGradientPanel"
-        Me.HomeGradientPanel.Quality = 10
-        Me.HomeGradientPanel.Size = New System.Drawing.Size(1386, 832)
-        Me.HomeGradientPanel.TabIndex = 3
         '
         'DepositTab
         '
@@ -2655,34 +2631,6 @@ Partial Class EmpCusModule
         Me.Withdraw2000_Btn.TabIndex = 0
         Me.Withdraw2000_Btn.UseVisualStyleBackColor = True
         '
-        'EditDetailsTab
-        '
-        Me.EditDetailsTab.Controls.Add(Me.EditDetailsGradientPanel)
-        Me.EditDetailsTab.Location = New System.Drawing.Point(4, 4)
-        Me.EditDetailsTab.Margin = New System.Windows.Forms.Padding(0)
-        Me.EditDetailsTab.Name = "EditDetailsTab"
-        Me.EditDetailsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.EditDetailsTab.Size = New System.Drawing.Size(1386, 832)
-        Me.EditDetailsTab.TabIndex = 3
-        Me.EditDetailsTab.Text = "EditDetails"
-        Me.EditDetailsTab.UseVisualStyleBackColor = True
-        '
-        'EditDetailsGradientPanel
-        '
-        Me.EditDetailsGradientPanel.BackgroundImage = CType(resources.GetObject("EditDetailsGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.EditDetailsGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.EditDetailsGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.EditDetailsGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.EditDetailsGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.EditDetailsGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.EditDetailsGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.EditDetailsGradientPanel.Location = New System.Drawing.Point(3, 3)
-        Me.EditDetailsGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.EditDetailsGradientPanel.Name = "EditDetailsGradientPanel"
-        Me.EditDetailsGradientPanel.Quality = 10
-        Me.EditDetailsGradientPanel.Size = New System.Drawing.Size(1380, 826)
-        Me.EditDetailsGradientPanel.TabIndex = 1
-        '
         'AddCusTab
         '
         Me.AddCusTab.BackColor = System.Drawing.Color.Magenta
@@ -3787,7 +3735,7 @@ Partial Class EmpCusModule
         Me.MenuCard.BorderRadius = 5
         Me.MenuCard.BottomSahddow = False
         Me.MenuCard.color = System.Drawing.Color.SlateBlue
-        Me.MenuCard.Controls.Add(Me.BunifuGradientPanel3)
+        Me.MenuCard.Controls.Add(Me.MenuGradientPanel)
         Me.MenuCard.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuCard.LeftSahddow = False
         Me.MenuCard.Location = New System.Drawing.Point(0, 0)
@@ -3798,32 +3746,31 @@ Partial Class EmpCusModule
         Me.MenuCard.Size = New System.Drawing.Size(270, 858)
         Me.MenuCard.TabIndex = 0
         '
-        'BunifuGradientPanel3
+        'MenuGradientPanel
         '
-        Me.BunifuGradientPanel3.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel3.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuGradientPanel3.Controls.Add(Me.Balance_lbl)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccType_lbl)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccTypeCreate_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccTypeDropdown)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccnoDropdown)
-        Me.BunifuGradientPanel3.Controls.Add(Me.Close_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.LogOut_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AddAccSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.EditDetailsSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.WithdrawSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.DepositSelect)
-        Me.BunifuGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.MediumPurple
-        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.Purple
-        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.DarkOrchid
-        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.BunifuGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
-        Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
-        Me.BunifuGradientPanel3.Quality = 10
-        Me.BunifuGradientPanel3.Size = New System.Drawing.Size(270, 858)
-        Me.BunifuGradientPanel3.TabIndex = 3
+        Me.MenuGradientPanel.BackgroundImage = CType(resources.GetObject("MenuGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.MenuGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MenuGradientPanel.Controls.Add(Me.Balance_lbl)
+        Me.MenuGradientPanel.Controls.Add(Me.AccType_lbl)
+        Me.MenuGradientPanel.Controls.Add(Me.AccTypeCreate_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.AccTypeDropdown)
+        Me.MenuGradientPanel.Controls.Add(Me.AccnoDropdown)
+        Me.MenuGradientPanel.Controls.Add(Me.Close_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.LogOut_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.AddAccSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.WithdrawSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.DepositSelect)
+        Me.MenuGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MenuGradientPanel.GradientBottomLeft = System.Drawing.Color.MediumPurple
+        Me.MenuGradientPanel.GradientBottomRight = System.Drawing.Color.Purple
+        Me.MenuGradientPanel.GradientTopLeft = System.Drawing.Color.DarkOrchid
+        Me.MenuGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.MenuGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.MenuGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MenuGradientPanel.Name = "MenuGradientPanel"
+        Me.MenuGradientPanel.Quality = 10
+        Me.MenuGradientPanel.Size = New System.Drawing.Size(270, 858)
+        Me.MenuGradientPanel.TabIndex = 3
         '
         'Balance_lbl
         '
@@ -3865,7 +3812,7 @@ Partial Class EmpCusModule
         Me.AccTypeCreate_Btn.IdleFillColor = System.Drawing.Color.White
         Me.AccTypeCreate_Btn.IdleForecolor = System.Drawing.Color.Violet
         Me.AccTypeCreate_Btn.IdleLineColor = System.Drawing.Color.Violet
-        Me.AccTypeCreate_Btn.Location = New System.Drawing.Point(43, 516)
+        Me.AccTypeCreate_Btn.Location = New System.Drawing.Point(42, 480)
         Me.AccTypeCreate_Btn.Margin = New System.Windows.Forms.Padding(5)
         Me.AccTypeCreate_Btn.Name = "AccTypeCreate_Btn"
         Me.AccTypeCreate_Btn.Size = New System.Drawing.Size(155, 57)
@@ -3897,7 +3844,7 @@ Partial Class EmpCusModule
         Me.AccTypeDropdown.ItemHeight = 40
         Me.AccTypeDropdown.ItemHighLightColor = System.Drawing.Color.Thistle
         Me.AccTypeDropdown.Items.AddRange(New Object() {"Savings", "Current"})
-        Me.AccTypeDropdown.Location = New System.Drawing.Point(6, 453)
+        Me.AccTypeDropdown.Location = New System.Drawing.Point(5, 417)
         Me.AccTypeDropdown.Name = "AccTypeDropdown"
         Me.AccTypeDropdown.Size = New System.Drawing.Size(235, 46)
         Me.AccTypeDropdown.TabIndex = 25
@@ -4030,7 +3977,7 @@ Partial Class EmpCusModule
         Me.AddAccSelect.IconVisible = True
         Me.AddAccSelect.IconZoom = 90.0R
         Me.AddAccSelect.IsTab = False
-        Me.AddAccSelect.Location = New System.Drawing.Point(4, 382)
+        Me.AddAccSelect.Location = New System.Drawing.Point(1, 327)
         Me.AddAccSelect.Margin = New System.Windows.Forms.Padding(4)
         Me.AddAccSelect.Name = "AddAccSelect"
         Me.AddAccSelect.Normalcolor = System.Drawing.Color.DarkOrchid
@@ -4043,43 +3990,6 @@ Partial Class EmpCusModule
         Me.AddAccSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.AddAccSelect.Textcolor = System.Drawing.Color.Black
         Me.AddAccSelect.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'EditDetailsSelect
-        '
-        Me.EditDetailsSelect.Active = False
-        Me.EditDetailsSelect.Activecolor = System.Drawing.Color.DarkViolet
-        Me.EditDetailsSelect.BackColor = System.Drawing.Color.DarkOrchid
-        Me.EditDetailsSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.EditDetailsSelect.BorderRadius = 0
-        Me.EditDetailsSelect.ButtonText = "   Edit Details"
-        Me.EditDetailsSelect.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.EditDetailsSelect.DisabledColor = System.Drawing.Color.Gray
-        Me.EditDetailsSelect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.EditDetailsSelect.Iconcolor = System.Drawing.Color.Transparent
-        Me.EditDetailsSelect.Iconimage = CType(resources.GetObject("EditDetailsSelect.Iconimage"), System.Drawing.Image)
-        Me.EditDetailsSelect.Iconimage_right = Nothing
-        Me.EditDetailsSelect.Iconimage_right_Selected = Nothing
-        Me.EditDetailsSelect.Iconimage_Selected = Nothing
-        Me.EditDetailsSelect.IconMarginLeft = 0
-        Me.EditDetailsSelect.IconMarginRight = 0
-        Me.EditDetailsSelect.IconRightVisible = False
-        Me.EditDetailsSelect.IconRightZoom = 0R
-        Me.EditDetailsSelect.IconVisible = True
-        Me.EditDetailsSelect.IconZoom = 90.0R
-        Me.EditDetailsSelect.IsTab = False
-        Me.EditDetailsSelect.Location = New System.Drawing.Point(4, 325)
-        Me.EditDetailsSelect.Margin = New System.Windows.Forms.Padding(4)
-        Me.EditDetailsSelect.Name = "EditDetailsSelect"
-        Me.EditDetailsSelect.Normalcolor = System.Drawing.Color.DarkOrchid
-        Me.EditDetailsSelect.OnHovercolor = System.Drawing.Color.DarkViolet
-        Me.EditDetailsSelect.OnHoverTextColor = System.Drawing.Color.White
-        Me.EditDetailsSelect.selected = False
-        Me.EditDetailsSelect.Size = New System.Drawing.Size(260, 59)
-        Me.EditDetailsSelect.TabIndex = 2
-        Me.EditDetailsSelect.Text = "   Edit Details"
-        Me.EditDetailsSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EditDetailsSelect.Textcolor = System.Drawing.Color.Black
-        Me.EditDetailsSelect.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'WithdrawSelect
         '
@@ -4170,7 +4080,6 @@ Partial Class EmpCusModule
         CType(Me.BunifuPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.HomeTab.ResumeLayout(False)
         Me.HomePage.ResumeLayout(False)
-        Me.SelectionTab.ResumeLayout(False)
         Me.DepositTab.ResumeLayout(False)
         Me.DepositGradientPanel.ResumeLayout(False)
         Me.BunifuCards1.ResumeLayout(False)
@@ -4179,7 +4088,6 @@ Partial Class EmpCusModule
         Me.WithdrawGradientPanel.ResumeLayout(False)
         Me.BunifuCards2.ResumeLayout(False)
         Me.BunifuCards2.PerformLayout()
-        Me.EditDetailsTab.ResumeLayout(False)
         Me.AddCusTab.ResumeLayout(False)
         Me.AddCusGradientPanel.ResumeLayout(False)
         Me.AddCusGradientPanel.PerformLayout()
@@ -4189,8 +4097,8 @@ Partial Class EmpCusModule
         Me.BunifuGradientPanel2.ResumeLayout(False)
         Me.BunifuGradientPanel2.PerformLayout()
         Me.MenuCard.ResumeLayout(False)
-        Me.BunifuGradientPanel3.ResumeLayout(False)
-        Me.BunifuGradientPanel3.PerformLayout()
+        Me.MenuGradientPanel.ResumeLayout(False)
+        Me.MenuGradientPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4210,9 +4118,8 @@ Partial Class EmpCusModule
     Friend WithEvents SelectionTab As TabPage
     Friend WithEvents DepositTab As TabPage
     Friend WithEvents BunifuGradientPanel2 As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BunifuGradientPanel3 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents MenuGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents WithdrawTab As TabPage
-    Friend WithEvents EditDetailsTab As TabPage
     Friend WithEvents AddCusTab As TabPage
     Friend WithEvents AddCusGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents DepositGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
@@ -4242,7 +4149,6 @@ Partial Class EmpCusModule
     Friend WithEvents DepositTotal_lbl As Label
     Friend WithEvents Deposit_Btn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents DepositSelect As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents EditDetailsSelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents WithdrawSelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Close_Btn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents LogOut_Btn As Bunifu.Framework.UI.BunifuFlatButton
@@ -4275,8 +4181,6 @@ Partial Class EmpCusModule
     Friend WithEvents Withdraw2000_Btn As Button
     Friend WithEvents Step4_btn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents AccnoDropdown As Bunifu.UI.WinForms.BunifuDropdown
-    Friend WithEvents HomeGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents EditDetailsGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents WithdrawCal_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents LName_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents MName_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox

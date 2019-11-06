@@ -7,6 +7,10 @@
         SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         Me.TransparencyKey = Color.Magenta
         MenuCard.Hide()
+
+        Dim StateList As String() = GetSingleCol("emp_Email", "empdetails")
+        Me.EmailDropdown.Items.AddRange(StateList)
+        MenuCard.Width = 290
     End Sub
 
     Private Sub LockStatus(ByVal status As String)
@@ -30,6 +34,22 @@
     End Sub
 
 #Region "Dragging Function"
+
+    Private Sub MenuGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseDown
+        MousePressedDown = True
+        lastLocation = e.Location
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseMove
+        If MousePressedDown = True Then
+            Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
+            Me.Update()
+        End If
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseUp
+        MousePressedDown = False
+    End Sub
     Private Sub LoginGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles LogInGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
@@ -113,10 +133,10 @@
 
 #Region "Menu Card"
     Private Sub Hamburger_Btn_Click(sender As Object, e As EventArgs) Handles Hamburger_Btn.Click
-        If MenuCard.Width = 309 Then
+        If MenuCard.Width = 290 Then
             MenuCard.Width = 67
         ElseIf MenuCard.Width = 67 Then
-            MenuCard.Width = 309
+            MenuCard.Width = 290
         End If
     End Sub
     Private Sub MenuDeselectAll()
@@ -159,8 +179,7 @@
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
-        Dim Form As New EmployeeModule
-        Form.Close()
+        Me.Hide()
     End Sub
 #End Region
 
@@ -172,7 +191,7 @@
             HomePage.SelectedTab = SelectionTab
             Empid = UsernameTextBox.Text
             empdetails = GetSingleRowDict("empdetails", "Emp_Id", Empid)
-            Dim AccList As String() = GetSingleCol("Accno", "empdetails", "Emp_ID", Empid)
+            Dim AccList As String() = GetSingleCol("Accno", "bankacc", "Cus_ID", empdetails("Cus_ID"))
             Me.AccnoDropdown.Items.AddRange(AccList)
             MenuCard.Show()
             MenuCard.Width = 309
@@ -199,12 +218,18 @@
 
 #Region "Edit Details"
     Private Sub EditPassword_btn_Click(sender As Object, e As EventArgs) Handles EditPassword_btn.Click
-        If OldPassword_txt.Text IsNot empdetails("Password") Then
+        If String.Compare(OldPassword_txt.Text, empdetails("Password")) <> 0 Then
             MessageBox.Show("Old password is Incorrect")
             Exit Sub
         End If
+
         If NewPassword_txt.Text.Length < 8 Then
-            MessageBox.Show("Too Short")
+            MessageBox.Show("Password should be at least 8 characters")
+            Exit Sub
+        End If
+
+        If String.Compare(NewPassword_txt.Text, ConfirmNewPassword_txt.Text) <> 0 Then
+            MessageBox.Show("Passwords dont match")
             Exit Sub
         End If
         EditPassword(Empid, NewPassword_txt.Text, "emp")
@@ -237,13 +262,13 @@
 
 #Region "Compose"
     Private Sub Send_btn_Click(sender As Object, e As EventArgs) Handles Send_btn.Click
-        Dim arr(8) As String
-        arr(0) = GetSno("messagehub", "msgno")
+        Dim arr(7) As String
+        arr(0) = GetSno("messagehub", "Msg_No")
         arr(1) = CurDateTime()
         arr(2) = empdetails("Emp_Email")
-        arr(3) = empdetails("Emp_name")
+        arr(3) = empdetails("Emp_Name")
         arr(4) = EmailDropdown.Text
-        arr(5) = GetSingleField("Emp_name", "empdetails", "Emp_Email", EmailDropdown.Text)
+        arr(5) = GetSingleField("Emp_Name", "empdetails", "Emp_Email", EmailDropdown.Text)
         arr(6) = Subject_txt.Text
         arr(7) = Message_txt.Text
         If InsertSingleRow(arr, "messagehub") = 1 Then

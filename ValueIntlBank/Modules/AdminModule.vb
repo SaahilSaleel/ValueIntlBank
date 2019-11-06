@@ -1,7 +1,6 @@
 ﻿Public Class AdminModule
     Dim MousePressedDown As Boolean
     Dim lastLocation As Point
-    Dim Empid As String
     Private Sub EmpCusModule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BanklistTableAdapter.Fill(Me.VibDataSet.banklist)
         Me.ReceiptsTableAdapter.Fill(Me.VibDataSet.receipts)
@@ -26,8 +25,13 @@
     End Sub
 
     Private Sub TransactionsUpdate()
-        Dim PassbookQuery As String = "SELECT Trans_ID, Amount, Debit_AccNo, Credit_Accno FROM vib.receipts;"
+        Dim PassbookQuery As String = "SELECT Trans_ID, Amount,DateTime, Debit_AccNo, Credit_Accno FROM vib.receipts;"
         ReceiptsBindingSource.DataSource = GetTable(PassbookQuery)
+    End Sub
+
+    Private Sub BankListUpdate()
+        Dim BankListQuery As String = "SELECT * FROM vib.banklist;"
+        BanklistBindingSource.DataSource = GetTable(BankListQuery)
     End Sub
 
 #Region "Dragging Function"
@@ -47,19 +51,19 @@
         MousePressedDown = False
     End Sub
 
-    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseDown
+    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs)
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseMove
+    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs)
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseUp
+    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs)
         MousePressedDown = False
     End Sub
 
@@ -110,6 +114,22 @@
     Private Sub WithdrawGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
+
+    Private Sub MenuGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseDown
+        MousePressedDown = True
+        lastLocation = e.Location
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseMove
+        If MousePressedDown = True Then
+            Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
+            Me.Update()
+        End If
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseUp
+        MousePressedDown = False
+    End Sub
 #End Region
 
 #Region "Menu Card"
@@ -119,26 +139,27 @@
         TransactionSelect.selected = False
         AddEmployeeSelect.selected = False
     End Sub
-    Private Sub BankTransferSelect_Click(sender As Object, e As EventArgs) Handles AddBankSelect.Click
+    Private Sub AddBankSelect_Click(sender As Object, e As EventArgs) Handles AddBankSelect.Click
         HomePage.SelectedTab() = AddBankTab
         MenuDeselectAll()
         AddBankSelect.selected = True
     End Sub
 
-    Private Sub EditPasswordSelect_Click(sender As Object, e As EventArgs) Handles EditBankSelect.Click
+    Private Sub EditBankSelect_Click(sender As Object, e As EventArgs) Handles EditBankSelect.Click
         HomePage.SelectedTab = EditBankTab
         MenuDeselectAll()
         EditBankSelect.selected = True
+        BankListUpdate()
     End Sub
 
-    Private Sub PassbookSelect_Click(sender As Object, e As EventArgs) Handles TransactionSelect.Click
+    Private Sub TransactionSelect_Click(sender As Object, e As EventArgs) Handles TransactionSelect.Click
         HomePage.SelectedTab = TransactionTab
         MenuDeselectAll()
         TransactionSelect.selected = True
         TransactionsUpdate()
     End Sub
 
-    Private Sub AddBeneficiarySelect_Click(sender As Object, e As EventArgs) Handles AddEmployeeSelect.Click
+    Private Sub AddEmployeeSelect_Click(sender As Object, e As EventArgs) Handles AddEmployeeSelect.Click
         MenuDeselectAll()
         AddEmployeeSelect.selected = True
         HomePage.SelectedTab = AddEmployeeTab
@@ -152,18 +173,17 @@
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
-        Dim Form As New AdminModule
-        Form.Close()
+        Me.Hide()
     End Sub
+
 #End Region
 
 #Region "Login Page"
 
     Private Sub LogInButton_Click(sender As Object, e As EventArgs) Handles LogInButton.Click
-        If LogIn(UsernameTextBox.Text, PasswordTextBox.Text, "emp") = 1 Then
+        If LogIn(UsernameTextBox.Text, PasswordTextBox.Text, "admin") = 1 Then
             ToolTip.Hide(UsernameTextBox)
             HomePage.SelectedTab = SelectionTab
-            Empid = UsernameTextBox.Text
             MenuCard.Show()
             LockStatus("Unlock")
             MainPage.SelectedTab() = HomeTab()
@@ -177,8 +197,6 @@
             LogInButton.Focus()
         End If
     End Sub
-
-
 
 #End Region
 
@@ -194,13 +212,17 @@
         AccDropdown.Items.AddRange(AccList)
         AccDropdown.SelectedIndex = 0
         Empname_txt.Text = cusdetails("First_Name") + " " + cusdetails("Mid_Name") + " " + cusdetails("Last_Name")
-        EmpMail_txt.Text = cusdetails("First_Name") + cusdetails("Last_Name") + EmpId_txt.Text.Substring(4)
+        EmpMail_txt.Text = cusdetails("First_Name") + cusdetails("Last_Name") + EmpId_txt.Text.Substring(4) + "@vib.com"
     End Sub
 
     Private Sub AddEmp_btn_Click(sender As Object, e As EventArgs) Handles AddEmp_btn.Click
         Dim arr(5) As String
         arr(0) = EmpId_txt.Text
         arr(1) = InputBox("Please Enter a Password")
+        While arr(1).Length < 8
+            MessageBox.Show("Password should be at least 8 characters")
+            arr(1) = InputBox("Please Enter a Password")
+        End While
         arr(2) = CusID_txt.Text
         arr(3) = AccDropdown.SelectedItem
         arr(4) = Empname_txt.Text
@@ -208,6 +230,11 @@
         If InsertSingleRow(arr, "empdetails") = 1 Then
             MessageBox.Show("Creation Succesful" & vbNewLine & "Your New Account " & arr(0) & " has been created")
             AddCus_lbl.Text = "ID:- " + arr(0)
+        End If
+
+        If AdminSwitch.Value = True Then
+            Dim adminarr As String() = {arr(0), arr(1)}
+            InsertSingleRow(adminarr, "adminlist")
         End If
     End Sub
 
@@ -225,9 +252,9 @@
         Dim row As Integer = BankDataGridView.CurrentRow.Index
         Branchno = BankDataGridView.Rows(row).Cells(0).Value
         Branchno_lbl.Text = Branchno
-        EditName_txt.Text = GetSingleField("Name", "bankdetails", "Branchno", Branchno)
-        EditStateDropdown.SelectedItem = GetSingleField("State", "bankdetails", "Branchno", Branchno)
-        EditCityDropdown.SelectedItem = GetSingleField("City", "bankdetails", "Branchno", Branchno)
+        EditName_txt.Text = GetSingleField("Name", "banklist", "Branchno", Branchno)
+        EditStateDropdown.SelectedItem = GetSingleField("State", "banklist", "Branchno", Branchno)
+        EditCityDropdown.SelectedItem = GetSingleField("City", "banklist", "Branchno", Branchno)
     End Sub
 
     Private Sub EditStateDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles EditStateDropdown.SelectedIndexChanged
@@ -238,20 +265,24 @@
     End Sub
 
     Private Sub UpdateName_btn_Click(sender As Object, e As EventArgs) Handles UpdateName_btn.Click
+        EditName_txt.Text = Capitalise(EditName_txt.Text)
         If UpdateSingleField("banklist", "Name", EditName_txt.Text, "Branchno", Branchno) = 1 Then
             MessageBox.Show("Edited succesfully")
+            BankListUpdate()
         End If
     End Sub
 
     Private Sub UpdateState_btn_Click(sender As Object, e As EventArgs) Handles UpdateState_btn.Click
         If UpdateSingleField("banklist", "State", EditStateDropdown.SelectedItem, "Branchno", Branchno) = 1 Then
             MessageBox.Show("Edited succesfully")
+            BankListUpdate()
         End If
     End Sub
 
     Private Sub UpdateCity_btn_Click(sender As Object, e As EventArgs) Handles UpdateCity_btn.Click
         If UpdateSingleField("banklist", "City", EditCityDropdown.SelectedItem, "Branchno", Branchno) = 1 Then
             MessageBox.Show("Edited succesfully")
+            BankListUpdate()
         End If
     End Sub
 
@@ -260,16 +291,21 @@
 #Region "Add Bank"
     Private Sub AddBank_Btn_Click(sender As Object, e As EventArgs) Handles AddBank_Btn.Click
 
-        Dim arr(4) As String
-        arr(0) = GetSno("banklist", "branchno")
-        arr(1) = BankName_txt.Text
-        While arr(1).Length < 5
-            arr(1) = "0" + arr(1)
+        Dim sno As String = GetSno("banklist", "branchno")
+        While sno.Length < 5
+            sno = "0" + sno
         End While
+        BankName_txt.Text = Capitalise(BankName_txt.Text)
+
+        Dim arr(4) As String
+        arr(0) = sno
+        arr(1) = BankName_txt.Text
         arr(2) = CityDropdown.SelectedItem
         arr(3) = StateDropdown.SelectedItem
-        arr(4) = "VIB" + arr(1)
+        arr(4) = "VIB" + arr(0)
         If InsertSingleRow(arr, "banklist") = 1 Then
+            Branchno_txt.Text = arr(0)
+            IFSC_txt.Text = arr(4)
             Dim msg = "Bank number " & Branchno_txt.Text & " " & BankName_txt.Text & " has been succesfully added"
             MessageBox.Show(msg)
         End If
@@ -282,4 +318,5 @@
     End Sub
 
 #End Region
+
 End Class

@@ -34,6 +34,22 @@
     End Sub
 
 #Region "Dragging Function"
+
+    Private Sub MenuGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseDown
+        MousePressedDown = True
+        lastLocation = e.Location
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseMove
+        If MousePressedDown = True Then
+            Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
+            Me.Update()
+        End If
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseUp
+        MousePressedDown = False
+    End Sub
     Private Sub LoginGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles LoginGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
@@ -50,19 +66,19 @@
         MousePressedDown = False
     End Sub
 
-    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseDown
+    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs)
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseMove
+    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs)
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles HomeGradientPanel.MouseUp
+    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs)
         MousePressedDown = False
     End Sub
 
@@ -119,7 +135,6 @@
     Private Sub MenuDeselectAll()
         DepositSelect.selected = False
         WithdrawSelect.selected = False
-        EditDetailsSelect.selected = False
         AddAccSelect.selected = False
     End Sub
     Private Sub AccnoDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AccnoDropdown.SelectedIndexChanged
@@ -146,11 +161,6 @@
         AccnoDropdown.Items.Clear()
         Wait(1)
         MenuCard.Hide()
-    End Sub
-    Private Sub EditDetailsSelect_Click(sender As Object, e As EventArgs) Handles EditDetailsSelect.Click
-        HomePage.SelectedTab = EditDetailsTab
-        MenuDeselectAll()
-        EditDetailsSelect.selected = True
     End Sub
 
     Private Sub AddAccSelect_Click(sender As Object, e As EventArgs) Handles AddAccSelect.Click
@@ -611,7 +621,7 @@
             Withdraw1_Txt.Text = amt
         Else
             ToolTip.Show("Enter a positive Integer Value", WithdrawCal_txt)
-            End If
+        End If
     End Sub
 
 #End Region
@@ -635,7 +645,7 @@
         Step1_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Indeterminate
         Step2_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked
         Step3_chk.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked
-        Step4_btn.Enabled = False
+        Step4_btn.Hide()
         MainPage.SelectedTab() = HomeTab
     End Sub
 
@@ -690,6 +700,10 @@
         Dim arr(12) As String
         arr(0) = GetID(8, "cusdetails", "Cus_ID")
         arr(1) = InputBox("Please Enter a Password")
+        While arr(1).Length < 8
+            MessageBox.Show("Password should be at least 8 characters")
+            arr(1) = InputBox("Please Enter a Password")
+        End While
         arr(2) = FName_txt.Text
         arr(3) = MName_txt.Text
         arr(4) = LName_txt.Text

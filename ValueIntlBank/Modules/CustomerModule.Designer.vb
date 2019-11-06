@@ -123,7 +123,7 @@ Partial Class CustomerModule
         Me.Name_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.Accno_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
-        Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.MenuGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Hamburger_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Balance_lbl = New System.Windows.Forms.Label()
         Me.AccType_lbl = New System.Windows.Forms.Label()
@@ -155,7 +155,7 @@ Partial Class CustomerModule
         Me.AddBenificiaryTab.SuspendLayout()
         Me.AddCusGradientPanel.SuspendLayout()
         Me.MenuCard.SuspendLayout()
-        Me.BunifuGradientPanel3.SuspendLayout()
+        Me.MenuGradientPanel.SuspendLayout()
         CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -1631,7 +1631,7 @@ Partial Class CustomerModule
         Me.MenuCard.BorderRadius = 5
         Me.MenuCard.BottomSahddow = False
         Me.MenuCard.color = System.Drawing.Color.SlateBlue
-        Me.MenuCard.Controls.Add(Me.BunifuGradientPanel3)
+        Me.MenuCard.Controls.Add(Me.MenuGradientPanel)
         Me.MenuCard.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuCard.LeftSahddow = False
         Me.MenuCard.Location = New System.Drawing.Point(0, 0)
@@ -1642,31 +1642,31 @@ Partial Class CustomerModule
         Me.MenuCard.Size = New System.Drawing.Size(309, 858)
         Me.MenuCard.TabIndex = 0
         '
-        'BunifuGradientPanel3
+        'MenuGradientPanel
         '
-        Me.BunifuGradientPanel3.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel3.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuGradientPanel3.Controls.Add(Me.Hamburger_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.Balance_lbl)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccType_lbl)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccnoDropdown)
-        Me.BunifuGradientPanel3.Controls.Add(Me.Close_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.LogOut_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AddBeneficiarySelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.PassbookSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.EditPasswordSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.BankTransferSelect)
-        Me.BunifuGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.MediumPurple
-        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.Purple
-        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.DarkOrchid
-        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.BunifuGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
-        Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
-        Me.BunifuGradientPanel3.Quality = 10
-        Me.BunifuGradientPanel3.Size = New System.Drawing.Size(309, 858)
-        Me.BunifuGradientPanel3.TabIndex = 3
+        Me.MenuGradientPanel.BackgroundImage = CType(resources.GetObject("MenuGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.MenuGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MenuGradientPanel.Controls.Add(Me.Hamburger_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.Balance_lbl)
+        Me.MenuGradientPanel.Controls.Add(Me.AccType_lbl)
+        Me.MenuGradientPanel.Controls.Add(Me.AccnoDropdown)
+        Me.MenuGradientPanel.Controls.Add(Me.Close_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.LogOut_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.AddBeneficiarySelect)
+        Me.MenuGradientPanel.Controls.Add(Me.PassbookSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.EditPasswordSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.BankTransferSelect)
+        Me.MenuGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MenuGradientPanel.GradientBottomLeft = System.Drawing.Color.MediumPurple
+        Me.MenuGradientPanel.GradientBottomRight = System.Drawing.Color.Purple
+        Me.MenuGradientPanel.GradientTopLeft = System.Drawing.Color.DarkOrchid
+        Me.MenuGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.MenuGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.MenuGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MenuGradientPanel.Name = "MenuGradientPanel"
+        Me.MenuGradientPanel.Quality = 10
+        Me.MenuGradientPanel.Size = New System.Drawing.Size(309, 858)
+        Me.MenuGradientPanel.TabIndex = 3
         '
         'Hamburger_Btn
         '
@@ -2013,8 +2013,8 @@ Partial Class CustomerModule
         Me.AddCusGradientPanel.ResumeLayout(False)
         Me.AddCusGradientPanel.PerformLayout()
         Me.MenuCard.ResumeLayout(False)
-        Me.BunifuGradientPanel3.ResumeLayout(False)
-        Me.BunifuGradientPanel3.PerformLayout()
+        Me.MenuGradientPanel.ResumeLayout(False)
+        Me.MenuGradientPanel.PerformLayout()
         CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -2032,7 +2032,7 @@ Partial Class CustomerModule
     Friend WithEvents HomePage As Bunifu.UI.WinForms.BunifuPages
     Friend WithEvents SelectionTab As TabPage
     Friend WithEvents MoneyTransferTab As TabPage
-    Friend WithEvents BunifuGradientPanel3 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents MenuGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents EditPasswordTab As TabPage
     Friend WithEvents PassbookTab As TabPage
     Friend WithEvents AddBenificiaryTab As TabPage

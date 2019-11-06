@@ -82,7 +82,6 @@ Partial Class AdminModule
         Me.HomeTab = New System.Windows.Forms.TabPage()
         Me.HomePage = New Bunifu.UI.WinForms.BunifuPages()
         Me.SelectionTab = New System.Windows.Forms.TabPage()
-        Me.HomeGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.AddBankTab = New System.Windows.Forms.TabPage()
         Me.DepositGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.IFSC_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
@@ -120,6 +119,8 @@ Partial Class AdminModule
         Me.ReceiptsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AddEmployeeTab = New System.Windows.Forms.TabPage()
         Me.AddCusGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.AdminSwitch = New Bunifu.Framework.UI.BunifuiOSSwitch()
         Me.AddEmpGen_btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.EmpMail_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.AddAcc_lbl = New System.Windows.Forms.Label()
@@ -130,7 +131,7 @@ Partial Class AdminModule
         Me.EmpId_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.CusID_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
-        Me.BunifuGradientPanel3 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.MenuGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.AccType_lbl = New System.Windows.Forms.Label()
         Me.Close_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.LogOut_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -148,7 +149,6 @@ Partial Class AdminModule
         CType(Me.BunifuPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.HomeTab.SuspendLayout()
         Me.HomePage.SuspendLayout()
-        Me.SelectionTab.SuspendLayout()
         Me.AddBankTab.SuspendLayout()
         Me.DepositGradientPanel.SuspendLayout()
         Me.EditBankTab.SuspendLayout()
@@ -163,7 +163,7 @@ Partial Class AdminModule
         Me.AddEmployeeTab.SuspendLayout()
         Me.AddCusGradientPanel.SuspendLayout()
         Me.MenuCard.SuspendLayout()
-        Me.BunifuGradientPanel3.SuspendLayout()
+        Me.MenuGradientPanel.SuspendLayout()
         CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -448,10 +448,10 @@ Partial Class AdminModule
         Me.HomePage.Multiline = True
         Me.HomePage.Name = "HomePage"
         Me.HomePage.Padding = New System.Drawing.Point(0, 0)
-        Me.HomePage.Page = Me.SelectionTab
-        Me.HomePage.PageIndex = 0
-        Me.HomePage.PageName = "SelectionTab"
-        Me.HomePage.PageTitle = "Home"
+        Me.HomePage.Page = Me.AddEmployeeTab
+        Me.HomePage.PageIndex = 4
+        Me.HomePage.PageName = "AddEmployeeTab"
+        Me.HomePage.PageTitle = "Add Employee"
         Me.HomePage.SelectedIndex = 0
         Me.HomePage.Size = New System.Drawing.Size(1342, 858)
         Me.HomePage.TabIndex = 2
@@ -475,30 +475,13 @@ Partial Class AdminModule
         '
         'SelectionTab
         '
-        Me.SelectionTab.Controls.Add(Me.HomeGradientPanel)
+        Me.SelectionTab.BackColor = System.Drawing.Color.Magenta
         Me.SelectionTab.Location = New System.Drawing.Point(4, 4)
         Me.SelectionTab.Margin = New System.Windows.Forms.Padding(0)
         Me.SelectionTab.Name = "SelectionTab"
         Me.SelectionTab.Size = New System.Drawing.Size(1334, 832)
         Me.SelectionTab.TabIndex = 0
         Me.SelectionTab.Text = "Home"
-        Me.SelectionTab.UseVisualStyleBackColor = True
-        '
-        'HomeGradientPanel
-        '
-        Me.HomeGradientPanel.BackgroundImage = CType(resources.GetObject("HomeGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.HomeGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.HomeGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HomeGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.HomeGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.HomeGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.HomeGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.HomeGradientPanel.Location = New System.Drawing.Point(0, 0)
-        Me.HomeGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.HomeGradientPanel.Name = "HomeGradientPanel"
-        Me.HomeGradientPanel.Quality = 10
-        Me.HomeGradientPanel.Size = New System.Drawing.Size(1334, 832)
-        Me.HomeGradientPanel.TabIndex = 3
         '
         'AddBankTab
         '
@@ -552,6 +535,7 @@ Partial Class AdminModule
         Me.IFSC_txt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.IFSC_txt.DefaultFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
         Me.IFSC_txt.DefaultText = ""
+        Me.IFSC_txt.Enabled = False
         Me.IFSC_txt.FillColor = System.Drawing.Color.White
         Me.IFSC_txt.HideSelection = True
         Me.IFSC_txt.IconLeft = Nothing
@@ -588,7 +572,7 @@ Partial Class AdminModule
         Me.IFSC_txt.OnIdleState = StateProperties12
         Me.IFSC_txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.IFSC_txt.PlaceholderForeColor = System.Drawing.Color.Silver
-        Me.IFSC_txt.PlaceholderText = ""
+        Me.IFSC_txt.PlaceholderText = "IFSC code will be generated"
         Me.IFSC_txt.ReadOnly = False
         Me.IFSC_txt.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.IFSC_txt.SelectedText = ""
@@ -602,7 +586,7 @@ Partial Class AdminModule
         Me.IFSC_txt.TextMarginBottom = 0
         Me.IFSC_txt.TextMarginLeft = 5
         Me.IFSC_txt.TextMarginTop = 0
-        Me.IFSC_txt.TextPlaceholder = ""
+        Me.IFSC_txt.TextPlaceholder = "IFSC code will be generated"
         Me.IFSC_txt.UseSystemPasswordChar = False
         Me.IFSC_txt.WordWrap = True
         '
@@ -783,6 +767,7 @@ Partial Class AdminModule
         Me.Branchno_txt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Branchno_txt.DefaultFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
         Me.Branchno_txt.DefaultText = ""
+        Me.Branchno_txt.Enabled = False
         Me.Branchno_txt.FillColor = System.Drawing.Color.White
         Me.Branchno_txt.HideSelection = True
         Me.Branchno_txt.IconLeft = Nothing
@@ -819,7 +804,7 @@ Partial Class AdminModule
         Me.Branchno_txt.OnIdleState = StateProperties20
         Me.Branchno_txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Branchno_txt.PlaceholderForeColor = System.Drawing.Color.Silver
-        Me.Branchno_txt.PlaceholderText = ""
+        Me.Branchno_txt.PlaceholderText = "Branch number will be generated"
         Me.Branchno_txt.ReadOnly = False
         Me.Branchno_txt.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.Branchno_txt.SelectedText = ""
@@ -833,7 +818,7 @@ Partial Class AdminModule
         Me.Branchno_txt.TextMarginBottom = 0
         Me.Branchno_txt.TextMarginLeft = 5
         Me.Branchno_txt.TextMarginTop = 0
-        Me.Branchno_txt.TextPlaceholder = ""
+        Me.Branchno_txt.TextPlaceholder = "Branch number will be generated"
         Me.Branchno_txt.UseSystemPasswordChar = False
         Me.Branchno_txt.WordWrap = True
         '
@@ -1356,6 +1341,8 @@ Partial Class AdminModule
         Me.AddCusGradientPanel.BackColor = System.Drawing.Color.Transparent
         Me.AddCusGradientPanel.BackgroundImage = CType(resources.GetObject("AddCusGradientPanel.BackgroundImage"), System.Drawing.Image)
         Me.AddCusGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AddCusGradientPanel.Controls.Add(Me.Label1)
+        Me.AddCusGradientPanel.Controls.Add(Me.AdminSwitch)
         Me.AddCusGradientPanel.Controls.Add(Me.AddEmpGen_btn)
         Me.AddCusGradientPanel.Controls.Add(Me.EmpMail_txt)
         Me.AddCusGradientPanel.Controls.Add(Me.AddAcc_lbl)
@@ -1376,6 +1363,31 @@ Partial Class AdminModule
         Me.AddCusGradientPanel.Quality = 10
         Me.AddCusGradientPanel.Size = New System.Drawing.Size(271, 832)
         Me.AddCusGradientPanel.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Purple
+        Me.Label1.Location = New System.Drawing.Point(10, 546)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(209, 37)
+        Me.Label1.TabIndex = 41
+        Me.Label1.Text = "Admin Status"
+        '
+        'AdminSwitch
+        '
+        Me.AdminSwitch.BackColor = System.Drawing.Color.Transparent
+        Me.AdminSwitch.BackgroundImage = CType(resources.GetObject("AdminSwitch.BackgroundImage"), System.Drawing.Image)
+        Me.AdminSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AdminSwitch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AdminSwitch.Location = New System.Drawing.Point(225, 554)
+        Me.AdminSwitch.Name = "AdminSwitch"
+        Me.AdminSwitch.OffColor = System.Drawing.Color.Gray
+        Me.AdminSwitch.OnColor = System.Drawing.Color.DarkOrchid
+        Me.AdminSwitch.Size = New System.Drawing.Size(35, 20)
+        Me.AdminSwitch.TabIndex = 40
+        Me.AdminSwitch.Value = False
         '
         'AddEmpGen_btn
         '
@@ -1430,7 +1442,7 @@ Partial Class AdminModule
         Me.EmpMail_txt.IconRight = Nothing
         Me.EmpMail_txt.IconRightCursor = System.Windows.Forms.Cursors.IBeam
         Me.EmpMail_txt.Lines = New String(-1) {}
-        Me.EmpMail_txt.Location = New System.Drawing.Point(17, 352)
+        Me.EmpMail_txt.Location = New System.Drawing.Point(17, 384)
         Me.EmpMail_txt.MaxLength = 32767
         Me.EmpMail_txt.MinimumSize = New System.Drawing.Size(100, 35)
         Me.EmpMail_txt.Modified = False
@@ -1493,7 +1505,7 @@ Partial Class AdminModule
         Me.AddCus_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddCus_lbl.ForeColor = System.Drawing.Color.Purple
         Me.AddCus_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.AddCus_lbl.Location = New System.Drawing.Point(214, 610)
+        Me.AddCus_lbl.Location = New System.Drawing.Point(28, 589)
         Me.AddCus_lbl.Name = "AddCus_lbl"
         Me.AddCus_lbl.Size = New System.Drawing.Size(0, 37)
         Me.AddCus_lbl.TabIndex = 32
@@ -1516,7 +1528,7 @@ Partial Class AdminModule
         Me.AddEmp_btn.IdleFillColor = System.Drawing.Color.White
         Me.AddEmp_btn.IdleForecolor = System.Drawing.Color.Violet
         Me.AddEmp_btn.IdleLineColor = System.Drawing.Color.Violet
-        Me.AddEmp_btn.Location = New System.Drawing.Point(15, 523)
+        Me.AddEmp_btn.Location = New System.Drawing.Point(15, 631)
         Me.AddEmp_btn.Margin = New System.Windows.Forms.Padding(5)
         Me.AddEmp_btn.Name = "AddEmp_btn"
         Me.AddEmp_btn.Size = New System.Drawing.Size(241, 58)
@@ -1548,7 +1560,7 @@ Partial Class AdminModule
         Me.AccDropdown.ItemHeight = 40
         Me.AccDropdown.ItemHighLightColor = System.Drawing.Color.Thistle
         Me.AccDropdown.Items.AddRange(New Object() {"Same Bank", "Other Bank"})
-        Me.AccDropdown.Location = New System.Drawing.Point(17, 428)
+        Me.AccDropdown.Location = New System.Drawing.Point(17, 460)
         Me.AccDropdown.Name = "AccDropdown"
         Me.AccDropdown.Size = New System.Drawing.Size(242, 46)
         Me.AccDropdown.TabIndex = 30
@@ -1581,7 +1593,7 @@ Partial Class AdminModule
         Me.Empname_txt.IconRight = Nothing
         Me.Empname_txt.IconRightCursor = System.Windows.Forms.Cursors.IBeam
         Me.Empname_txt.Lines = New String(-1) {}
-        Me.Empname_txt.Location = New System.Drawing.Point(13, 277)
+        Me.Empname_txt.Location = New System.Drawing.Point(13, 309)
         Me.Empname_txt.MaxLength = 32767
         Me.Empname_txt.MinimumSize = New System.Drawing.Size(100, 35)
         Me.Empname_txt.Modified = False
@@ -1655,7 +1667,7 @@ Partial Class AdminModule
         Me.EmpId_txt.IconRight = Nothing
         Me.EmpId_txt.IconRightCursor = System.Windows.Forms.Cursors.IBeam
         Me.EmpId_txt.Lines = New String(-1) {}
-        Me.EmpId_txt.Location = New System.Drawing.Point(15, 211)
+        Me.EmpId_txt.Location = New System.Drawing.Point(15, 243)
         Me.EmpId_txt.MaxLength = 32767
         Me.EmpId_txt.MinimumSize = New System.Drawing.Size(100, 35)
         Me.EmpId_txt.Modified = False
@@ -1780,7 +1792,7 @@ Partial Class AdminModule
         Me.MenuCard.BorderRadius = 5
         Me.MenuCard.BottomSahddow = False
         Me.MenuCard.color = System.Drawing.Color.SlateBlue
-        Me.MenuCard.Controls.Add(Me.BunifuGradientPanel3)
+        Me.MenuCard.Controls.Add(Me.MenuGradientPanel)
         Me.MenuCard.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuCard.LeftSahddow = False
         Me.MenuCard.Location = New System.Drawing.Point(0, 0)
@@ -1791,28 +1803,28 @@ Partial Class AdminModule
         Me.MenuCard.Size = New System.Drawing.Size(327, 858)
         Me.MenuCard.TabIndex = 0
         '
-        'BunifuGradientPanel3
+        'MenuGradientPanel
         '
-        Me.BunifuGradientPanel3.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel3.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuGradientPanel3.Controls.Add(Me.AccType_lbl)
-        Me.BunifuGradientPanel3.Controls.Add(Me.Close_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.LogOut_Btn)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AddEmployeeSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.TransactionSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.EditBankSelect)
-        Me.BunifuGradientPanel3.Controls.Add(Me.AddBankSelect)
-        Me.BunifuGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.MediumPurple
-        Me.BunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.Purple
-        Me.BunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.DarkOrchid
-        Me.BunifuGradientPanel3.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.BunifuGradientPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.BunifuGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
-        Me.BunifuGradientPanel3.Name = "BunifuGradientPanel3"
-        Me.BunifuGradientPanel3.Quality = 10
-        Me.BunifuGradientPanel3.Size = New System.Drawing.Size(327, 858)
-        Me.BunifuGradientPanel3.TabIndex = 3
+        Me.MenuGradientPanel.BackgroundImage = CType(resources.GetObject("MenuGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.MenuGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MenuGradientPanel.Controls.Add(Me.AccType_lbl)
+        Me.MenuGradientPanel.Controls.Add(Me.Close_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.LogOut_Btn)
+        Me.MenuGradientPanel.Controls.Add(Me.AddEmployeeSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.TransactionSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.EditBankSelect)
+        Me.MenuGradientPanel.Controls.Add(Me.AddBankSelect)
+        Me.MenuGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MenuGradientPanel.GradientBottomLeft = System.Drawing.Color.MediumPurple
+        Me.MenuGradientPanel.GradientBottomRight = System.Drawing.Color.Purple
+        Me.MenuGradientPanel.GradientTopLeft = System.Drawing.Color.DarkOrchid
+        Me.MenuGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.MenuGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.MenuGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.MenuGradientPanel.Name = "MenuGradientPanel"
+        Me.MenuGradientPanel.Quality = 10
+        Me.MenuGradientPanel.Size = New System.Drawing.Size(327, 858)
+        Me.MenuGradientPanel.TabIndex = 3
         '
         'AccType_lbl
         '
@@ -2075,7 +2087,6 @@ Partial Class AdminModule
         CType(Me.BunifuPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.HomeTab.ResumeLayout(False)
         Me.HomePage.ResumeLayout(False)
-        Me.SelectionTab.ResumeLayout(False)
         Me.AddBankTab.ResumeLayout(False)
         Me.DepositGradientPanel.ResumeLayout(False)
         Me.EditBankTab.ResumeLayout(False)
@@ -2092,8 +2103,8 @@ Partial Class AdminModule
         Me.AddCusGradientPanel.ResumeLayout(False)
         Me.AddCusGradientPanel.PerformLayout()
         Me.MenuCard.ResumeLayout(False)
-        Me.BunifuGradientPanel3.ResumeLayout(False)
-        Me.BunifuGradientPanel3.PerformLayout()
+        Me.MenuGradientPanel.ResumeLayout(False)
+        Me.MenuGradientPanel.PerformLayout()
         CType(Me.ReceiptsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -2111,7 +2122,7 @@ Partial Class AdminModule
     Friend WithEvents HomePage As Bunifu.UI.WinForms.BunifuPages
     Friend WithEvents SelectionTab As TabPage
     Friend WithEvents AddBankTab As TabPage
-    Friend WithEvents BunifuGradientPanel3 As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents MenuGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents EditBankTab As TabPage
     Friend WithEvents TransactionTab As TabPage
     Friend WithEvents AddEmployeeTab As TabPage
@@ -2124,7 +2135,6 @@ Partial Class AdminModule
     Friend WithEvents LogOut_Btn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents AddEmployeeSelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents WithdrawGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents HomeGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents EditDetailsGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents EmpId_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents CusID_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
@@ -2168,4 +2178,6 @@ Partial Class AdminModule
     Friend WithEvents UpdateCity_btn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents UpdateState_btn As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents UpdateName_btn As Bunifu.Framework.UI.BunifuThinButton2
+    Friend WithEvents Label1 As Label
+    Friend WithEvents AdminSwitch As Bunifu.Framework.UI.BunifuiOSSwitch
 End Class

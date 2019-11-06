@@ -67,11 +67,14 @@
     Function EditPassword(ByVal id As String, ByVal newpassword As String, ByVal table As String)
         Dim Success As Integer = 0
         If table = "cus" Then
-            UpdateSingleField(table, "password", newpassword, "Cus_id", id)
+            UpdateSingleField("cusdetails", "password", newpassword, "Cus_id", id)
             Success = 1
         ElseIf table = "emp" Then
-            UpdateSingleField(table, "password", newpassword, "Emp_id", id)
+            UpdateSingleField("empdetails", "password", newpassword, "Emp_id", id)
             Success = 1
+        End If
+        If Success = 1 Then
+            MessageBox.Show("Password has been updated succesfully")
         End If
         Return Success
     End Function

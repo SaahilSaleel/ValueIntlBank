@@ -24,10 +24,10 @@ Partial Class Hub
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hub))
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.AdminSelect_btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.EmployeeSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.SelfServiceSelect = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.CustomerServiceSelect = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.AdminSelect_btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +49,43 @@ Partial Class Hub
         Me.BunifuGradientPanel1.Quality = 10
         Me.BunifuGradientPanel1.Size = New System.Drawing.Size(241, 381)
         Me.BunifuGradientPanel1.TabIndex = 0
+        '
+        'AdminSelect_btn
+        '
+        Me.AdminSelect_btn.Active = False
+        Me.AdminSelect_btn.Activecolor = System.Drawing.Color.DarkViolet
+        Me.AdminSelect_btn.BackColor = System.Drawing.Color.DarkOrchid
+        Me.AdminSelect_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AdminSelect_btn.BorderRadius = 0
+        Me.AdminSelect_btn.ButtonText = "Admin"
+        Me.AdminSelect_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AdminSelect_btn.DisabledColor = System.Drawing.Color.Gray
+        Me.AdminSelect_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.AdminSelect_btn.Iconcolor = System.Drawing.Color.Transparent
+        Me.AdminSelect_btn.Iconimage = Nothing
+        Me.AdminSelect_btn.Iconimage_right = Nothing
+        Me.AdminSelect_btn.Iconimage_right_Selected = Nothing
+        Me.AdminSelect_btn.Iconimage_Selected = Nothing
+        Me.AdminSelect_btn.IconMarginLeft = 0
+        Me.AdminSelect_btn.IconMarginRight = 0
+        Me.AdminSelect_btn.IconRightVisible = False
+        Me.AdminSelect_btn.IconRightZoom = 0R
+        Me.AdminSelect_btn.IconVisible = True
+        Me.AdminSelect_btn.IconZoom = 90.0R
+        Me.AdminSelect_btn.IsTab = False
+        Me.AdminSelect_btn.Location = New System.Drawing.Point(0, 234)
+        Me.AdminSelect_btn.Margin = New System.Windows.Forms.Padding(4)
+        Me.AdminSelect_btn.Name = "AdminSelect_btn"
+        Me.AdminSelect_btn.Normalcolor = System.Drawing.Color.DarkOrchid
+        Me.AdminSelect_btn.OnHovercolor = System.Drawing.Color.DarkViolet
+        Me.AdminSelect_btn.OnHoverTextColor = System.Drawing.Color.White
+        Me.AdminSelect_btn.selected = False
+        Me.AdminSelect_btn.Size = New System.Drawing.Size(305, 59)
+        Me.AdminSelect_btn.TabIndex = 7
+        Me.AdminSelect_btn.Text = "Admin"
+        Me.AdminSelect_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AdminSelect_btn.Textcolor = System.Drawing.Color.Black
+        Me.AdminSelect_btn.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'EmployeeSelect
         '
@@ -160,43 +197,6 @@ Partial Class Hub
         Me.CustomerServiceSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CustomerServiceSelect.Textcolor = System.Drawing.Color.Black
         Me.CustomerServiceSelect.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'AdminSelect_btn
-        '
-        Me.AdminSelect_btn.Active = False
-        Me.AdminSelect_btn.Activecolor = System.Drawing.Color.DarkViolet
-        Me.AdminSelect_btn.BackColor = System.Drawing.Color.DarkOrchid
-        Me.AdminSelect_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.AdminSelect_btn.BorderRadius = 0
-        Me.AdminSelect_btn.ButtonText = "Admin"
-        Me.AdminSelect_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AdminSelect_btn.DisabledColor = System.Drawing.Color.Gray
-        Me.AdminSelect_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.AdminSelect_btn.Iconcolor = System.Drawing.Color.Transparent
-        Me.AdminSelect_btn.Iconimage = Nothing
-        Me.AdminSelect_btn.Iconimage_right = Nothing
-        Me.AdminSelect_btn.Iconimage_right_Selected = Nothing
-        Me.AdminSelect_btn.Iconimage_Selected = Nothing
-        Me.AdminSelect_btn.IconMarginLeft = 0
-        Me.AdminSelect_btn.IconMarginRight = 0
-        Me.AdminSelect_btn.IconRightVisible = False
-        Me.AdminSelect_btn.IconRightZoom = 0R
-        Me.AdminSelect_btn.IconVisible = True
-        Me.AdminSelect_btn.IconZoom = 90.0R
-        Me.AdminSelect_btn.IsTab = False
-        Me.AdminSelect_btn.Location = New System.Drawing.Point(0, 234)
-        Me.AdminSelect_btn.Margin = New System.Windows.Forms.Padding(4)
-        Me.AdminSelect_btn.Name = "AdminSelect_btn"
-        Me.AdminSelect_btn.Normalcolor = System.Drawing.Color.DarkOrchid
-        Me.AdminSelect_btn.OnHovercolor = System.Drawing.Color.DarkViolet
-        Me.AdminSelect_btn.OnHoverTextColor = System.Drawing.Color.White
-        Me.AdminSelect_btn.selected = False
-        Me.AdminSelect_btn.Size = New System.Drawing.Size(305, 59)
-        Me.AdminSelect_btn.TabIndex = 7
-        Me.AdminSelect_btn.Text = "Admin"
-        Me.AdminSelect_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AdminSelect_btn.Textcolor = System.Drawing.Color.Black
-        Me.AdminSelect_btn.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Hub
         '

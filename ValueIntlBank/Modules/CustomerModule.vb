@@ -30,6 +30,22 @@
     End Sub
 
 #Region "Dragging Function"
+
+    Private Sub MenuGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseDown
+        MousePressedDown = True
+        lastLocation = e.Location
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseMove
+        If MousePressedDown = True Then
+            Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
+            Me.Update()
+        End If
+    End Sub
+
+    Private Sub MenuGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseUp
+        MousePressedDown = False
+    End Sub
     Private Sub LoginGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles LoginGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
@@ -250,6 +266,7 @@
         If BankTransfer(Accno, TransferAmount_txt.Text, Receiver, TransferComment_txt.Text) = 1 Then
             Dim msg = "Rs " & TransferAmount_txt.Text & " has been succesfully transferred to receiver AccNo:- " & BeneficiaryDropdown.SelectedItem
             MessageBox.Show(msg)
+            BalanceUpdate()
         End If
     End Sub
 
@@ -268,12 +285,18 @@
     End Sub
 
     Private Sub EditPassword_btn_Click(sender As Object, e As EventArgs) Handles EditPassword_btn.Click
-        If OldPassword_txt.Text IsNot cusdetails("Password") Then
+        If String.Compare(OldPassword_txt.Text, cusdetails("Password")) <> 0 Then
             MessageBox.Show("Old password is Incorrect")
             Exit Sub
         End If
+
         If NewPassword_txt.Text.Length < 8 Then
-            MessageBox.Show("Too Short")
+            MessageBox.Show("Password should be at least 8 characters")
+            Exit Sub
+        End If
+
+        If String.Compare(NewPassword_txt.Text, ConfirmNewPassword_txt.Text) <> 0 Then
+            MessageBox.Show("Passwords dont match")
             Exit Sub
         End If
         EditPassword(Cusid, NewPassword_txt.Text, "cus")

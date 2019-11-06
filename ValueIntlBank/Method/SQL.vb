@@ -17,6 +17,8 @@ Module SQL
                 Query = "select * from vib.cusdetails where Cus_ID='" & user & "' and password='" & pass & "' "
             ElseIf table = "emp" Then
                 Query = "select * from vib.empdetails where Emp_ID='" & user & "' and password='" & pass & "' "
+            ElseIf table = "admin" Then
+                Query = "select * from vib.adminlist where username='" & user & "' and password='" & pass & "' "
             End If
             COMMAND = New MySqlCommand(Query, MysqlConn)
             READER = COMMAND.ExecuteReader
@@ -333,7 +335,7 @@ Module SQL
     End Function
 
     Function UpdateSingleField(ByVal table As String, ByVal updatecol As String, ByVal updateVal As String, ByVal conditionCol As String, ByVal conditionVal As String) As Integer
-        Dim query As String = "Update " + table + " Set " + updatecol + " = " + updateVal + " where " + conditionCol + " = " + conditionVal
+        Dim query As String = "Update " + table + " Set " + updatecol + " = '" + updateVal + "' where " + conditionCol + " = '" + conditionVal + "'"
         Return ExecuteQuery(query)
     End Function
 
