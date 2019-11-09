@@ -1,4 +1,4 @@
-﻿Public Class EmpCusModule
+﻿Public Class CustomerServiceModule
     Dim MousePressedDown As Boolean
     Dim lastLocation As Point
     Dim Cusid As String
@@ -172,7 +172,7 @@
 
     Private Sub AccTypeCreate_Btn_Click(sender As Object, e As EventArgs) Handles AccTypeCreate_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(8, "bankacc", "Accno")
+        arr(0) = GetID(12, "bankacc", "Accno")
         arr(1) = cusdetails("First_Name")
         arr(2) = cusdetails("Mid_Name")
         arr(3) = cusdetails("Last_Name")
@@ -192,7 +192,7 @@
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
-        Dim Form As New EmpCusModule
+        Dim Form As New CustomerServiceModule
         Form.Close()
     End Sub
 #End Region
@@ -290,7 +290,7 @@
 
     Private Sub Deposit_Btn_Click(sender As Object, e As EventArgs) Handles Deposit_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(8, "receipts", "Trans_ID")
+        arr(0) = GetID(12, "receipts", "Trans_ID")
         arr(1) = DepositTotalInr
         arr(2) = "Deposit"
         arr(3) = ""
@@ -456,7 +456,7 @@
 
     Private Sub Withdraw_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(8, "receipts", "Trans_ID")
+        arr(0) = GetID(12, "receipts", "Trans_ID")
         arr(1) = WithdrawTotalInr
         arr(2) = "Withdraw"
         arr(3) = Cusid
@@ -698,23 +698,61 @@
 
     Private Sub AddCus_btn_Click(sender As Object, e As EventArgs) Handles AddCus_btn.Click
         Dim arr(12) As String
-        arr(0) = GetID(8, "cusdetails", "Cus_ID")
+
+        arr(2) = FName_txt.Text
+        If arr(2).Length < 1 Then
+            ToolTip.Show("Please Enter a name", FName_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(FName_txt)
+        End If
+        arr(3) = MName_txt.Text
+        arr(4) = LName_txt.Text
+        If arr(4).Length < 1 Then
+            ToolTip.Show("Please Enter a name", LName_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(LName_txt)
+        End If
+        arr(5) = CityDropdown.SelectedItem
+        arr(6) = StateDropdown.SelectedItem
+        arr(7) = Address_txt.Text
+        If arr(7).Length < 1 Then
+            ToolTip.Show("Please Enter an address", Address_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(Address_txt)
+        End If
+        arr(8) = Pincode_txt.Text
+        If arr(8).Length <> 7 Then
+            ToolTip.Show("Please Enter a 7 digit pincode", Pincode_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(Pincode_txt)
+        End If
+        arr(9) = Phone_txt.Text
+        If arr(9).Length <> 10 Then
+            ToolTip.Show("Please Enter a 10 digit phone number", Phone_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(Phone_txt)
+        End If
+        arr(10) = DOB_DatePicker.Value.ToString("yyyy-MM-dd")
+        If DOB_DatePicker.Value.Year > (Date.Today.Year - 18) Then
+            ToolTip.Show("You must be 18 years of age at least", DOB_DatePicker)
+            Exit Sub
+        Else
+            ToolTip.Hide(DOB_DatePicker)
+        End If
+        arr(11) = GetChar(GetGroupBoxCheckedButton(SexGroupBox).Name, 1)
+        arr(12) = BranchDropdown.SelectedItem
+
+        arr(0) = GetID(12, "cusdetails", "Cus_ID")
         arr(1) = InputBox("Please Enter a Password")
         While arr(1).Length < 8
             MessageBox.Show("Password should be at least 8 characters")
             arr(1) = InputBox("Please Enter a Password")
         End While
-        arr(2) = FName_txt.Text
-        arr(3) = MName_txt.Text
-        arr(4) = LName_txt.Text
-        arr(5) = CityDropdown.SelectedItem
-        arr(6) = StateDropdown.SelectedItem
-        arr(7) = Address_txt.Text
-        arr(8) = Pincode_txt.Text
-        arr(9) = Phone_txt.Text
-        arr(10) = DOB_DatePicker.Value.ToString("yyyy-MM-dd")
-        arr(11) = GetChar(GetGroupBoxCheckedButton(SexGroupBox).Name, 1)
-        arr(12) = BranchDropdown.SelectedItem
 
         If InsertSingleRow(arr, "cusdetails") = 1 Then
             MessageBox.Show("Creation Succesful" & vbNewLine & "Your New Account " & arr(0) & " has been created")
@@ -730,7 +768,7 @@
 
     Private Sub CreateAcc_Btn_Click(sender As Object, e As EventArgs) Handles CreateAcc_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(8, "bankacc", "Accno")
+        arr(0) = GetID(12, "bankacc", "Accno")
         arr(1) = cusdetails("First_Name")
         arr(2) = cusdetails("Mid_Name")
         arr(3) = cusdetails("Last_Name")

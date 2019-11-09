@@ -1,4 +1,4 @@
-﻿Public Class CustomerModule
+﻿Public Class SelfServiceModule
     Dim MousePressedDown As Boolean
     Dim lastLocation As Point
     Dim Cusid As String
@@ -46,12 +46,12 @@
     Private Sub MenuGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
-    Private Sub LoginGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles LoginGradientPanel.MouseDown
+    Private Sub LoginGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles LogInGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub LoginGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles LoginGradientPanel.MouseMove
+    Private Sub LoginGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles LogInGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
@@ -62,69 +62,93 @@
         MousePressedDown = False
     End Sub
 
-    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs)
+    Private Sub AddBeneficiaryGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles AddBeneficiaryGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs)
+    Private Sub AddBeneficiaryGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles AddBeneficiaryGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs)
+    Private Sub AddBeneficiaryGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles AddBeneficiaryGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles AddCusGradientPanel.MouseDown
+    Private Sub TransferGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles TransferGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles AddCusGradientPanel.MouseMove
+    Private Sub TransferGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles TransferGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles AddCusGradientPanel.MouseUp
+    Private Sub TransferGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles TransferGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub DepositGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseDown
+    Private Sub EditPasswordGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles EditPasswordGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub DepositGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseMove
+    Private Sub EditPasswordGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles EditPasswordGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub DepositGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseUp
+    Private Sub EditPasswordGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles EditPasswordGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub WithdrawGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseDown
+    Private Sub PassbookGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles PassbookGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub WithdrawGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseMove
+    Private Sub PassbookGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles PassbookGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub WithdrawGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseUp
+    Private Sub PassbookGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles PassbookGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
+#End Region
+
+#Region "Reset"
+
+    Private Sub EditPassReset()
+        OldPassword_txt.Text = ""
+        NewPassword_txt.Text = ""
+        ConfirmNewPassword_txt.Text = ""
+    End Sub
+    Private Sub TransferReset()
+        BeneficiaryDropdown.SelectedIndex = 0
+        TransferComment_txt.Text = ""
+        TransferAmount_txt.Text = ""
+    End Sub
+
+    Private Sub AddBenificiaryReset()
+        BankDropdown.SelectedIndex = 0
+        Accno_txt.Text = ""
+        Name_txt.Text = ""
+        Nickname_txt.Text = ""
+        IFSC_txt.Text = ""
+        Bank_txt.Text = ""
+    End Sub
+
 #End Region
 
 #Region "Menu Card"
@@ -152,12 +176,14 @@
 
         HomePage.SelectedTab() = MoneyTransferTab
         MenuDeselectAll()
+        TransferReset()
         BankTransferSelect.selected = True
     End Sub
 
     Private Sub EditPasswordSelect_Click(sender As Object, e As EventArgs) Handles EditPasswordSelect.Click
         HomePage.SelectedTab = EditPasswordTab
         MenuDeselectAll()
+        EditPassReset()
         EditPasswordSelect.selected = True
     End Sub
     Private Sub LogOut_Btn_Click(sender As Object, e As EventArgs) Handles LogOut_Btn.Click
@@ -179,10 +205,11 @@
         MenuDeselectAll()
         AddBeneficiarySelect.selected = True
         HomePage.SelectedTab = AddBenificiaryTab
+        AddBenificiaryReset()
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
-        Dim Form As New CustomerModule
+        Dim Form As New SelfServiceModule
         Form.Close()
     End Sub
 #End Region
@@ -262,7 +289,7 @@
 
 #Region "Bank Transfer"
     Private Sub Transfer_Btn_Click(sender As Object, e As EventArgs) Handles Transfer_Btn.Click
-        Dim Receiver As Integer = CInt(BeneficiaryDropdown.SelectedItem.ToString.Substring(0, 8))
+        Dim Receiver As Integer = CInt(BeneficiaryDropdown.SelectedItem.ToString.Substring(0, 12))
         If BankTransfer(Accno, TransferAmount_txt.Text, Receiver, TransferComment_txt.Text) = 1 Then
             Dim msg = "Rs " & TransferAmount_txt.Text & " has been succesfully transferred to receiver AccNo:- " & BeneficiaryDropdown.SelectedItem
             MessageBox.Show(msg)
@@ -277,15 +304,13 @@
     Private Sub ConfirmNewPassword_txt_TextChanged(sender As Object, e As EventArgs) Handles ConfirmNewPassword_txt.TextChanged
         If ConfirmNewPassword_txt.Text IsNot NewPassword_txt.Text Then
             ToolTip.Show("Does not match", ConfirmNewPassword_txt)
-            EditPassword_btn.Enabled = False
         Else
             ToolTip.Hide(ConfirmNewPassword_txt)
-            EditPassword_btn.Enabled = True
         End If
     End Sub
 
     Private Sub EditPassword_btn_Click(sender As Object, e As EventArgs) Handles EditPassword_btn.Click
-        If String.Compare(OldPassword_txt.Text, cusdetails("Password")) <> 0 Then
+        If String.Equals(OldPassword_txt.Text, cusdetails("Password")) = False Then
             MessageBox.Show("Old password is Incorrect")
             Exit Sub
         End If
@@ -295,14 +320,14 @@
             Exit Sub
         End If
 
-        If String.Compare(NewPassword_txt.Text, ConfirmNewPassword_txt.Text) <> 0 Then
+        If String.Equals(NewPassword_txt.Text, ConfirmNewPassword_txt.Text) = False Then
             MessageBox.Show("Passwords dont match")
             Exit Sub
         End If
         EditPassword(Cusid, NewPassword_txt.Text, "cus")
     End Sub
 
-    Private Sub Hamburger_Btn_Click(sender As Object, e As EventArgs) Handles Hamburger_Btn.Click
+    Private Sub Hamburger_Btn_Click(sender As Object, e As EventArgs)
         If MenuCard.Width = 309 Then
             MenuCard.Width = 67
         ElseIf MenuCard.Width = 67 Then

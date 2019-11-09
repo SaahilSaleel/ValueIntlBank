@@ -34,6 +34,30 @@
         BanklistBindingSource.DataSource = GetTable(BankListQuery)
     End Sub
 
+#Region "Reset"
+    Private Sub AddBankReset()
+        StateDropdown.SelectedIndex = 0
+        CityDropdown.SelectedIndex = 0
+        IFSC_txt.Text = ""
+        Branchno_txt.Text = ""
+        BankName_txt.Text = ""
+    End Sub
+
+    Private Sub EditBankReset()
+        EditStateDropdown.SelectedIndex = 0
+        EditCityDropdown.SelectedIndex = 0
+        EditName_txt.Text = ""
+    End Sub
+    Private Sub AddEmpReset()
+        AccDropdown.SelectedIndex = 0
+        CusID_txt.Text = ""
+        EmpId_txt.Text = ""
+        EmpMail_txt.Text = ""
+        Empname_txt.Text = ""
+        AdminSwitch.Value = False
+    End Sub
+#End Region
+
 #Region "Dragging Function"
     Private Sub LoginGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles LogInGradientPanel.MouseDown
         MousePressedDown = True
@@ -51,67 +75,51 @@
         MousePressedDown = False
     End Sub
 
-    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs)
+    Private Sub AddEmpGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles AddEmpGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs)
+    Private Sub AddEmpGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles AddEmpGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs)
+    Private Sub AddEmpGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles AddEmpGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles AddCusGradientPanel.MouseDown
+    Private Sub AddBankGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles AddBankGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles AddCusGradientPanel.MouseMove
+    Private Sub AddBankGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles AddBankGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles AddCusGradientPanel.MouseUp
+    Private Sub AddBankGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles AddBankGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub DepositGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseDown
+    Private Sub EditBankGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles EditBankGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub DepositGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseMove
+    Private Sub EditBankGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles EditBankGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub DepositGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseUp
-        MousePressedDown = False
-    End Sub
-
-    Private Sub WithdrawGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseDown
-        MousePressedDown = True
-        lastLocation = e.Location
-    End Sub
-
-    Private Sub WithdrawGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseMove
-        If MousePressedDown = True Then
-            Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
-            Me.Update()
-        End If
-    End Sub
-
-    Private Sub WithdrawGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseUp
+    Private Sub EditBankGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles EditBankGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
@@ -130,6 +138,24 @@
     Private Sub MenuGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles MenuGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
+
+    Private Sub TransactionGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles TransactionGradientPanel.MouseDown
+        MousePressedDown = True
+        lastLocation = e.Location
+    End Sub
+
+    Private Sub TransactionGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles TransactionGradientPanel.MouseMove
+        If MousePressedDown = True Then
+            Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
+            Me.Update()
+        End If
+    End Sub
+
+    Private Sub TransactionGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles TransactionGradientPanel.MouseUp
+        MousePressedDown = False
+    End Sub
+
+
 #End Region
 
 #Region "Menu Card"
@@ -142,12 +168,14 @@
     Private Sub AddBankSelect_Click(sender As Object, e As EventArgs) Handles AddBankSelect.Click
         HomePage.SelectedTab() = AddBankTab
         MenuDeselectAll()
+        AddBankReset()
         AddBankSelect.selected = True
     End Sub
 
     Private Sub EditBankSelect_Click(sender As Object, e As EventArgs) Handles EditBankSelect.Click
         HomePage.SelectedTab = EditBankTab
         MenuDeselectAll()
+        EditBankReset()
         EditBankSelect.selected = True
         BankListUpdate()
     End Sub
@@ -161,6 +189,7 @@
 
     Private Sub AddEmployeeSelect_Click(sender As Object, e As EventArgs) Handles AddEmployeeSelect.Click
         MenuDeselectAll()
+        AddEmpReset()
         AddEmployeeSelect.selected = True
         HomePage.SelectedTab = AddEmployeeTab
     End Sub
@@ -201,12 +230,11 @@
 #End Region
 
 #Region "Add Employee"
-
     Private Sub AddEmpGen_btn_Click(sender As Object, e As EventArgs) Handles AddEmpGen_btn.Click
         Dim cusdetails As Dictionary(Of String, String)
         Dim Cusid As String = CusID_txt.Text
         cusdetails = GetSingleRowDict("cusdetails", "Cus_Id", Cusid)
-        EmpId_txt.Text = GetID(8, "empdetails", "Emp_ID")
+        EmpId_txt.Text = GetID(12, "empdetails", "Emp_ID")
         Dim AccList As String() = GetSingleCol("Accno", "bankacc", "Cus_ID", Cusid)
         AccDropdown.Items.Clear()
         AccDropdown.Items.AddRange(AccList)

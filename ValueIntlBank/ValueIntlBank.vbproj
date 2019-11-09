@@ -157,210 +157,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer Menu\AccountTransfer.Designer.vb">
-      <DependentUpon>AccountTransfer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\AccountTransfer.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Misc\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Misc\Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\AddBank.Designer.vb">
-      <DependentUpon>AddBank.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\AddBank.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer Menu\CusHome.Designer.vb">
-      <DependentUpon>CusHome.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\CusHome.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer Menu\TransferReceipt.Designer.vb">
-      <DependentUpon>TransferReceipt.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\TransferReceipt.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\CreateBankAcc.Designer.vb">
-      <DependentUpon>CreateBankAcc.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\CreateBankAcc.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusHome.Designer.vb">
-      <DependentUpon>EmpCusHome.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusHome.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusMenu.Designer.vb">
-      <DependentUpon>EmpCusMenu.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusLogin.Designer.vb">
-      <DependentUpon>EmpCusLogin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\EmpCusLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer Menu\AddBeneficiary.Designer.vb">
-      <DependentUpon>AddBeneficiary.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\AddBeneficiary.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\PersonalHome.Designer.vb">
-      <DependentUpon>PersonalHome.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\PersonalHome.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogIn\CusLogin.Designer.vb">
-      <DependentUpon>CusLogin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="LogIn\CusLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer Menu\TransferMenu.Designer.vb">
-      <DependentUpon>TransferMenu.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\TransferMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\AddCus.Designer.vb">
-      <DependentUpon>AddCus.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\AddCus.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\EditCusDetails.Designer.vb">
-      <DependentUpon>EditCusDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\EditCusDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\AccDeposit.Designer.vb">
-      <DependentUpon>AccDeposit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\AccDeposit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\Loan.Designer.vb">
-      <DependentUpon>Loan.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\Loan.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Customer\AccWithdraw.Designer.vb">
-      <DependentUpon>AccWithdraw.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Customer\AccWithdraw.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\EditPersonalDetails.Designer.vb">
-      <DependentUpon>EditPersonalDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\EditPersonalDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\AddEmployee.Designer.vb">
-      <DependentUpon>AddEmployee.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\AddEmployee.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\AllTransactions.Designer.vb">
-      <DependentUpon>AllTransactions.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\AllTransactions.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\EditBankDetails.Designer.vb">
-      <DependentUpon>EditBankDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\EditBankDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\EditOtherDetails.Designer.vb">
-      <DependentUpon>EditOtherDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\EditOtherDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\SalaryManager.Designer.vb">
-      <DependentUpon>SalaryManager.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\Manager\SalaryManager.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\MessageHub.Designer.vb">
-      <DependentUpon>MessageHub.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\MessageHub.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\MySalary.Designer.vb">
-      <DependentUpon>MySalary.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\MySalary.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\Personal\ViewBankDetails.Designer.vb">
-      <DependentUpon>ViewBankDetails.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\Personal\ViewBankDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogIn\KioskSelection.Designer.vb">
-      <DependentUpon>KioskSelection.vb</DependentUpon>
-    </Compile>
-    <Compile Include="LogIn\KioskSelection.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Method\Bank.vb" />
     <Compile Include="Method\Misc.vb" />
-    <Compile Include="Misc\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Misc\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogIn\EmpLogin.Designer.vb">
-      <DependentUpon>EmpLogin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="LogIn\EmpLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Misc\SplashScreen1.Designer.vb">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Misc\SplashScreen1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Modules\AdminModule.Designer.vb">
       <DependentUpon>AdminModule.vb</DependentUpon>
     </Compile>
     <Compile Include="Modules\AdminModule.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\CustomerModule.Designer.vb">
-      <DependentUpon>CustomerModule.vb</DependentUpon>
+    <Compile Include="Modules\SelfServiceModule.Designer.vb">
+      <DependentUpon>SelfServiceModule.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\CustomerModule.vb">
+    <Compile Include="Modules\SelfServiceModule.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\EmpCusModule.Designer.vb">
-      <DependentUpon>EmpCusModule.vb</DependentUpon>
+    <Compile Include="Modules\CustomerServiceModule.Designer.vb">
+      <DependentUpon>CustomerServiceModule.vb</DependentUpon>
     </Compile>
-    <Compile Include="Modules\EmpCusModule.vb">
+    <Compile Include="Modules\CustomerServiceModule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\EmployeeModule.Designer.vb">
@@ -390,12 +204,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Customer Menu\CusPassbook.Designer.vb">
-      <DependentUpon>CusPassbook.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Customer Menu\CusPassbook.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Method\SQL.vb" />
     <Compile Include="vibDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -404,83 +212,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Customer Menu\AccountTransfer.resx">
-      <DependentUpon>AccountTransfer.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Personal\Manager\AddBank.resx">
-      <DependentUpon>AddBank.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer Menu\CusHome.resx">
-      <DependentUpon>CusHome.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer Menu\CusPassbook.resx">
-      <DependentUpon>CusPassbook.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer Menu\TransferMenu.resx">
-      <DependentUpon>TransferMenu.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\AccWithdraw.resx">
-      <DependentUpon>AccWithdraw.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\AddCus.resx">
-      <DependentUpon>AddCus.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\CreateBankAcc.resx">
-      <DependentUpon>CreateBankAcc.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\AccDeposit.resx">
-      <DependentUpon>AccDeposit.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\EmpCusHome.resx">
-      <DependentUpon>EmpCusHome.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\EmpCusMenu.resx">
-      <DependentUpon>EmpCusMenu.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Customer\EmpCusLogin.resx">
-      <DependentUpon>EmpCusLogin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer Menu\AddBeneficiary.resx">
-      <DependentUpon>AddBeneficiary.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Personal\Manager\AddEmployee.resx">
-      <DependentUpon>AddEmployee.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Personal\Manager\AllTransactions.resx">
-      <DependentUpon>AllTransactions.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Personal\MessageHub.resx">
-      <DependentUpon>MessageHub.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\Personal\PersonalHome.resx">
-      <DependentUpon>PersonalHome.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\CusLogin.resx">
-      <DependentUpon>CusLogin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\KioskSelection.resx">
-      <DependentUpon>KioskSelection.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Misc\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\EmpLogin.resx">
-      <DependentUpon>EmpLogin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Misc\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Misc\SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modules\AdminModule.resx">
       <DependentUpon>AdminModule.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\CustomerModule.resx">
-      <DependentUpon>CustomerModule.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\SelfServiceModule.resx">
+      <DependentUpon>SelfServiceModule.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\EmpCusModule.resx">
-      <DependentUpon>EmpCusModule.vb</DependentUpon>
+    <EmbeddedResource Include="Modules\CustomerServiceModule.resx">
+      <DependentUpon>CustomerServiceModule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\EmployeeModule.resx">
       <DependentUpon>EmployeeModule.vb</DependentUpon>

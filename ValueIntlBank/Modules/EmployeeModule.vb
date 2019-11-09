@@ -66,73 +66,94 @@
         MousePressedDown = False
     End Sub
 
-    Private Sub HomeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs)
+
+    Private Sub ComposeGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles ComposeGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub HomeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs)
+    Private Sub ComposeGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles ComposeGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub HomeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs)
+    Private Sub ComposeGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles ComposeGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles ComposeGradientPanel.MouseDown
+    Private Sub EditDetailsGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles EditDetailsGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles ComposeGradientPanel.MouseMove
+    Private Sub EditDetailsGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles EditDetailsGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub AddCusGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles ComposeGradientPanel.MouseUp
+    Private Sub EditDetailsGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles EditDetailsGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub DepositGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseDown
+    Private Sub InboxGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles InboxGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub DepositGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseMove
+    Private Sub InboxGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles InboxGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub DepositGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles DepositGradientPanel.MouseUp
+    Private Sub InboxGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles InboxGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 
-    Private Sub WithdrawGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseDown
+    Private Sub BankListGradientPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles BankListGradientPanel.MouseDown
         MousePressedDown = True
         lastLocation = e.Location
     End Sub
 
-    Private Sub WithdrawGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseMove
+    Private Sub BankListGradientPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles BankListGradientPanel.MouseMove
         If MousePressedDown = True Then
             Me.Location = New Point((Me.Location.X - lastLocation.X) + e.X, (Me.Location.Y - lastLocation.Y) + e.Y)
             Me.Update()
         End If
     End Sub
 
-    Private Sub WithdrawGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles WithdrawGradientPanel.MouseUp
+    Private Sub BankListGradientPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles BankListGradientPanel.MouseUp
         MousePressedDown = False
     End Sub
 #End Region
 
+#Region "Reset"
+    Private Sub InboxReset()
+        InboxTabControl.SelectedTab = ReceivedTab
+        MessagePreview_txt.Text = ""
+    End Sub
+    Private Sub ComposeReset()
+        EmailDropdown.SelectedIndex = 0
+        Message_txt.Text = ""
+        Subject_txt.Text = ""
+    End Sub
+
+    Private Sub EditDetailsReset()
+        OldPassword_txt.Text = ""
+        NewPassword_txt.Text = ""
+        ConfirmNewPassword_txt.Text = ""
+        AccnoDropdown.SelectedIndex = 0
+    End Sub
+
+#End Region
+
 #Region "Menu Card"
-    Private Sub Hamburger_Btn_Click(sender As Object, e As EventArgs) Handles Hamburger_Btn.Click
+    Private Sub Hamburger_Btn_Click(sender As Object, e As EventArgs)
         If MenuCard.Width = 290 Then
             MenuCard.Width = 67
         ElseIf MenuCard.Width = 67 Then
@@ -167,6 +188,7 @@
 
     Private Sub ComposeSelect_Click(sender As Object, e As EventArgs) Handles ComposeSelect.Click
         MenuDeselectAll()
+        InboxReset()
         ComposeSelect.selected = True
         HomePage.SelectedTab = ComposeTab
     End Sub
@@ -218,7 +240,7 @@
 
 #Region "Edit Details"
     Private Sub EditPassword_btn_Click(sender As Object, e As EventArgs) Handles EditPassword_btn.Click
-        If String.Compare(OldPassword_txt.Text, empdetails("Password")) <> 0 Then
+        If String.Equals(OldPassword_txt.Text, empdetails("Password")) = False Then
             MessageBox.Show("Old password is Incorrect")
             Exit Sub
         End If
@@ -228,7 +250,7 @@
             Exit Sub
         End If
 
-        If String.Compare(NewPassword_txt.Text, ConfirmNewPassword_txt.Text) <> 0 Then
+        If String.Equals(NewPassword_txt.Text, ConfirmNewPassword_txt.Text) = False Then
             MessageBox.Show("Passwords dont match")
             Exit Sub
         End If
@@ -273,6 +295,7 @@
         arr(7) = Message_txt.Text
         If InsertSingleRow(arr, "messagehub") = 1 Then
             MessageBox.Show("Your Message has been sent succesfully")
+            ComposeReset()
         End If
     End Sub
 #End Region

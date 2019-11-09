@@ -17,7 +17,7 @@ Module Misc
     Function GetID(ByVal len As Integer, ByVal table As String, ByVal col As String) As String
         Dim val As String = GenID(len)
         Do Until GetRowCount(val, table, col) = 0
-            val = GenID(8)
+            val = GenID(len)
         Loop
         Return val
     End Function
@@ -40,9 +40,9 @@ Module Misc
             End If
 
         Next
-#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+        Return Nothing
     End Function
-#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
 
     Function CurDate() As String
         Dim CurrentDate As String = Date.Now.ToString("yyyy-MM-dd")

@@ -78,7 +78,7 @@ Partial Class EmployeeModule
         Me.HomePage = New Bunifu.UI.WinForms.BunifuPages()
         Me.SelectionTab = New System.Windows.Forms.TabPage()
         Me.EditDetailsTab = New System.Windows.Forms.TabPage()
-        Me.DepositGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.EditDetailsGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.AccnoDropdown = New Bunifu.UI.WinForms.BunifuDropdown()
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.EditPassword_btn = New Bunifu.Framework.UI.BunifuThinButton2()
@@ -87,9 +87,9 @@ Partial Class EmployeeModule
         Me.OldPassword_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.UpdateAcc_Btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.InboxTab = New System.Windows.Forms.TabPage()
-        Me.WithdrawGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.InboxGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.MessagePreview_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.InboxTabControl = New System.Windows.Forms.TabControl()
         Me.ReceivedTab = New System.Windows.Forms.TabPage()
         Me.ReceivedDataGridView = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.MsgNoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -109,7 +109,7 @@ Partial Class EmployeeModule
         Me.MessagehubBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Branchno_lbl = New System.Windows.Forms.Label()
         Me.BankListTab = New System.Windows.Forms.TabPage()
-        Me.EditDetailsGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.BankListGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.BankListRefresh_btn = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BankListDataGridView = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.BranchnoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -127,7 +127,6 @@ Partial Class EmployeeModule
         Me.Message_txt = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox()
         Me.MenuCard = New Bunifu.Framework.UI.BunifuCards()
         Me.MenuGradientPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.Hamburger_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.AccType_lbl = New System.Windows.Forms.Label()
         Me.Close_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.LogOut_Btn = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -154,10 +153,10 @@ Partial Class EmployeeModule
         Me.HomeTab.SuspendLayout()
         Me.HomePage.SuspendLayout()
         Me.EditDetailsTab.SuspendLayout()
-        Me.DepositGradientPanel.SuspendLayout()
+        Me.EditDetailsGradientPanel.SuspendLayout()
         Me.InboxTab.SuspendLayout()
-        Me.WithdrawGradientPanel.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.InboxGradientPanel.SuspendLayout()
+        Me.InboxTabControl.SuspendLayout()
         Me.ReceivedTab.SuspendLayout()
         CType(Me.ReceivedDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MessagehubBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,7 +165,7 @@ Partial Class EmployeeModule
         CType(Me.SentDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MessagehubBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BankListTab.SuspendLayout()
-        Me.EditDetailsGradientPanel.SuspendLayout()
+        Me.BankListGradientPanel.SuspendLayout()
         CType(Me.BankListDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BanklistBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ComposeTab.SuspendLayout()
@@ -458,10 +457,10 @@ Partial Class EmployeeModule
         Me.HomePage.Multiline = True
         Me.HomePage.Name = "HomePage"
         Me.HomePage.Padding = New System.Drawing.Point(0, 0)
-        Me.HomePage.Page = Me.EditDetailsTab
-        Me.HomePage.PageIndex = 1
-        Me.HomePage.PageName = "EditDetailsTab"
-        Me.HomePage.PageTitle = "Edit Details"
+        Me.HomePage.Page = Me.InboxTab
+        Me.HomePage.PageIndex = 2
+        Me.HomePage.PageName = "InboxTab"
+        Me.HomePage.PageTitle = "Inbox"
         Me.HomePage.SelectedIndex = 0
         Me.HomePage.Size = New System.Drawing.Size(1342, 858)
         Me.HomePage.TabIndex = 2
@@ -496,36 +495,36 @@ Partial Class EmployeeModule
         'EditDetailsTab
         '
         Me.EditDetailsTab.BackColor = System.Drawing.Color.Magenta
-        Me.EditDetailsTab.Controls.Add(Me.DepositGradientPanel)
+        Me.EditDetailsTab.Controls.Add(Me.EditDetailsGradientPanel)
         Me.EditDetailsTab.Location = New System.Drawing.Point(4, 4)
         Me.EditDetailsTab.Name = "EditDetailsTab"
         Me.EditDetailsTab.Size = New System.Drawing.Size(1334, 832)
         Me.EditDetailsTab.TabIndex = 1
         Me.EditDetailsTab.Text = "Edit Details"
         '
-        'DepositGradientPanel
+        'EditDetailsGradientPanel
         '
-        Me.DepositGradientPanel.BackColor = System.Drawing.Color.Transparent
-        Me.DepositGradientPanel.BackgroundImage = CType(resources.GetObject("DepositGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.DepositGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.DepositGradientPanel.Controls.Add(Me.AccnoDropdown)
-        Me.DepositGradientPanel.Controls.Add(Me.BunifuSeparator1)
-        Me.DepositGradientPanel.Controls.Add(Me.EditPassword_btn)
-        Me.DepositGradientPanel.Controls.Add(Me.ConfirmNewPassword_txt)
-        Me.DepositGradientPanel.Controls.Add(Me.NewPassword_txt)
-        Me.DepositGradientPanel.Controls.Add(Me.OldPassword_txt)
-        Me.DepositGradientPanel.Controls.Add(Me.UpdateAcc_Btn)
-        Me.DepositGradientPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DepositGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.DepositGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.DepositGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.DepositGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.DepositGradientPanel.Location = New System.Drawing.Point(0, 0)
-        Me.DepositGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.DepositGradientPanel.Name = "DepositGradientPanel"
-        Me.DepositGradientPanel.Quality = 10
-        Me.DepositGradientPanel.Size = New System.Drawing.Size(271, 832)
-        Me.DepositGradientPanel.TabIndex = 1
+        Me.EditDetailsGradientPanel.BackColor = System.Drawing.Color.Transparent
+        Me.EditDetailsGradientPanel.BackgroundImage = CType(resources.GetObject("EditDetailsGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.EditDetailsGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.EditDetailsGradientPanel.Controls.Add(Me.AccnoDropdown)
+        Me.EditDetailsGradientPanel.Controls.Add(Me.BunifuSeparator1)
+        Me.EditDetailsGradientPanel.Controls.Add(Me.EditPassword_btn)
+        Me.EditDetailsGradientPanel.Controls.Add(Me.ConfirmNewPassword_txt)
+        Me.EditDetailsGradientPanel.Controls.Add(Me.NewPassword_txt)
+        Me.EditDetailsGradientPanel.Controls.Add(Me.OldPassword_txt)
+        Me.EditDetailsGradientPanel.Controls.Add(Me.UpdateAcc_Btn)
+        Me.EditDetailsGradientPanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.EditDetailsGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
+        Me.EditDetailsGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
+        Me.EditDetailsGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
+        Me.EditDetailsGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.EditDetailsGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.EditDetailsGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.EditDetailsGradientPanel.Name = "EditDetailsGradientPanel"
+        Me.EditDetailsGradientPanel.Quality = 10
+        Me.EditDetailsGradientPanel.Size = New System.Drawing.Size(271, 832)
+        Me.EditDetailsGradientPanel.TabIndex = 1
         '
         'AccnoDropdown
         '
@@ -841,32 +840,32 @@ Partial Class EmployeeModule
         'InboxTab
         '
         Me.InboxTab.BackColor = System.Drawing.Color.Magenta
-        Me.InboxTab.Controls.Add(Me.WithdrawGradientPanel)
+        Me.InboxTab.Controls.Add(Me.InboxGradientPanel)
         Me.InboxTab.Location = New System.Drawing.Point(4, 4)
         Me.InboxTab.Name = "InboxTab"
         Me.InboxTab.Size = New System.Drawing.Size(1334, 832)
         Me.InboxTab.TabIndex = 2
         Me.InboxTab.Text = "Inbox"
         '
-        'WithdrawGradientPanel
+        'InboxGradientPanel
         '
-        Me.WithdrawGradientPanel.BackColor = System.Drawing.Color.Transparent
-        Me.WithdrawGradientPanel.BackgroundImage = CType(resources.GetObject("WithdrawGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.WithdrawGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.WithdrawGradientPanel.Controls.Add(Me.MessagePreview_txt)
-        Me.WithdrawGradientPanel.Controls.Add(Me.TabControl1)
-        Me.WithdrawGradientPanel.Controls.Add(Me.Branchno_lbl)
-        Me.WithdrawGradientPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.WithdrawGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.WithdrawGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.WithdrawGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.WithdrawGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.WithdrawGradientPanel.Location = New System.Drawing.Point(0, 0)
-        Me.WithdrawGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.WithdrawGradientPanel.Name = "WithdrawGradientPanel"
-        Me.WithdrawGradientPanel.Quality = 10
-        Me.WithdrawGradientPanel.Size = New System.Drawing.Size(1051, 832)
-        Me.WithdrawGradientPanel.TabIndex = 2
+        Me.InboxGradientPanel.BackColor = System.Drawing.Color.Transparent
+        Me.InboxGradientPanel.BackgroundImage = CType(resources.GetObject("InboxGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.InboxGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.InboxGradientPanel.Controls.Add(Me.MessagePreview_txt)
+        Me.InboxGradientPanel.Controls.Add(Me.InboxTabControl)
+        Me.InboxGradientPanel.Controls.Add(Me.Branchno_lbl)
+        Me.InboxGradientPanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.InboxGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
+        Me.InboxGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
+        Me.InboxGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
+        Me.InboxGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.InboxGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.InboxGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.InboxGradientPanel.Name = "InboxGradientPanel"
+        Me.InboxGradientPanel.Quality = 10
+        Me.InboxGradientPanel.Size = New System.Drawing.Size(1051, 832)
+        Me.InboxGradientPanel.TabIndex = 2
         '
         'MessagePreview_txt
         '
@@ -941,15 +940,15 @@ Partial Class EmployeeModule
         Me.MessagePreview_txt.UseSystemPasswordChar = False
         Me.MessagePreview_txt.WordWrap = True
         '
-        'TabControl1
+        'InboxTabControl
         '
-        Me.TabControl1.Controls.Add(Me.ReceivedTab)
-        Me.TabControl1.Controls.Add(Me.SentTab)
-        Me.TabControl1.Location = New System.Drawing.Point(13, 18)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1012, 403)
-        Me.TabControl1.TabIndex = 51
+        Me.InboxTabControl.Controls.Add(Me.ReceivedTab)
+        Me.InboxTabControl.Controls.Add(Me.SentTab)
+        Me.InboxTabControl.Location = New System.Drawing.Point(13, 18)
+        Me.InboxTabControl.Name = "InboxTabControl"
+        Me.InboxTabControl.SelectedIndex = 0
+        Me.InboxTabControl.Size = New System.Drawing.Size(1012, 403)
+        Me.InboxTabControl.TabIndex = 51
         '
         'ReceivedTab
         '
@@ -1198,7 +1197,7 @@ Partial Class EmployeeModule
         'BankListTab
         '
         Me.BankListTab.BackColor = System.Drawing.Color.Magenta
-        Me.BankListTab.Controls.Add(Me.EditDetailsGradientPanel)
+        Me.BankListTab.Controls.Add(Me.BankListGradientPanel)
         Me.BankListTab.Location = New System.Drawing.Point(4, 4)
         Me.BankListTab.Margin = New System.Windows.Forms.Padding(0)
         Me.BankListTab.Name = "BankListTab"
@@ -1206,24 +1205,24 @@ Partial Class EmployeeModule
         Me.BankListTab.TabIndex = 3
         Me.BankListTab.Text = "Bank List"
         '
-        'EditDetailsGradientPanel
+        'BankListGradientPanel
         '
-        Me.EditDetailsGradientPanel.BackColor = System.Drawing.Color.Transparent
-        Me.EditDetailsGradientPanel.BackgroundImage = CType(resources.GetObject("EditDetailsGradientPanel.BackgroundImage"), System.Drawing.Image)
-        Me.EditDetailsGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.EditDetailsGradientPanel.Controls.Add(Me.BankListRefresh_btn)
-        Me.EditDetailsGradientPanel.Controls.Add(Me.BankListDataGridView)
-        Me.EditDetailsGradientPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.EditDetailsGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
-        Me.EditDetailsGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
-        Me.EditDetailsGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
-        Me.EditDetailsGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
-        Me.EditDetailsGradientPanel.Location = New System.Drawing.Point(0, 0)
-        Me.EditDetailsGradientPanel.Margin = New System.Windows.Forms.Padding(0)
-        Me.EditDetailsGradientPanel.Name = "EditDetailsGradientPanel"
-        Me.EditDetailsGradientPanel.Quality = 10
-        Me.EditDetailsGradientPanel.Size = New System.Drawing.Size(918, 832)
-        Me.EditDetailsGradientPanel.TabIndex = 1
+        Me.BankListGradientPanel.BackColor = System.Drawing.Color.Transparent
+        Me.BankListGradientPanel.BackgroundImage = CType(resources.GetObject("BankListGradientPanel.BackgroundImage"), System.Drawing.Image)
+        Me.BankListGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BankListGradientPanel.Controls.Add(Me.BankListRefresh_btn)
+        Me.BankListGradientPanel.Controls.Add(Me.BankListDataGridView)
+        Me.BankListGradientPanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BankListGradientPanel.GradientBottomLeft = System.Drawing.Color.BlueViolet
+        Me.BankListGradientPanel.GradientBottomRight = System.Drawing.Color.Plum
+        Me.BankListGradientPanel.GradientTopLeft = System.Drawing.Color.HotPink
+        Me.BankListGradientPanel.GradientTopRight = System.Drawing.Color.DodgerBlue
+        Me.BankListGradientPanel.Location = New System.Drawing.Point(0, 0)
+        Me.BankListGradientPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.BankListGradientPanel.Name = "BankListGradientPanel"
+        Me.BankListGradientPanel.Quality = 10
+        Me.BankListGradientPanel.Size = New System.Drawing.Size(918, 832)
+        Me.BankListGradientPanel.TabIndex = 1
         '
         'BankListRefresh_btn
         '
@@ -1611,7 +1610,6 @@ Partial Class EmployeeModule
         '
         Me.MenuGradientPanel.BackgroundImage = CType(resources.GetObject("MenuGradientPanel.BackgroundImage"), System.Drawing.Image)
         Me.MenuGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.MenuGradientPanel.Controls.Add(Me.Hamburger_Btn)
         Me.MenuGradientPanel.Controls.Add(Me.AccType_lbl)
         Me.MenuGradientPanel.Controls.Add(Me.Close_Btn)
         Me.MenuGradientPanel.Controls.Add(Me.LogOut_Btn)
@@ -1630,40 +1628,6 @@ Partial Class EmployeeModule
         Me.MenuGradientPanel.Quality = 10
         Me.MenuGradientPanel.Size = New System.Drawing.Size(290, 858)
         Me.MenuGradientPanel.TabIndex = 3
-        '
-        'Hamburger_Btn
-        '
-        Me.Hamburger_Btn.Active = False
-        Me.Hamburger_Btn.Activecolor = System.Drawing.Color.Transparent
-        Me.Hamburger_Btn.BackColor = System.Drawing.Color.Transparent
-        Me.Hamburger_Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Hamburger_Btn.BorderRadius = 0
-        Me.Hamburger_Btn.ButtonText = ""
-        Me.Hamburger_Btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Hamburger_Btn.DisabledColor = System.Drawing.Color.Gray
-        Me.Hamburger_Btn.Iconcolor = System.Drawing.Color.Transparent
-        Me.Hamburger_Btn.Iconimage = CType(resources.GetObject("Hamburger_Btn.Iconimage"), System.Drawing.Image)
-        Me.Hamburger_Btn.Iconimage_right = Nothing
-        Me.Hamburger_Btn.Iconimage_right_Selected = Nothing
-        Me.Hamburger_Btn.Iconimage_Selected = Nothing
-        Me.Hamburger_Btn.IconMarginLeft = 0
-        Me.Hamburger_Btn.IconMarginRight = 0
-        Me.Hamburger_Btn.IconRightVisible = True
-        Me.Hamburger_Btn.IconRightZoom = 0R
-        Me.Hamburger_Btn.IconVisible = True
-        Me.Hamburger_Btn.IconZoom = 90.0R
-        Me.Hamburger_Btn.IsTab = False
-        Me.Hamburger_Btn.Location = New System.Drawing.Point(3, 8)
-        Me.Hamburger_Btn.Name = "Hamburger_Btn"
-        Me.Hamburger_Btn.Normalcolor = System.Drawing.Color.Transparent
-        Me.Hamburger_Btn.OnHovercolor = System.Drawing.Color.Transparent
-        Me.Hamburger_Btn.OnHoverTextColor = System.Drawing.Color.White
-        Me.Hamburger_Btn.selected = False
-        Me.Hamburger_Btn.Size = New System.Drawing.Size(50, 48)
-        Me.Hamburger_Btn.TabIndex = 40
-        Me.Hamburger_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Hamburger_Btn.Textcolor = System.Drawing.Color.White
-        Me.Hamburger_Btn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'AccType_lbl
         '
@@ -1979,11 +1943,11 @@ Partial Class EmployeeModule
         Me.HomeTab.ResumeLayout(False)
         Me.HomePage.ResumeLayout(False)
         Me.EditDetailsTab.ResumeLayout(False)
-        Me.DepositGradientPanel.ResumeLayout(False)
+        Me.EditDetailsGradientPanel.ResumeLayout(False)
         Me.InboxTab.ResumeLayout(False)
-        Me.WithdrawGradientPanel.ResumeLayout(False)
-        Me.WithdrawGradientPanel.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
+        Me.InboxGradientPanel.ResumeLayout(False)
+        Me.InboxGradientPanel.PerformLayout()
+        Me.InboxTabControl.ResumeLayout(False)
         Me.ReceivedTab.ResumeLayout(False)
         CType(Me.ReceivedDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MessagehubBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1992,7 +1956,7 @@ Partial Class EmployeeModule
         CType(Me.SentDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MessagehubBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BankListTab.ResumeLayout(False)
-        Me.EditDetailsGradientPanel.ResumeLayout(False)
+        Me.BankListGradientPanel.ResumeLayout(False)
         CType(Me.BankListDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BanklistBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ComposeTab.ResumeLayout(False)
@@ -2023,15 +1987,15 @@ Partial Class EmployeeModule
     Friend WithEvents BankListTab As TabPage
     Friend WithEvents ComposeTab As TabPage
     Friend WithEvents ComposeGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents DepositGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents EditDetailsGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents EditDetailsSelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BankListSelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents InboxSelect As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Close_Btn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents LogOut_Btn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents ComposeSelect As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents WithdrawGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents EditDetailsGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents InboxGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents BankListGradientPanel As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents AccType_lbl As Label
     Friend WithEvents BankListDataGridView As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents VibDataSet As vibDataSet
@@ -2056,7 +2020,7 @@ Partial Class EmployeeModule
     Friend WithEvents AccnoDropdown As Bunifu.UI.WinForms.BunifuDropdown
     Friend WithEvents MessagehubBindingSource As BindingSource
     Friend WithEvents MessagehubTableAdapter As vibDataSetTableAdapters.messagehubTableAdapter
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents InboxTabControl As TabControl
     Friend WithEvents ReceivedTab As TabPage
     Friend WithEvents ReceivedDataGridView As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents ReadStatusDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
@@ -2066,7 +2030,6 @@ Partial Class EmployeeModule
     Friend WithEvents DateTimeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents MsgNoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SentTab As TabPage
-    Friend WithEvents Hamburger_Btn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents MessagePreview_txt As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox
     Friend WithEvents SentDataGridView As Bunifu.UI.WinForms.BunifuDataGridView
     Friend WithEvents MessagehubBindingSource1 As BindingSource

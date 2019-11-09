@@ -45,35 +45,6 @@ Module SQL
         Return Success
     End Function
 
-    Function GetRowCount(ByVal table As String) As Integer
-        MysqlConn.ConnectionString =
-       "server=localhost;userid=root;password=root;database=vib"
-
-        Dim count As Integer
-        count = 0
-        Try
-            MysqlConn.Open()
-            Dim Query As String
-            Query = "select * from vib." + table
-            COMMAND = New MySqlCommand(Query, MysqlConn)
-            READER = COMMAND.ExecuteReader
-
-            While READER.Read
-                count += 1
-
-            End While
-
-            MysqlConn.Close()
-
-        Catch ex As MySqlException
-            MessageBox.Show(ex.Message)
-        Finally
-            MysqlConn.Dispose()
-
-        End Try
-        Return count
-    End Function
-
     Function GetRowCount(ByVal val As String, ByVal table As String, ByVal col As String) As Integer
         MysqlConn.ConnectionString =
        "server=localhost;userid=root;password=root;database=vib"
@@ -114,7 +85,7 @@ Module SQL
             query += "'" + arr(i) + "'"
         Next i
         query += ");"
-        MessageBox.Show(query)
+        'MessageBox.Show(query)
         Dim success = ExecuteQuery(query)
         Return success
     End Function
@@ -234,8 +205,8 @@ Module SQL
        "server=localhost;userid=root;password=root;database=vib"
 
         Dim value(0) As String
+        value(0) = ""
         Dim i As Integer = 0
-
         Try
             MysqlConn.Open()
             Dim Query As String
@@ -244,9 +215,7 @@ Module SQL
             READER = COMMAND.ExecuteReader
 
             While READER.Read
-#Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 value(i) = READER.GetString(0)
-#Enable Warning BC42104 ' Variable is used before it has been assigned a value
                 i += 1
                 ReDim Preserve value(i)
             End While
@@ -269,6 +238,7 @@ Module SQL
        "server=localhost;userid=root;password=root;database=vib"
 
         Dim value(0) As String
+        value(0) = ""
         Dim i As Integer = 0
 
         Try
@@ -279,9 +249,7 @@ Module SQL
             READER = COMMAND.ExecuteReader
 
             While READER.Read
-#Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 value(i) = READER.GetString(0)
-#Enable Warning BC42104 ' Variable is used before it has been assigned a value
                 i += 1
                 ReDim Preserve value(i)
             End While
@@ -304,6 +272,7 @@ Module SQL
        "server=localhost;userid=root;password=root;database=vib"
 
         Dim value(0) As String
+        value(0) = ""
         Dim i As Integer = 0
 
         Try
@@ -314,9 +283,7 @@ Module SQL
             READER = COMMAND.ExecuteReader
 
             While READER.Read
-#Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 value(i) = READER.GetString(0)
-#Enable Warning BC42104 ' Variable is used before it has been assigned a value
                 i += 1
                 ReDim Preserve value(i)
             End While

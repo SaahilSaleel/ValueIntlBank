@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EmpCusModule
+Partial Class CustomerServiceModule
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,7 +24,7 @@ Partial Class EmpCusModule
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim Animation2 As Utilities.BunifuPages.BunifuAnimatorNS.Animation = New Utilities.BunifuPages.BunifuAnimatorNS.Animation()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmpCusModule))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerServiceModule))
         Dim StateProperties1 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
         Dim StateProperties2 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
         Dim StateProperties3 As Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties = New Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties()
@@ -2761,12 +2761,12 @@ Partial Class EmpCusModule
         'AddAcc_lbl
         '
         Me.AddAcc_lbl.AutoSize = True
-        Me.AddAcc_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddAcc_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddAcc_lbl.ForeColor = System.Drawing.Color.Purple
         Me.AddAcc_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AddAcc_lbl.Location = New System.Drawing.Point(14, 754)
         Me.AddAcc_lbl.Name = "AddAcc_lbl"
-        Me.AddAcc_lbl.Size = New System.Drawing.Size(0, 37)
+        Me.AddAcc_lbl.Size = New System.Drawing.Size(0, 30)
         Me.AddAcc_lbl.TabIndex = 36
         '
         'InitialDeposit_btn
@@ -2787,7 +2787,7 @@ Partial Class EmpCusModule
         Me.InitialDeposit_btn.IdleFillColor = System.Drawing.Color.White
         Me.InitialDeposit_btn.IdleForecolor = System.Drawing.Color.Violet
         Me.InitialDeposit_btn.IdleLineColor = System.Drawing.Color.Violet
-        Me.InitialDeposit_btn.Location = New System.Drawing.Point(264, 742)
+        Me.InitialDeposit_btn.Location = New System.Drawing.Point(266, 777)
         Me.InitialDeposit_btn.Margin = New System.Windows.Forms.Padding(5)
         Me.InitialDeposit_btn.Name = "InitialDeposit_btn"
         Me.InitialDeposit_btn.Size = New System.Drawing.Size(159, 55)
@@ -3475,11 +3475,11 @@ Partial Class EmpCusModule
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(42, 35)
+        Me.Label4.Location = New System.Drawing.Point(29, 35)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(191, 33)
+        Me.Label4.Size = New System.Drawing.Size(204, 33)
         Me.Label4.TabIndex = 32
-        Me.Label4.Text = "Initial Deposit"
+        Me.Label4.Text = "Submit Details"
         '
         'Step1_chk
         '
@@ -3786,12 +3786,12 @@ Partial Class EmpCusModule
         'AccType_lbl
         '
         Me.AccType_lbl.AutoSize = True
-        Me.AccType_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AccType_lbl.Font = New System.Drawing.Font("Mongolian Baiti", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AccType_lbl.ForeColor = System.Drawing.Color.Purple
         Me.AccType_lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AccType_lbl.Location = New System.Drawing.Point(8, 614)
         Me.AccType_lbl.Name = "AccType_lbl"
-        Me.AccType_lbl.Size = New System.Drawing.Size(0, 37)
+        Me.AccType_lbl.Size = New System.Drawing.Size(0, 30)
         Me.AccType_lbl.TabIndex = 37
         '
         'AccTypeCreate_Btn
