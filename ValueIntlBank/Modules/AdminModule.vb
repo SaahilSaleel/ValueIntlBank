@@ -234,7 +234,7 @@
         Dim cusdetails As Dictionary(Of String, String)
         Dim Cusid As String = CusID_txt.Text
         cusdetails = GetSingleRowDict("cusdetails", "Cus_Id", Cusid)
-        EmpId_txt.Text = GetID(12, "empdetails", "Emp_ID")
+        EmpId_txt.Text = GetID(8, "empdetails", "Emp_ID")
         Dim AccList As String() = GetSingleCol("Accno", "bankacc", "Cus_ID", Cusid)
         AccDropdown.Items.Clear()
         AccDropdown.Items.AddRange(AccList)

@@ -34,7 +34,7 @@
         bal -= Amount
         Dim Success = 0
         Dim arr(7) As String
-        arr(0) = GetID(12, "receipts", "Trans_ID")
+        arr(0) = GetID(8, "receipts", "Trans_ID")
         arr(1) = Amount
         arr(2) = Comment
         arr(3) = GetSingleField("Cus_ID", "bankacc", "Accno", Sender_Acc)

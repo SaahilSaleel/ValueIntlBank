@@ -30,8 +30,10 @@
     End Sub
 
     Private Sub BalanceUpdate()
-        Balance_lbl.Text = GetSingleField("Balance", "bankacc", "accno", Accno)
+        Balance_lbl.Text = "Bal: " + GetSingleField("Balance", "bankacc", "accno", Accno)
     End Sub
+
+
 
 #Region "Dragging Function"
 
@@ -172,7 +174,7 @@
 
     Private Sub AccTypeCreate_Btn_Click(sender As Object, e As EventArgs) Handles AccTypeCreate_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(12, "bankacc", "Accno")
+        arr(0) = GetID(8, "bankacc", "Accno")
         arr(1) = cusdetails("First_Name")
         arr(2) = cusdetails("Mid_Name")
         arr(3) = cusdetails("Last_Name")
@@ -192,8 +194,7 @@
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
-        Dim Form As New CustomerServiceModule
-        Form.Close()
+        Me.Hide()
     End Sub
 #End Region
 
@@ -259,6 +260,14 @@
     End Sub
     Dim DepositTotalInr As Integer
     Private Sub DepositTotal()
+        Dim textbox() = {Deposit2000_Txt, Deposit500_Txt, Deposit100_Txt, Deposit200_Txt, Deposit50_Txt, Deposit20_Txt, Deposit10_Txt, Deposit5_Txt, Deposit2_Txt, Deposit1_Txt}
+        For i = 0 To 9
+            If isValidNumber(textbox(i).Text) = False Then
+                ToolTip.Show("Enter a number", textbox(i))
+                textbox(i).Text = "0"
+                Exit Sub
+            End If
+        Next
         If Deposit2000_Txt.Text IsNot "" And Deposit500_Txt.Text IsNot "" And Deposit200_Txt.Text IsNot "" And Deposit100_Txt.Text IsNot "" And Deposit50_Txt.Text IsNot "" And Deposit1_Txt.Text IsNot "" And Deposit2_Txt.Text IsNot "" And Deposit5_Txt.Text IsNot "" And Deposit10_Txt.Text IsNot "" And Deposit20_Txt.Text IsNot "" Then
             Dim inr2000 As Integer = Deposit2000_Txt.Text * 2000
             Dim inr500 As Integer = Deposit500_Txt.Text * 500
@@ -273,6 +282,10 @@
             DepositTotalInr = inr2000 + inr500 + inr200 + inr100 + inr50 + inr20 + inr10 + inr5 + inr2 + inr1
             DepositTotal_lbl.Text = DepositTotalInr & " Rs"
         End If
+
+
+
+
     End Sub
 
     Sub DepositResetFields()
@@ -290,7 +303,7 @@
 
     Private Sub Deposit_Btn_Click(sender As Object, e As EventArgs) Handles Deposit_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(12, "receipts", "Trans_ID")
+        arr(0) = GetID(8, "receipts", "Trans_ID")
         arr(1) = DepositTotalInr
         arr(2) = "Deposit"
         arr(3) = ""
@@ -425,6 +438,14 @@
     End Sub
     Dim WithdrawTotalInr As Integer
     Private Sub WithdrawTotal()
+        Dim textbox() = {Withdraw2000_Txt, Withdraw500_Txt, Withdraw100_Txt, Withdraw200_Txt, Withdraw50_Txt, Withdraw20_Txt, Withdraw10_Txt, Withdraw5_Txt, Withdraw2_Txt, Withdraw1_Txt}
+        For i = 0 To 9
+            If isValidNumber(textbox(i).Text) = False Then
+                ToolTip.Show("Enter a number", textbox(i))
+                textbox(i).Text = "0"
+                Exit Sub
+            End If
+        Next
         If Withdraw2000_Txt.Text IsNot "" And Withdraw500_Txt.Text IsNot "" And Withdraw200_Txt.Text IsNot "" And Withdraw100_Txt.Text IsNot "" And Withdraw50_Txt.Text IsNot "" And Withdraw1_Txt.Text IsNot "" And Withdraw2_Txt.Text IsNot "" And Withdraw5_Txt.Text IsNot "" And Withdraw10_Txt.Text IsNot "" And Withdraw20_Txt.Text IsNot "" Then
             Dim inr2000 As Integer = Withdraw2000_Txt.Text * 2000
             Dim inr500 As Integer = Withdraw500_Txt.Text * 500
@@ -456,7 +477,7 @@
 
     Private Sub Withdraw_Btn_Click(sender As Object, e As EventArgs) Handles Withdraw_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(12, "receipts", "Trans_ID")
+        arr(0) = GetID(8, "receipts", "Trans_ID")
         arr(1) = WithdrawTotalInr
         arr(2) = "Withdraw"
         arr(3) = Cusid
@@ -701,15 +722,34 @@
 
         arr(2) = FName_txt.Text
         If arr(2).Length < 1 Then
+
             ToolTip.Show("Please Enter a name", FName_txt)
+            Exit Sub
+        ElseIf isValidName(arr(2)) = False Then
+            ToolTip.Hide(FName_txt)
+            ToolTip.Show("Please Enter characters only", FName_txt)
+            FName_txt.Text = ""
             Exit Sub
         Else
             ToolTip.Hide(FName_txt)
         End If
         arr(3) = MName_txt.Text
+        If isValidName(arr(3)) = False Then
+            ToolTip.Hide(MName_txt)
+            ToolTip.Show("Please Enter characters only", MName_txt)
+            MName_txt.Text = ""
+            Exit Sub
+        Else
+            ToolTip.Hide(MName_txt)
+        End If
         arr(4) = LName_txt.Text
         If arr(4).Length < 1 Then
             ToolTip.Show("Please Enter a name", LName_txt)
+            Exit Sub
+        ElseIf isValidName(arr(2)) = False Then
+            ToolTip.Hide(LName_txt)
+            ToolTip.Show("Please Enter characters only", LName_txt)
+            LName_txt.Text = ""
             Exit Sub
         Else
             ToolTip.Hide(LName_txt)
@@ -727,12 +767,22 @@
         If arr(8).Length <> 7 Then
             ToolTip.Show("Please Enter a 7 digit pincode", Pincode_txt)
             Exit Sub
+        ElseIf isValidNumber(arr(8)) = False Then
+            ToolTip.Hide(Pincode_txt)
+            ToolTip.Show("Please Enter Digits only", Pincode_txt)
+            Pincode_txt.Text = ""
+            Exit Sub
         Else
             ToolTip.Hide(Pincode_txt)
         End If
         arr(9) = Phone_txt.Text
         If arr(9).Length <> 10 Then
             ToolTip.Show("Please Enter a 10 digit phone number", Phone_txt)
+            Exit Sub
+        ElseIf isValidNumber(arr(9)) = False Then
+            ToolTip.Hide(Phone_txt)
+            ToolTip.Show("Please Enter Digits only", Phone_txt)
+            Phone_txt.Text = ""
             Exit Sub
         Else
             ToolTip.Hide(Phone_txt)
@@ -747,7 +797,7 @@
         arr(11) = GetChar(GetGroupBoxCheckedButton(SexGroupBox).Name, 1)
         arr(12) = BranchDropdown.SelectedItem
 
-        arr(0) = GetID(12, "cusdetails", "Cus_ID")
+        arr(0) = GetID(8, "cusdetails", "Cus_ID")
         arr(1) = InputBox("Please Enter a Password")
         While arr(1).Length < 8
             MessageBox.Show("Password should be at least 8 characters")
@@ -768,7 +818,7 @@
 
     Private Sub CreateAcc_Btn_Click(sender As Object, e As EventArgs) Handles CreateAcc_Btn.Click
         Dim arr(7) As String
-        arr(0) = GetID(12, "bankacc", "Accno")
+        arr(0) = GetID(8, "bankacc", "Accno")
         arr(1) = cusdetails("First_Name")
         arr(2) = cusdetails("Mid_Name")
         arr(3) = cusdetails("Last_Name")
@@ -790,7 +840,6 @@
         HomePage.SelectedTab = DepositTab
         AddCus = 1
     End Sub
-
 #End Region
 
 End Class

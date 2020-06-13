@@ -452,7 +452,7 @@ Partial Class EmployeeModule
         Me.HomePage.Controls.Add(Me.BankListTab)
         Me.HomePage.Controls.Add(Me.ComposeTab)
         Me.HomePage.Dock = System.Windows.Forms.DockStyle.Left
-        Me.HomePage.Location = New System.Drawing.Point(290, 0)
+        Me.HomePage.Location = New System.Drawing.Point(242, 0)
         Me.HomePage.Margin = New System.Windows.Forms.Padding(0)
         Me.HomePage.Multiline = True
         Me.HomePage.Name = "HomePage"
@@ -1603,7 +1603,7 @@ Partial Class EmployeeModule
         Me.MenuCard.Name = "MenuCard"
         Me.MenuCard.RightSahddow = False
         Me.MenuCard.ShadowDepth = 20
-        Me.MenuCard.Size = New System.Drawing.Size(290, 858)
+        Me.MenuCard.Size = New System.Drawing.Size(242, 858)
         Me.MenuCard.TabIndex = 0
         '
         'MenuGradientPanel
@@ -1626,7 +1626,7 @@ Partial Class EmployeeModule
         Me.MenuGradientPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.MenuGradientPanel.Name = "MenuGradientPanel"
         Me.MenuGradientPanel.Quality = 10
-        Me.MenuGradientPanel.Size = New System.Drawing.Size(290, 858)
+        Me.MenuGradientPanel.Size = New System.Drawing.Size(242, 858)
         Me.MenuGradientPanel.TabIndex = 3
         '
         'AccType_lbl
@@ -1818,7 +1818,7 @@ Partial Class EmployeeModule
         Me.InboxSelect.OnHovercolor = System.Drawing.Color.DarkViolet
         Me.InboxSelect.OnHoverTextColor = System.Drawing.Color.White
         Me.InboxSelect.selected = False
-        Me.InboxSelect.Size = New System.Drawing.Size(308, 59)
+        Me.InboxSelect.Size = New System.Drawing.Size(304, 59)
         Me.InboxSelect.TabIndex = 1
         Me.InboxSelect.Text = "   Inbox"
         Me.InboxSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1855,7 +1855,7 @@ Partial Class EmployeeModule
         Me.EditDetailsSelect.OnHovercolor = System.Drawing.Color.DarkViolet
         Me.EditDetailsSelect.OnHoverTextColor = System.Drawing.Color.White
         Me.EditDetailsSelect.selected = False
-        Me.EditDetailsSelect.Size = New System.Drawing.Size(308, 59)
+        Me.EditDetailsSelect.Size = New System.Drawing.Size(305, 59)
         Me.EditDetailsSelect.TabIndex = 0
         Me.EditDetailsSelect.Text = "   Edit Details"
         Me.EditDetailsSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

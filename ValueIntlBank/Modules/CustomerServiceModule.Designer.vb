@@ -4065,14 +4065,14 @@ Partial Class CustomerServiceModule
         Me.DepositSelect.Textcolor = System.Drawing.Color.Black
         Me.DepositSelect.TextFont = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'EmpCusModule
+        'CustomerServiceModule
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.BackColor = System.Drawing.Color.Magenta
         Me.ClientSize = New System.Drawing.Size(1645, 884)
         Me.Controls.Add(Me.MainPage)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "EmpCusModule"
+        Me.Name = "CustomerServiceModule"
         Me.ShowIcon = False
         Me.MainPage.ResumeLayout(False)
         Me.LoginTab.ResumeLayout(False)

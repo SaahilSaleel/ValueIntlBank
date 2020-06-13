@@ -209,8 +209,7 @@
     End Sub
 
     Private Sub Close_Btn_Click(sender As Object, e As EventArgs) Handles Close_Btn.Click
-        Dim Form As New SelfServiceModule
-        Form.Close()
+        Me.Hide()
     End Sub
 #End Region
 
@@ -290,6 +289,12 @@
 #Region "Bank Transfer"
     Private Sub Transfer_Btn_Click(sender As Object, e As EventArgs) Handles Transfer_Btn.Click
         Dim Receiver As Integer = CInt(BeneficiaryDropdown.SelectedItem.ToString.Substring(0, 12))
+        If isValidNumber(TransferAmount_txt.Text) = False Then
+            ToolTip.Show("Enter a number", TransferAmount_txt)
+            Exit Sub
+        Else
+            ToolTip.Hide(TransferAmount_txt)
+        End If
         If BankTransfer(Accno, TransferAmount_txt.Text, Receiver, TransferComment_txt.Text) = 1 Then
             Dim msg = "Rs " & TransferAmount_txt.Text & " has been succesfully transferred to receiver AccNo:- " & BeneficiaryDropdown.SelectedItem
             MessageBox.Show(msg)

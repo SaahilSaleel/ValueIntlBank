@@ -268,6 +268,9 @@
 #Region "Inbox"
     Private Sub ReceivedDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles ReceivedDataGridView.CellClick
         Dim row As Integer = ReceivedDataGridView.CurrentRow.Index
+        If IsDBNull(ReceivedDataGridView.Rows(row).Cells(0).Value) Then
+            Exit Sub
+        End If
         Dim Msgno As String = ReceivedDataGridView.Rows(row).Cells(0).Value
         Dim Msg As String = GetSingleField("Message", "MessageHub", "Msg_No", Msgno)
         MessagePreview_txt.Text = Msg
@@ -275,6 +278,9 @@
 
     Private Sub SentDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles SentDataGridView.CellClick
         Dim row As Integer = SentDataGridView.CurrentRow.Index
+        If IsDBNull(SentDataGridView.Rows(row).Cells(0).Value) Then
+            Exit Sub
+        End If
         Dim Msgno As String = SentDataGridView.Rows(row).Cells(0).Value
         Dim Msg As String = GetSingleField("Message", "MessageHub", "Msg_No", Msgno)
         MessagePreview_txt.Text = Msg
